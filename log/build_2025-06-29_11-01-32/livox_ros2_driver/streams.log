@@ -1,0 +1,180 @@
+[0.008s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver': AMENT_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_agent:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_msgs:/usr/local:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver
+[0.043s] -- The C compiler identification is GNU 11.4.0
+[0.085s] -- The CXX compiler identification is GNU 11.4.0
+[0.093s] -- Detecting C compiler ABI info
+[0.140s] -- Detecting C compiler ABI info - done
+[0.149s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.149s] -- Detecting C compile features
+[0.149s] -- Detecting C compile features - done
+[0.151s] -- Detecting CXX compiler ABI info
+[0.205s] -- Detecting CXX compiler ABI info - done
+[0.218s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.218s] -- Detecting CXX compile features
+[0.218s] -- Detecting CXX compile features - done
+[0.218s] -- livox_ros2_driver version: 0.0.1
+[0.220s] -- Found ament_cmake_auto: 1.3.10 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.449s] -- Found Python3: /home/spaaaaace/anaconda3/envs/vision/bin/python3 (found version "3.8.20") found components: Interpreter 
+[0.596s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.599s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.605s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.614s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.625s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.657s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.659s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.729s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.750s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.784s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.790s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.844s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.846s] -- Found Threads: TRUE  
+[0.978s] -- Checking for module 'eigen3'
+[0.988s] --   Found eigen3, version 3.4.0
+[1.014s] -- Found Eigen: /usr/local/include/eigen3 (Required is at least version "3.1") 
+[1.014s] -- Eigen found (include: /usr/local/include/eigen3, version: 3.4.0)
+[1.040s] -- Checking for module 'flann'
+[1.051s] --   Found flann, version 1.9.1
+[1.082s] -- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+[1.082s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[1.805s] -- Checking for module 'libusb-1.0'
+[1.817s] --   Found libusb-1.0, version 1.0.25
+[1.846s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[1.847s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[1.892s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[2.038s] -- Eigen found (include: /usr/local/include/eigen3, version: 3.4.0)
+[2.046s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[2.052s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[2.186s] -- Found Qhull version 8.0.2
+[2.318s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[2.442s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[2.443s] -- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+[2.444s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[2.444s] -- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+[2.445s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+[2.446s] -- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+[2.446s] -- Found PCL_2D: /usr/include/pcl-1.12  
+[2.446s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+[2.447s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[2.448s] -- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+[2.448s] -- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+[2.449s] -- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+[2.450s] -- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+[2.451s] -- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+[2.452s] -- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+[2.452s] -- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+[2.453s] -- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+[2.454s] -- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+[2.455s] -- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+[2.455s] -- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+[2.456s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+[2.456s] -- Found PCL_MODELER: /usr/include/pcl-1.12  
+[2.456s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+[2.457s] -- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+[2.458s] -- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+[2.480s] [33mCMake Warning (dev) at CMakeLists.txt:31 (find_package):
+[2.480s]   Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+[2.480s]   Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+[2.480s]   command to set the policy and suppress this warning.
+[2.480s] 
+[2.480s]   CMake variable PCL_ROOT is set to:
+[2.480s] 
+[2.480s]     /usr
+[2.480s] 
+[2.481s]   For compatibility, CMake is ignoring the variable.
+[2.481s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.481s] [0m
+[2.487s] -- Found livox_sdk: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/include  
+[2.492s] -- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.0") 
+[2.493s] -- Checking for module 'apr-1'
+[2.504s] --   Found apr-1, version 1.7.0
+[2.533s] [0m/usr/include/apr-1.0[0m
+[2.533s] [0mapr-1[0m
+[2.544s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.559s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.561s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.561s] -- Configured cppcheck include dirs: /home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/common;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/common/rapidjson;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/comon/rapdidxml;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/common/comm;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/timesync;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/timesync/user_uart;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/livox_ros2_driver
+[2.561s] -- Configured cppcheck exclude dirs and/or files: 
+[2.563s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.563s] -- Configured cpplint exclude dirs and/or files: 
+[2.563s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.564s] -- Added test 'lint_cmake' to check CMake code style
+[2.564s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.566s] -- Added test 'uncrustify' to check C / C++ code style
+[2.566s] -- Configured uncrustify additional arguments: 
+[2.567s] -- Added test 'xmllint' to check XML markup files
+[2.568s] -- Configuring done (2.6s)
+[2.589s] [33mCMake Warning at /opt/ros/humble/share/ament_cmake_auto/cmake/ament_auto_add_library.cmake:66 (add_library):
+[2.589s]   Cannot generate a safe runtime search path for target livox_ros2_driver
+[2.589s]   because files in some directories may conflict with libraries in implicit
+[2.589s]   directories:
+[2.589s] 
+[2.589s]     runtime library [libz.so.1] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+[2.589s]       /home/spaaaaace/anaconda3/envs/vision/lib
+[2.589s] 
+[2.589s]   Some of these libraries may not be found correctly.
+[2.589s] Call Stack (most recent call first):
+[2.589s]   CMakeLists.txt:50 (ament_auto_add_library)
+[2.590s] 
+[2.590s] [0m
+[2.592s] -- Generating done (0.0s)
+[2.594s] -- Build files have been written to: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver
+[2.607s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver' returned '0': AMENT_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_agent:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_msgs:/usr/local:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver
+[2.609s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver': AMENT_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_agent:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_msgs:/usr/local:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver -- -j22 -l22
+[2.629s] [  6%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver_node.dir/rclcpp_components/node_main_livox_ros2_driver_node.cpp.o[0m
+[2.630s] [ 18%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/livox_ros2_driver/lds.cpp.o[0m
+[2.630s] [ 18%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/livox_ros2_driver/lds_lvx.cpp.o[0m
+[2.630s] [ 25%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/livox_ros2_driver/lvx_file.cpp.o[0m
+[2.630s] [ 37%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/livox_ros2_driver/lds_lidar.cpp.o[0m
+[2.630s] [ 37%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/livox_ros2_driver/ldq.cpp.o[0m
+[2.630s] [ 43%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/livox_ros2_driver/lds_hub.cpp.o[0m
+[2.631s] [ 56%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/livox_ros2_driver/lddc.cpp.o[0m
+[2.631s] [ 56%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/timesync/timesync.cpp.o[0m
+[2.631s] [ 62%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/timesync/user_uart/user_uart.cpp.o[0m
+[2.631s] [ 68%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/livox_ros2_driver/livox_ros2_driver.cpp.o[0m
+[2.632s] [ 75%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/common/comm/comm_protocol.cpp.o[0m
+[2.632s] [ 81%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/common/comm/sdk_protocol.cpp.o[0m
+[2.633s] [ 87%] [32mBuilding CXX object CMakeFiles/livox_ros2_driver.dir/common/comm/gps_protocol.cpp.o[0m
+[4.689s] [ 93%] [32m[1mLinking CXX executable livox_ros2_driver_node[0m
+[4.774s] [ 93%] Built target livox_ros2_driver_node
+[7.856s] [100%] [32m[1mLinking CXX shared library liblivox_ros2_driver.so[0m
+[8.493s] [100%] Built target livox_ros2_driver
+[8.502s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver' returned '0': AMENT_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_agent:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_msgs:/usr/local:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver -- -j22 -l22
+[8.552s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver': AMENT_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_agent:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_msgs:/usr/local:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver
+[8.554s] -- Install configuration: ""
+[8.554s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/lib/livox_ros2_driver/livox_ros2_driver_node
+[8.555s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/lib/livox_ros2_driver/livox_ros2_driver_node" to ""
+[8.555s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/library_path.sh
+[8.555s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/library_path.dsv
+[8.555s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/lib/liblivox_ros2_driver.so
+[8.562s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/lib/liblivox_ros2_driver.so" to ""
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/config
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/config/livox_lidar_config.json
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/config/livox_lidar.rviz
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/config/livox_hub_config.json
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/config/livox_hub.rviz
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_template_launch.py
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_hub_msg_launch .py
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_hub_launch.py
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_lidar_msg_launch.py
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_hub_rviz_launch.py
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_lidar_rviz_launch.py
+[8.563s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_lidar_launch.py
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/ament_index/resource_index/package_run_dependencies/livox_ros2_driver
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/ament_index/resource_index/parent_prefix_path/livox_ros2_driver
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/ament_prefix_path.sh
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/ament_prefix_path.dsv
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/path.sh
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/path.dsv
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/local_setup.bash
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/local_setup.sh
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/local_setup.zsh
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/local_setup.dsv
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/package.dsv
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/ament_index/resource_index/packages/livox_ros2_driver
+[8.564s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/ament_index/resource_index/rclcpp_components/livox_ros2_driver
+[8.565s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.565s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/cmake/ament_cmake_export_libraries-extras.cmake
+[8.565s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/cmake/livox_ros2_driverConfig.cmake
+[8.565s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/cmake/livox_ros2_driverConfig-version.cmake
+[8.565s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/package.xml
+[8.566s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver' returned '0': AMENT_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_agent:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_msgs:/usr/local:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver

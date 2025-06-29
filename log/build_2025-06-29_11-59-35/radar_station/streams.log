@@ -1,0 +1,40 @@
+[0.017s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station -- -j22 -l22
+[0.041s] [ 50%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/radar_station.cpp.o[0m
+[1.891s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:16:37:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs[m[K’ does not name a type
+[1.891s]    16 |     void point_cloud_callback(const [01;31m[Ksensor_msgs[m[K::msg::PointCloud2::SharedPtr msg)
+[1.891s]       |                                     [01;31m[K^~~~~~~~~~~[m[K
+[1.891s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:16:53:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+[1.891s]    16 |     void point_cloud_callback(const sensor_msgs::msg[01;31m[K::[m[KPointCloud2::SharedPtr msg)
+[1.891s]       |                                                     [01;31m[K^~[m[K
+[1.891s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:16:53:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+[1.891s]    16 |     void point_cloud_callback[34m[K([m[Kconst sensor_msgs::msg[01;31m[K:[m[K[32m[K:[m[KPointCloud2::SharedPtr msg)
+[1.891s]       |                              [34m[K~[m[K                      [01;31m[K^[m[K[32m[K~[m[K
+[1.891s]       |                                                     [32m[K)[m[K
+[1.891s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:16:50:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[1.891s]    16 |     void point_cloud_callback(const sensor_msgs::[01;31m[Kmsg[m[K::PointCloud2::SharedPtr msg)
+[1.892s]       |                                                  [01;31m[K^~~[m[K
+[1.892s]       |                                                     [32m[K;[m[K
+[1.893s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:16:55:[m[K [01;31m[Kerror: [m[K‘[01m[KPointCloud2[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+[1.893s]    16 |     void point_cloud_callback(const sensor_msgs::msg::[01;31m[KPointCloud2[m[K::SharedPtr msg)
+[1.893s]       |                                                       [01;31m[K^~~~~~~~~~~[m[K
+[1.899s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:22:26:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs[m[K’ was not declared in this scope
+[1.899s]    22 |     rclcpp::Subscription<[01;31m[Ksensor_msgs[m[K::msg::PointCloud2>::SharedPtr point_cloud_sub_;
+[1.899s]       |                          [01;31m[K^~~~~~~~~~~[m[K
+[1.899s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:22:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.899s]    22 |     rclcpp::Subscription<sensor_msgs::msg::PointCloud2[01;31m[K>[m[K::SharedPtr point_cloud_sub_;
+[1.899s]       |                                                       [01;31m[K^[m[K
+[1.899s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:22:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[1.899s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:22:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[1.899s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:22:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[1.899s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:22:58:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[1.899s]    22 |     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::[01;31m[KSharedPtr[m[K point_cloud_sub_;
+[1.899s]       |                                                          [01;31m[K^~~~~~~~~[m[K
+[1.899s]       |                                                                   [32m[K;[m[K
+[1.901s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:22:68:[m[K [01;31m[Kerror: [m[K‘[01m[Kpoint_cloud_sub_[m[K’ does not name a type
+[1.901s]    22 | clcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr [01;31m[Kpoint_cloud_sub_[m[K;
+[1.901s]       |                                                               [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[1.901s] 
+[2.725s] gmake[2]: *** [CMakeFiles/radar_station.dir/build.make:76：CMakeFiles/radar_station.dir/src/radar_station.cpp.o] 错误 1
+[2.725s] gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/radar_station.dir/all] 错误 2
+[2.725s] gmake: *** [Makefile:146：all] 错误 2
+[2.727s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station -- -j22 -l22
