@@ -1,0 +1,21 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/radar_station.cpp.o[0m
+[100%] [32m[1mLinking CXX executable radar_station[0m
+[100%] Built target radar_station
+-- Install configuration: ""
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/lib/radar_station/radar_station
+-- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/lib/radar_station/radar_station" to ""
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/ament_index/resource_index/package_run_dependencies/radar_station
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/ament_index/resource_index/parent_prefix_path/radar_station
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/ament_prefix_path.sh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/ament_prefix_path.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/path.sh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/path.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.bash
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.sh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.zsh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/package.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/ament_index/resource_index/packages/radar_station
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/cmake/radar_stationConfig.cmake
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/cmake/radar_stationConfig-version.cmake
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/package.xml

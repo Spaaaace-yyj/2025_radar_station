@@ -1,0 +1,5 @@
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:[m[K In member function ‘[01m[Kvoid RadarStation::point_cloud_callback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:82:25:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Klidar_camera_point[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+   82 |         Eigen::Vector3f [01;35m[Klidar_camera_point[m[K = R * lidar_point + T;
+      |                         [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+/usr/bin/ld: warning: libopencv_core.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_core.so.410

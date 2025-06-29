@@ -70,6 +70,7 @@
         "stop_token": "cpp",
         "streambuf": "cpp",
         "thread": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "core": "cpp"
     }
 }

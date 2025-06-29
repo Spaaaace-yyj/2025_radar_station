@@ -1,0 +1,40 @@
+[ 12%] Built target livox_ros2_driver_node
+[100%] Built target livox_ros2_driver
+-- Install configuration: ""
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/lib/livox_ros2_driver/livox_ros2_driver_node
+-- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/lib/livox_ros2_driver/livox_ros2_driver_node" to ""
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/library_path.sh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/library_path.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/lib/liblivox_ros2_driver.so
+-- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/lib/liblivox_ros2_driver.so" to ""
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/config
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/config/livox_lidar_config.json
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/config/livox_lidar.rviz
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/config/livox_hub_config.json
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/config/livox_hub.rviz
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_template_launch.py
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_hub_msg_launch .py
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_hub_launch.py
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_lidar_msg_launch.py
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_hub_rviz_launch.py
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_lidar_rviz_launch.py
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/launch/livox_lidar_launch.py
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/ament_index/resource_index/package_run_dependencies/livox_ros2_driver
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/ament_index/resource_index/parent_prefix_path/livox_ros2_driver
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/ament_prefix_path.sh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/ament_prefix_path.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/path.sh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/environment/path.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/local_setup.bash
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/local_setup.sh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/local_setup.zsh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/local_setup.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/package.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/ament_index/resource_index/packages/livox_ros2_driver
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/ament_index/resource_index/rclcpp_components/livox_ros2_driver
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/cmake/livox_ros2_driverConfig.cmake
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/cmake/livox_ros2_driverConfig-version.cmake
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver/share/livox_ros2_driver/package.xml

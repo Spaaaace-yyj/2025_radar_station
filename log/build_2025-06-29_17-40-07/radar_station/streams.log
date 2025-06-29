@@ -1,0 +1,13 @@
+[0.016s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station -- -j22 -l22
+[0.061s] [ 50%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/radar_station.cpp.o[0m
+[3.501s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:[m[K In member function ‘[01m[Kvoid RadarStation::image_callback(sensor_msgs::msg::Image_<std::allocator<void> >::SharedPtr)[m[K’:
+[3.501s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:42:9:[m[K [01;31m[Kerror: [m[K‘[01m[KMat[m[K’ has not been declared
+[3.501s]    42 |         [01;31m[KMat[m[K::frame_ = image_mat_.clone();
+[3.501s]       |         [01;31m[K^~~[m[K
+[3.508s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:43:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kframe_[m[K’ was not declared in this scope
+[3.508s]    43 |         cv::imshow("image", [01;31m[Kframe_[m[K);
+[3.508s]       |                             [01;31m[K^~~~~~[m[K
+[6.399s] gmake[2]: *** [CMakeFiles/radar_station.dir/build.make:76：CMakeFiles/radar_station.dir/src/radar_station.cpp.o] 错误 1
+[6.399s] gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/radar_station.dir/all] 错误 2
+[6.400s] gmake: *** [Makefile:146：all] 错误 2
+[6.402s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station -- -j22 -l22

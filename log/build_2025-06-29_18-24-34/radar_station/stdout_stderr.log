@@ -1,0 +1,25 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/radar_station.cpp.o[0m
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:[m[K In member function ‘[01m[Kvoid RadarStation::point_cloud_callback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:92:25:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Klidar_camera_point[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+   92 |         Eigen::Vector3f [01;35m[Klidar_camera_point[m[K = R * lidar_point + T;
+      |                         [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+[100%] [32m[1mLinking CXX executable radar_station[0m
+[100%] Built target radar_station
+-- Install configuration: ""
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/lib/radar_station/radar_station
+-- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/lib/radar_station/radar_station" to ""
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/ament_index/resource_index/package_run_dependencies/radar_station
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/ament_index/resource_index/parent_prefix_path/radar_station
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/ament_prefix_path.sh
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/path.sh
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/path.dsv
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.bash
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.sh
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.zsh
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/package.dsv
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/ament_index/resource_index/packages/radar_station
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/cmake/radar_stationConfig.cmake
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/cmake/radar_stationConfig-version.cmake
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/package.xml

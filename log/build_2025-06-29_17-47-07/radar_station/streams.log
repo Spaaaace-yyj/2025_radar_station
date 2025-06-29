@@ -1,0 +1,22 @@
+[0.015s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station -- -j22 -l22
+[0.054s] [ 50%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/radar_station.cpp.o[0m
+[3.762s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.762s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.762s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.762s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.762s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.762s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.762s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.763s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.763s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.763s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.763s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.763s]                  from [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:4[m[K:
+[3.763s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:[m[K In member function ‘[01m[Kvoid RadarStation::image_callback(sensor_msgs::msg::Image_<std::allocator<void> >::SharedPtr)[m[K’:
+[3.763s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:43:61:[m[K [01;31m[Kerror: [m[K‘[01m[Kimage_mat[m[K’ was not declared in this scope; did you mean ‘[01m[Kimage_mat_[m[K’?
+[3.763s]    43 |             RCLCPP_INFO(this->get_logger(), "Image: %dx%d", [01;31m[Kimage_mat[m[K.cols, image_mat.rows);
+[3.763s]       |                                                             [01;31m[K^~~~~~~~~[m[K
+[6.818s] gmake[2]: *** [CMakeFiles/radar_station.dir/build.make:76：CMakeFiles/radar_station.dir/src/radar_station.cpp.o] 错误 1
+[6.818s] gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/radar_station.dir/all] 错误 2
+[6.819s] gmake: *** [Makefile:146：all] 错误 2
+[6.821s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station -- -j22 -l22

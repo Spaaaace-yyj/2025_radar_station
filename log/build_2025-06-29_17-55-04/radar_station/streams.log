@@ -1,0 +1,10 @@
+[0.017s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station -- -j22 -l22
+[0.063s] [ 50%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/radar_station.cpp.o[0m
+[3.456s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:[m[K In member function ‘[01m[Kvoid RadarStation::image_callback(sensor_msgs::msg::Image_<std::allocator<void> >::SharedPtr)[m[K’:
+[3.456s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:41:95:[m[K [01;31m[Kerror: [m[K‘[01m[Kbgr8[m[K’ is not a member of ‘[01m[Ksensor_msgs::image_encodings[m[K’
+[3.456s]    41 |         cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::[01;31m[Kbgr8[m[K);
+[3.456s]       |                                                                                               [01;31m[K^~~~[m[K
+[6.303s] gmake[2]: *** [CMakeFiles/radar_station.dir/build.make:76：CMakeFiles/radar_station.dir/src/radar_station.cpp.o] 错误 1
+[6.303s] gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/radar_station.dir/all] 错误 2
+[6.304s] gmake: *** [Makefile:146：all] 错误 2
+[6.307s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station -- -j22 -l22

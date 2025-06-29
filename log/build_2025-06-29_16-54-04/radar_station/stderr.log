@@ -1,0 +1,104 @@
+[0m** WARNING ** io features related to pcap will be disabled[0m
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:55:44:[m[K [01;31m[Kerror: [m[K‘[01m[KCameraInfo[m[K’ is not a member of ‘[01m[Ksensor_msgs::msg[m[K’
+   55 |     rclcpp::Subscription<sensor_msgs::msg::[01;31m[KCameraInfo[m[K>::SharedPtr camera_info_sub_;
+      |                                            [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:55:54:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   55 |     rclcpp::Subscription<sensor_msgs::msg::CameraInfo[01;31m[K>[m[K::SharedPtr camera_info_sub_;
+      |                                                      [01;31m[K^[m[K
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:55:54:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:55:54:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:55:54:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:55:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   55 |     rclcpp::Subscription<sensor_msgs::msg::CameraInfo>::[01;31m[KSharedPtr[m[K camera_info_sub_;
+      |                                                         [01;31m[K^~~~~~~~~[m[K
+      |                                                                  [32m[K;[m[K
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:55:67:[m[K [01;31m[Kerror: [m[K‘[01m[Kcamera_info_sub_[m[K’ does not name a type
+   55 |     rclcpp::Subscription<sensor_msgs::msg::CameraInfo>::SharedPtr [01;31m[Kcamera_info_sub_[m[K;
+      |                                                                   [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:[m[K In constructor ‘[01m[KRadarStation::RadarStation()[m[K’:
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:24:32:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KRadarStation::declare_parameter(const char [12])[m[K’
+   24 |         [01;31m[Kthis->declare_parameter("image_width")[m[K;
+      |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:4[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterT&, const ParameterDescriptor&, bool)[m[K’
+  421 |   [01;36m[Kdeclare_parameter[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:24:32:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 1 provided
+   24 |         [01;36m[Kthis->declare_parameter("image_width")[m[K;
+      |         [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:4[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterDescriptor&, bool)[m[K’
+  434 |   [01;36m[Kdeclare_parameter[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:24:32:[m[K [01;36m[Knote: [m[K  couldn’t deduce template parameter ‘[01m[KParameterT[m[K’
+   24 |         [01;36m[Kthis->declare_parameter("image_width")[m[K;
+      |         [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:4[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, const rclcpp::ParameterValue&, const ParameterDescriptor&, bool)[m[K’
+  366 |   [01;36m[Kdeclare_parameter[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 1 provided
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, rclcpp::ParameterType, const ParameterDescriptor&, bool)[m[K’
+  391 |   [01;36m[Kdeclare_parameter[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 1 provided
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:25:32:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KRadarStation::declare_parameter(const char [13])[m[K’
+   25 |         [01;31m[Kthis->declare_parameter("image_height")[m[K;
+      |         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:4[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterT&, const ParameterDescriptor&, bool)[m[K’
+  421 |   [01;36m[Kdeclare_parameter[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:421:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:25:32:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 1 provided
+   25 |         [01;36m[Kthis->declare_parameter("image_height")[m[K;
+      |         [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:4[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ParameterT> auto rclcpp::Node::declare_parameter(const string&, const ParameterDescriptor&, bool)[m[K’
+  434 |   [01;36m[Kdeclare_parameter[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:434:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:25:32:[m[K [01;36m[Knote: [m[K  couldn’t deduce template parameter ‘[01m[KParameterT[m[K’
+   25 |         [01;36m[Kthis->declare_parameter("image_height")[m[K;
+      |         [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:4[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, const rclcpp::ParameterValue&, const ParameterDescriptor&, bool)[m[K’
+  366 |   [01;36m[Kdeclare_parameter[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:366:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 1 provided
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconst rclcpp::ParameterValue& rclcpp::Node::declare_parameter(const string&, rclcpp::ParameterType, const ParameterDescriptor&, bool)[m[K’
+  391 |   [01;36m[Kdeclare_parameter[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:391:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 1 provided
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:34:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kcamera_info_sub_[m[K’ was not declared in this scope
+   34 |         [01;31m[Kcamera_info_sub_[m[K = this->create_subscription<sensor_msgs::msg::CameraInfo>(
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:34:72:[m[K [01;31m[Kerror: [m[K‘[01m[KCameraInfo[m[K’ is not a member of ‘[01m[Ksensor_msgs::msg[m[K’
+   34 |         camera_info_sub_ = this->create_subscription<sensor_msgs::msg::[01;31m[KCameraInfo[m[K>(
+      |                                                                        [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:35:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kcamera_info_callback[m[K’ is not a member of ‘[01m[KRadarStation[m[K’
+   35 |             "/camera_info", 10, std::bind(&RadarStation::[01;31m[Kcamera_info_callback[m[K, this, std::placeholders::_1));
+      |                                                          [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/radar_station.dir/build.make:76：CMakeFiles/radar_station.dir/src/radar_station.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/radar_station.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

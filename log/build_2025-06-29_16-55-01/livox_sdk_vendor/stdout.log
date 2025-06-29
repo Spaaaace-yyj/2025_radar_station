@@ -1,0 +1,60 @@
+[ 12%] [34m[1mPerforming update step for 'livox-sdk-v2.3.1'[0m
+[ 25%] [34m[1mNo patch step for 'livox-sdk-v2.3.1'[0m
+[ 37%] [34m[1mPerforming configure step for 'livox-sdk-v2.3.1'[0m
+-- main project dir: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-build
+[ 50%] [34m[1mPerforming build step for 'livox-sdk-v2.3.1'[0m
+[ 54%] Built target livox_sdk_static
+[ 58%] Built target trouble_shooting
+[ 62%] Built target lidar_sample
+[ 66%] Built target hub_sample
+[ 75%] Built target lidar_utc_sync
+[ 81%] Built target hub_sample_cc
+[ 87%] Built target lidar_sample_cc
+[ 93%] Built target hub_lvx_sample
+[100%] Built target lidar_lvx_sample
+[ 62%] [34m[1mPerforming install step for 'livox-sdk-v2.3.1'[0m
+[ 54%] Built target livox_sdk_static
+[ 58%] Built target hub_sample
+[ 62%] Built target lidar_sample
+[ 68%] Built target hub_lvx_sample
+[ 72%] Built target trouble_shooting
+[ 79%] Built target lidar_sample_cc
+[ 85%] Built target hub_sample_cc
+[ 91%] Built target lidar_lvx_sample
+[100%] Built target lidar_utc_sync
+[36mInstall the project...[0m
+-- Install configuration: ""
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk_install/lib/liblivox_sdk_static.a
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk_install/include/livox_def.h
+-- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk_install/include/livox_sdk.h
+[ 75%] [34m[1mCompleted 'livox-sdk-v2.3.1'[0m
+[100%] Built target livox-sdk-v2.3.1
+-- Install configuration: ""
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/include
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/include/livox_sdk.h
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/include/livox_def.h
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/lib
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/lib/liblivox_sdk_static.a
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/Modules
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/Modules/Findlivox_sdk.cmake
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/ament_index/resource_index/package_run_dependencies/livox_sdk_vendor
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/ament_index/resource_index/parent_prefix_path/livox_sdk_vendor
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/ament_prefix_path.sh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/ament_prefix_path.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/path.sh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/path.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.bash
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.sh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.zsh
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/package.dsv
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/ament_index/resource_index/packages/livox_sdk_vendor
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendor-extras.cmake
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendorConfig.cmake
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendorConfig-version.cmake
+-- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/package.xml
