@@ -1,4 +1,0 @@
-Log file created at: 2025/06/29 15:08:03
-Running on machine: spaaaaace-DRA-XX
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-E0629 15:08:03.632479 81361 MVCAMAPI.cpp:350] CameraInit Failed, err:-18,Version:2.1.0.37,FriendlyName:MV-SUA134GC#0,SN:041130220341

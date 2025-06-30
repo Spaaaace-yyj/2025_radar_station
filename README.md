@@ -105,7 +105,7 @@ for(size_t i = 0; i < point_cloud_->points.size(); i++){
 
 买了块巨大的标定板
 
-<img src="/home/spaaaaace/Code/mid70/2025_radar_station/doc/76.jpg" alt="76" style="zoom:25%;" />
+<img src="doc/76.jpg" alt="76" style="zoom:25%;" />
 
 用来标定雷达和相机之间的外参，标定用matlab的雷达外参标定算法
 
