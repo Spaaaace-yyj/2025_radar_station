@@ -1,0 +1,64 @@
+[0.014s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor -- -j22 -l22
+[0.029s] [ 12%] [34m[1mPerforming update step for 'livox-sdk-v2.3.1'[0m
+[0.038s] [ 25%] [34m[1mNo patch step for 'livox-sdk-v2.3.1'[0m
+[0.041s] [ 37%] [34m[1mPerforming configure step for 'livox-sdk-v2.3.1'[0m
+[0.049s] -- main project dir: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1
+[0.052s] -- Configuring done (0.0s)
+[0.080s] -- Generating done (0.0s)
+[0.082s] -- Build files have been written to: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-build
+[0.088s] [ 50%] [34m[1mPerforming build step for 'livox-sdk-v2.3.1'[0m
+[0.120s] [ 54%] Built target livox_sdk_static
+[0.126s] [ 58%] Built target lidar_sample
+[0.127s] [ 62%] Built target trouble_shooting
+[0.127s] [ 68%] Built target lidar_lvx_sample
+[0.127s] [ 75%] Built target hub_sample_cc
+[0.128s] [ 79%] Built target hub_sample
+[0.129s] [ 85%] Built target hub_lvx_sample
+[0.131s] [ 93%] Built target lidar_utc_sync
+[0.131s] [100%] Built target lidar_sample_cc
+[0.138s] [ 62%] [34m[1mPerforming install step for 'livox-sdk-v2.3.1'[0m
+[0.160s] [ 54%] Built target livox_sdk_static
+[0.168s] [ 60%] Built target hub_sample
+[0.168s] [ 64%] Built target trouble_shooting
+[0.168s] [ 68%] Built target hub_lvx_sample
+[0.168s] [ 72%] Built target lidar_sample
+[0.168s] [ 79%] Built target lidar_sample_cc
+[0.168s] [ 85%] Built target lidar_lvx_sample
+[0.169s] [ 93%] Built target lidar_utc_sync
+[0.170s] [100%] Built target hub_sample_cc
+[0.176s] [36mInstall the project...[0m
+[0.178s] -- Install configuration: ""
+[0.178s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk_install/lib/liblivox_sdk_static.a
+[0.178s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk_install/include/livox_def.h
+[0.178s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk_install/include/livox_sdk.h
+[0.183s] [ 75%] [34m[1mCompleted 'livox-sdk-v2.3.1'[0m
+[0.190s] [100%] Built target livox-sdk-v2.3.1
+[0.193s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor -- -j22 -l22
+[0.210s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor
+[0.212s] -- Install configuration: ""
+[0.213s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor
+[0.213s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/include
+[0.213s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/include/livox_sdk.h
+[0.213s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/include/livox_def.h
+[0.213s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/lib
+[0.213s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/lib/liblivox_sdk_static.a
+[0.213s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake
+[0.213s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/Modules
+[0.213s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/Modules/Findlivox_sdk.cmake
+[0.213s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/ament_index/resource_index/package_run_dependencies/livox_sdk_vendor
+[0.213s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/ament_index/resource_index/parent_prefix_path/livox_sdk_vendor
+[0.214s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/ament_prefix_path.sh
+[0.214s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/ament_prefix_path.dsv
+[0.214s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/path.sh
+[0.214s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/path.dsv
+[0.214s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.bash
+[0.214s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.sh
+[0.214s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.zsh
+[0.214s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.dsv
+[0.215s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/package.dsv
+[0.215s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/ament_index/resource_index/packages/livox_sdk_vendor
+[0.216s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendor-extras.cmake
+[0.216s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendorConfig.cmake
+[0.216s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendorConfig-version.cmake
+[0.216s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/share/livox_sdk_vendor/package.xml
+[0.217s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor

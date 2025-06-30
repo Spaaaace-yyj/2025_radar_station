@@ -1,0 +1,258 @@
+[0.013s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_interfaces -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces
+[0.055s] -- The C compiler identification is GNU 11.4.0
+[0.097s] -- The CXX compiler identification is GNU 11.4.0
+[0.107s] -- Detecting C compiler ABI info
+[0.152s] -- Detecting C compiler ABI info - done
+[0.163s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.163s] -- Detecting C compile features
+[0.163s] -- Detecting C compile features - done
+[0.166s] -- Detecting CXX compiler ABI info
+[0.209s] -- Detecting CXX compiler ABI info - done
+[0.215s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.215s] -- Detecting CXX compile features
+[0.216s] -- Detecting CXX compile features - done
+[0.217s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.463s] -- Found Python3: /home/spaaaaace/anaconda3/envs/vision/bin/python3 (found version "3.8.20") found components: Interpreter 
+[0.523s] -- Found std_msgs: 4.2.4 (/opt/ros/humble/share/std_msgs/cmake)
+[0.547s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.551s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.557s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.565s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.577s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.596s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.766s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.927s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.996s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.013s] -- Found PythonInterp: /home/spaaaaace/anaconda3/envs/vision/bin/python3 (found suitable version "3.8.20", minimum required is "3.6") 
+[1.015s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.031s] -- Found PythonLibs: /home/spaaaaace/anaconda3/envs/vision/lib/libpython3.8.so (found suitable version "3.8.20", minimum required is "3.5") 
+[1.031s] -- Using PYTHON_EXECUTABLE: /home/spaaaaace/anaconda3/envs/vision/bin/python3
+[1.031s] -- Using PYTHON_INCLUDE_DIRS: /home/spaaaaace/anaconda3/envs/vision/include/python3.8
+[1.031s] -- Using PYTHON_LIBRARIES: /home/spaaaaace/anaconda3/envs/vision/lib/libpython3.8.so
+[1.044s] -- Found PythonExtra: .so  
+[1.194s] -- Using numpy include directory: /home/spaaaaace/anaconda3/envs/vision/lib/python3.8/site-packages/numpy/core/include
+[1.202s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.217s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.218s] -- Added test 'lint_cmake' to check CMake code style
+[1.218s] -- Added test 'xmllint' to check XML markup files
+[1.220s] -- Configuring done (1.2s)
+[1.241s] -- Generating done (0.0s)
+[1.243s] -- Build files have been written to: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces
+[1.249s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_interfaces -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces
+[1.251s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces -- -j22 -l22
+[1.268s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.273s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.274s] [  5%] Built target ament_cmake_python_copy_livox_interfaces
+[1.404s] running egg_info
+[1.404s] creating livox_interfaces.egg-info
+[1.411s] writing livox_interfaces.egg-info/PKG-INFO
+[1.411s] writing dependency_links to livox_interfaces.egg-info/dependency_links.txt
+[1.411s] writing top-level names to livox_interfaces.egg-info/top_level.txt
+[1.411s] writing manifest file 'livox_interfaces.egg-info/SOURCES.txt'
+[1.431s] reading manifest file 'livox_interfaces.egg-info/SOURCES.txt'
+[1.431s] writing manifest file 'livox_interfaces.egg-info/SOURCES.txt'
+[1.449s] [  5%] Built target ament_cmake_python_build_livox_interfaces_egg
+[1.589s] [  5%] Built target livox_interfaces__cpp
+[1.593s] [ 12%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.593s] [ 12%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.593s] [ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.678s] [ 15%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_generator_c.dir/rosidl_generator_c/livox_interfaces/msg/detail/custom_msg__functions.c.o[0m
+[1.679s] [ 17%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_generator_c.dir/rosidl_generator_c/livox_interfaces/msg/detail/custom_point__functions.c.o[0m
+[1.718s] [ 20%] [32m[1mLinking C shared library liblivox_interfaces__rosidl_generator_c.so[0m
+[1.737s] [ 20%] Built target livox_interfaces__rosidl_generator_c
+[1.740s] [ 23%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.741s] [ 25%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.741s] [ 28%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.878s] [ 33%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/livox_interfaces/msg/custom_point__type_support.cpp.o[0m
+[1.878s] [ 33%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/livox_interfaces/msg/custom_msg__type_support.cpp.o[0m
+[1.890s] [ 35%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/livox_interfaces/msg/detail/custom_point__type_support.cpp.o[0m
+[1.891s] [ 38%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/livox_interfaces/msg/detail/custom_msg__type_support.cpp.o[0m
+[1.919s] [ 41%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/livox_interfaces/msg/detail/dds_fastrtps/custom_point__type_support.cpp.o[0m
+[1.920s] [ 43%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/livox_interfaces/msg/detail/dds_fastrtps/custom_msg__type_support.cpp.o[0m
+[2.064s] [ 46%] [32m[1mLinking CXX shared library liblivox_interfaces__rosidl_typesupport_cpp.so[0m
+[2.074s] [ 48%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/livox_interfaces/msg/detail/custom_point__type_support_c.cpp.o[0m
+[2.075s] [ 51%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/livox_interfaces/msg/detail/custom_msg__type_support_c.cpp.o[0m
+[2.082s] [ 51%] Built target livox_interfaces__rosidl_typesupport_cpp
+[2.250s] [ 56%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/livox_interfaces/msg/custom_point__type_support.cpp.o[0m
+[2.250s] [ 56%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/livox_interfaces/msg/custom_msg__type_support.cpp.o[0m
+[2.265s] [ 58%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/livox_interfaces/msg/detail/custom_point__type_support.c.o[0m
+[2.265s] [ 61%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/livox_interfaces/msg/detail/custom_msg__type_support.c.o[0m
+[2.267s] [ 64%] [32m[1mLinking CXX shared library liblivox_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[2.274s] [ 66%] [32m[1mLinking CXX shared library liblivox_interfaces__rosidl_typesupport_c.so[0m
+[2.290s] [ 69%] [32m[1mLinking C shared library liblivox_interfaces__rosidl_typesupport_introspection_c.so[0m
+[2.296s] [ 69%] Built target livox_interfaces__rosidl_typesupport_c
+[2.303s] [ 69%] Built target livox_interfaces__rosidl_typesupport_introspection_c
+[2.314s] [ 71%] [32m[1mLinking CXX shared library liblivox_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.320s] [ 71%] Built target livox_interfaces__rosidl_typesupport_fastrtps_c
+[2.367s] [ 71%] Built target livox_interfaces__rosidl_typesupport_fastrtps_cpp
+[2.377s] [ 74%] [32m[1mLinking CXX shared library liblivox_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[2.419s] [ 74%] Built target livox_interfaces__rosidl_typesupport_introspection_cpp
+[2.427s] [ 74%] Built target livox_interfaces
+[2.437s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[2.933s] [ 76%] Built target livox_interfaces__py
+[2.941s] [ 82%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_generator_py.dir/rosidl_generator_py/livox_interfaces/msg/_custom_point_s.c.o[0m
+[2.941s] [ 82%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_generator_py.dir/rosidl_generator_py/livox_interfaces/msg/_custom_msg_s.c.o[0m
+[3.013s] [ 84%] [32m[1mLinking C shared library rosidl_generator_py/livox_interfaces/liblivox_interfaces__rosidl_generator_py.so[0m
+[3.039s] [ 84%] Built target livox_interfaces__rosidl_generator_py
+[3.046s] [ 87%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[3.047s] [ 92%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[3.047s] [ 92%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[3.101s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/livox_interfaces/livox_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[3.118s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/livox_interfaces/livox_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[3.125s] [ 97%] Built target livox_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[3.138s] [100%] [32m[1mLinking C shared library rosidl_generator_py/livox_interfaces/livox_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[3.141s] [100%] Built target livox_interfaces__rosidl_typesupport_introspection_c__pyext
+[3.161s] [100%] Built target livox_interfaces__rosidl_typesupport_c__pyext
+[3.164s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces -- -j22 -l22
+[3.237s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces
+[3.239s] -- Install configuration: ""
+[3.239s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/ament_index/resource_index/rosidl_interfaces/livox_interfaces
+[3.239s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces
+[3.239s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg
+[3.239s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail
+[3.239s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__type_support.h
+[3.239s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__functions.h
+[3.240s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__struct.h
+[3.240s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__struct.h
+[3.240s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__functions.c
+[3.240s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__functions.c
+[3.240s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__functions.h
+[3.240s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__type_support.h
+[3.240s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_msg.h
+[3.240s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_point.h
+[3.240s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_generator_c__visibility_control.h
+[3.240s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/environment/library_path.sh
+[3.240s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/environment/library_path.dsv
+[3.241s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_c.so
+[3.241s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_c.so" to ""
+[3.241s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces
+[3.241s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg
+[3.241s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.241s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail
+[3.241s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_fastrtps_c.h
+[3.241s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_fastrtps_c.h
+[3.241s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_c.so
+[3.241s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[3.241s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces
+[3.241s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg
+[3.241s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_msg.hpp
+[3.241s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__struct.hpp
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__traits.hpp
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__traits.hpp
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__builder.hpp
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__struct.hpp
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__builder.hpp
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_point.hpp
+[3.242s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces
+[3.242s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg
+[3.242s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_fastrtps_cpp.hpp
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/dds_fastrtps
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.242s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[3.243s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[3.243s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces
+[3.243s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg
+[3.243s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail
+[3.243s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_introspection_c.h
+[3.243s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__type_support.c
+[3.243s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_introspection_c.h
+[3.243s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__type_support.c
+[3.243s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.243s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_c.so
+[3.243s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[3.243s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_c.so
+[3.243s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_c.so" to ""
+[3.243s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces
+[3.243s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg
+[3.243s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_introspection_cpp.hpp
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__type_support.cpp
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__type_support.cpp
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_introspection_cpp.hpp
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_cpp.so
+[3.244s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_cpp.so
+[3.244s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_cpp.so" to ""
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/environment/pythonpath.sh
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/environment/pythonpath.dsv
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces-0.0.1-py3.8.egg-info
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces-0.0.1-py3.8.egg-info/dependency_links.txt
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces-0.0.1-py3.8.egg-info/SOURCES.txt
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces-0.0.1-py3.8.egg-info/PKG-INFO
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces-0.0.1-py3.8.egg-info/top_level.txt
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[3.244s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/msg
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/msg/_custom_point.py
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/msg/_custom_msg_s.c
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/msg/_custom_msg.py
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/msg/_custom_point_s.c
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/msg/__init__.py
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/liblivox_interfaces__rosidl_generator_py.so
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_c.c
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[3.245s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/__init__.py
+[3.269s] Listing '/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces'...
+[3.269s] Compiling '/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/__init__.py'...
+[3.269s] Listing '/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/msg'...
+[3.269s] Compiling '/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/msg/__init__.py'...
+[3.269s] Compiling '/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/msg/_custom_msg.py'...
+[3.270s] Compiling '/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/msg/_custom_point.py'...
+[3.272s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[3.272s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""
+[3.272s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[3.272s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""
+[3.273s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[3.273s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""
+[3.273s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_py.so
+[3.273s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_py.so" to ""
+[3.273s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/msg/CustomPoint.idl
+[3.273s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/msg/CustomMsg.idl
+[3.273s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/msg/CustomPoint.msg
+[3.274s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/msg/CustomMsg.msg
+[3.274s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/ament_index/resource_index/package_run_dependencies/livox_interfaces
+[3.274s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/ament_index/resource_index/parent_prefix_path/livox_interfaces
+[3.274s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/environment/ament_prefix_path.sh
+[3.274s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/environment/ament_prefix_path.dsv
+[3.274s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/environment/path.sh
+[3.274s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/environment/path.dsv
+[3.274s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/local_setup.bash
+[3.274s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/local_setup.sh
+[3.274s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/local_setup.zsh
+[3.274s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/local_setup.dsv
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/package.dsv
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/ament_index/resource_index/packages/livox_interfaces
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_cExport.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_cExport-noconfig.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_cppExport.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cExport.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[3.275s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cppExport.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_pyExport.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/rosidl_cmake-extras.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfacesConfig.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfacesConfig-version.cmake
+[3.276s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/share/livox_interfaces/package.xml
+[3.278s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces

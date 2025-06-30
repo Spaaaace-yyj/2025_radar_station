@@ -1,0 +1,11 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/radar_station.cpp.o[0m
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:[m[K In member function ‘[01m[Kvoid RadarStation::image_callback(sensor_msgs::msg::Image_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:81:25:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[KEigen::Vector3f T[m[K’
+   81 |         Eigen::Vector3f [01;31m[KT[m[K(00.1098, 00.0189, 0.5067);
+      |                         [01;31m[K^[m[K
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:79:25:[m[K [01;36m[Knote: [m[K‘[01m[KEigen::Vector3f T[m[K’ previously declared here
+   79 |         Eigen::Vector3f [01;36m[KT[m[K(0.1098, 0.0189, -0.5067);
+      |                         [01;36m[K^[m[K
+gmake[2]: *** [CMakeFiles/radar_station.dir/build.make:76：CMakeFiles/radar_station.dir/src/radar_station.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/radar_station.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

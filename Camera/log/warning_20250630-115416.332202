@@ -1,0 +1,4 @@
+Log file created at: 2025/06/30 11:54:16
+Running on machine: spaaaaace-DRA-XX
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+W0630 11:54:16.470867 332238 MVCameraBase.cpp:99] Device:(name:MV-SUA134GC#0 sn:041130220341)Lost

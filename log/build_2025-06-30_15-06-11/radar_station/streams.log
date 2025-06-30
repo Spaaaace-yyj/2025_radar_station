@@ -1,0 +1,28 @@
+[0.019s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station -- -j22 -l22
+[0.056s] [ 50%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/radar_station.cpp.o[0m
+[10.111s] [100%] [32m[1mLinking CXX executable radar_station[0m
+[10.533s] /usr/bin/ld: warning: libopencv_imgcodecs.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_imgcodecs.so.410
+[10.534s] /usr/bin/ld: warning: libopencv_imgproc.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_imgproc.so.410
+[10.534s] /usr/bin/ld: warning: libopencv_core.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_core.so.410
+[10.955s] [100%] Built target radar_station
+[10.964s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station -- -j22 -l22
+[10.986s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station
+[10.988s] -- Install configuration: ""
+[10.988s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/lib/radar_station/radar_station
+[10.994s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/lib/radar_station/radar_station" to ""
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/ament_index/resource_index/package_run_dependencies/radar_station
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/ament_index/resource_index/parent_prefix_path/radar_station
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/ament_prefix_path.sh
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/ament_prefix_path.dsv
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/path.sh
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/environment/path.dsv
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.bash
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.sh
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.zsh
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/local_setup.dsv
+[10.994s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/package.dsv
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/ament_index/resource_index/packages/radar_station
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/cmake/radar_stationConfig.cmake
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/cmake/radar_stationConfig-version.cmake
+[10.994s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station/share/radar_station/package.xml
+[10.996s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) PS1=(vision) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station

@@ -1,0 +1,8 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/radar_station.cpp.o[0m
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:[m[K In member function ‘[01m[Kvoid RadarStation::image_callback(sensor_msgs::msg::Image_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:80:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<cv::Point_<float> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   80 |         for(int i = 0; [01;35m[Ki < lidar_points_projection.size()[m[K; i++){
+      |                        [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/radar_station.dir/build.make:76: CMakeFiles/radar_station.dir/src/radar_station.cpp.o] 中断
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/radar_station.dir/all] 中断
+gmake: *** [Makefile:146: all] 中断

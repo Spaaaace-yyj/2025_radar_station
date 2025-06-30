@@ -71,6 +71,9 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "variant": "cpp",
-        "core": "cpp"
+        "core": "cpp",
+        "geometry": "cpp",
+        "*.inc": "cpp",
+        "version": "cpp"
     }
 }

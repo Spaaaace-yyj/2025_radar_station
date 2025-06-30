@@ -1,0 +1,5 @@
+[0m** WARNING ** io features related to pcap will be disabled[0m
+gmake[2]: *** 正在删除文件“radar_station”
+gmake[2]: *** [CMakeFiles/radar_station.dir/build.make:313: radar_station] 中断
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/radar_station.dir/all] 中断
+gmake: *** [Makefile:146: all] 中断

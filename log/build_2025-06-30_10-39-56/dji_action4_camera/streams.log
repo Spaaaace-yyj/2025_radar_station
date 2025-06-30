@@ -1,0 +1,95 @@
+[0.011s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(yolov8) /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/camera_driver/dji_Action4_camera -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera
+[0.055s] -- The C compiler identification is GNU 11.4.0
+[0.089s] -- The CXX compiler identification is GNU 11.4.0
+[0.095s] -- Detecting C compiler ABI info
+[0.138s] -- Detecting C compiler ABI info - done
+[0.150s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.150s] -- Detecting C compile features
+[0.151s] -- Detecting C compile features - done
+[0.153s] -- Detecting CXX compiler ABI info
+[0.200s] -- Detecting CXX compiler ABI info - done
+[0.209s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.209s] -- Detecting CXX compile features
+[0.209s] -- Detecting CXX compile features - done
+[0.211s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.469s] -- Found Python3: /home/spaaaaace/anaconda3/envs/yolov8/bin/python3 (found version "3.8.20") found components: Interpreter 
+[0.530s] -- Found OpenCV: /usr/local (found version "4.10.0") 
+[0.531s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.564s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.568s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.576s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.583s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.595s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.630s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.631s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.701s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.741s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.776s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.782s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.826s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.826s] -- Found Threads: TRUE  
+[0.870s] -- Found sensor_msgs: 4.2.4 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.896s] -- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+[0.899s] -- Found image_transport: 3.1.9 (/opt/ros/humble/share/image_transport/cmake)
+[0.923s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.981s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.981s] -- Configured cppcheck include dirs: 
+[0.981s] -- Configured cppcheck exclude dirs and/or files: 
+[0.981s] -- Added test 'lint_cmake' to check CMake code style
+[0.982s] -- Added test 'uncrustify' to check C / C++ code style
+[0.982s] -- Configured uncrustify additional arguments: 
+[0.982s] -- Added test 'xmllint' to check XML markup files
+[0.983s] -- Configuring done (1.0s)
+[0.990s] -- Generating done (0.0s)
+[0.991s] -- Build files have been written to: /home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera
+[0.998s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(yolov8) /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/camera_driver/dji_Action4_camera -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera
+[1.000s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(yolov8) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera -- -j22 -l22
+[1.017s] [ 50%] [32mBuilding CXX object CMakeFiles/camera_node.dir/src/camera_node.cpp.o[0m
+[3.224s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.224s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.224s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.224s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.224s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.224s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.224s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.224s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.224s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.224s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.224s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.224s]                  from [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/camera_driver/dji_Action4_camera/src/camera_node.cpp:1[m[K:
+[3.224s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/camera_driver/dji_Action4_camera/src/camera_node.cpp:[m[K In member function ‘[01m[Kvoid CameraNode::setup_timer()[m[K’:
+[3.224s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/camera_driver/dji_Action4_camera/src/camera_node.cpp:72:45:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%lld[m[K’ expects argument of type ‘[01m[Klong long int[m[K’, but argument 6 has type ‘[01m[Kstd::chrono::duration<long int, std::ratio<1, 1000> >::rep[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[3.224s]    72 |             RCLCPP_INFO(this->get_logger(), [01;35m[K"camera fps: %.2f FPS, timer %lld ms"[m[K, fps, [32m[Kperiod.count()[m[K);
+[3.224s]       |                                             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K       [32m[K~~~~~~~~~~~~~~[m[K
+[3.224s]       |                                                                                                     [32m[K|[m[K
+[3.224s]       |                                                                                                     [32m[Kstd::chrono::duration<long int, std::ratio<1, 1000> >::rep {aka long int}[m[K
+[3.224s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/camera_driver/dji_Action4_camera/src/camera_node.cpp:72:77:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[3.224s]    72 |             RCLCPP_INFO(this->get_logger(), "camera fps: %.2f FPS, timer [01;36m[K%lld[m[K ms", fps, period.count());
+[3.224s]       |                                                                          [01;36m[K~~~^[m[K
+[3.225s]       |                                                                             [01;36m[K|[m[K
+[3.225s]       |                                                                             [01;36m[Klong long int[m[K
+[3.225s]       |                                                                          [32m[K%ld[m[K
+[4.387s] [100%] [32m[1mLinking CXX executable camera_node[0m
+[4.446s] /usr/bin/ld: warning: libopencv_core.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_core.so.410
+[4.700s] [100%] Built target camera_node
+[4.707s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(yolov8) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera -- -j22 -l22
+[4.818s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(yolov8) /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera
+[4.829s] -- Install configuration: ""
+[4.829s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/lib/dji_action4_camera/camera_node
+[4.830s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/lib/dji_action4_camera/camera_node" to ""
+[4.832s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/ament_index/resource_index/package_run_dependencies/dji_action4_camera
+[4.832s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/ament_index/resource_index/parent_prefix_path/dji_action4_camera
+[4.832s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/environment/ament_prefix_path.sh
+[4.832s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/environment/ament_prefix_path.dsv
+[4.833s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/environment/path.sh
+[4.833s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/environment/path.dsv
+[4.833s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/local_setup.bash
+[4.833s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/local_setup.sh
+[4.833s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/local_setup.zsh
+[4.833s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/local_setup.dsv
+[4.833s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/package.dsv
+[4.843s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/ament_index/resource_index/packages/dji_action4_camera
+[4.843s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/cmake/dji_action4_cameraConfig.cmake
+[4.843s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/cmake/dji_action4_cameraConfig-version.cmake
+[4.843s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/package.xml
+[4.853s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(yolov8) /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera
