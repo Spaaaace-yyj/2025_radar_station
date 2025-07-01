@@ -101,7 +101,7 @@ for(size_t i = 0; i < point_cloud_->points.size(); i++){
 
 将debug图像由opencv的imshow转为用ros2的话题发布
 
-买了块巨大的标定板
+买了块巨大的标定板（花我95    o.O）
 
 <img src="doc/76.jpg" alt="76" style="zoom: 25%;" />
 
@@ -146,7 +146,7 @@ Eigen::Vector3f lidar_point_in_camera = R_lidar_to_camera * lidar_point + T_lida
 
 重新采集了一次点云和图像进行标定
 
-<img src="/home/spaaaaace/Code/mid70/2025_radar_station/doc/capture_20250630205635268.bmp" alt="capture_20250630205635268" style="zoom: 33%;" />
+<img src="doc/capture_20250630205635268.bmp" alt="capture_20250630205635268" style="zoom: 33%;" />
 
 最后重新算出来的旋转和平移矩阵
 
@@ -201,7 +201,7 @@ K = 1635.80929422889	0					709.797419508020
     0					0					1
 ```
 
-对比了一下用ros标定的相机内参
+对比了一下用ros标定的相机内参，和ros标定出来的相差非常大！
 
 **修改了内参后，点云基本全部都对齐了!!!!!!!!!!!!!!!!!!!!!!!!!!**
 
