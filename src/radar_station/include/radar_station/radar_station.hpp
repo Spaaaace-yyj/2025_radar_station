@@ -48,7 +48,11 @@ private:
     int save_count = 0;
     std::string file_path = "/home/spaaaaace/Code/mid70/2025_radar_station/image_cloud";
 
-    int lidar_frame_add_num_ = 2;
+    int lidar_frame_add_num_ = 3;
+
+    float T_add_x_ = 0.0f;
+    float T_add_y_ = 0.0f;
+    float T_add_z_ = 0.0f;
 
     cv::Mat frame_;
     std::vector<cv::Scalar> colormap_;
@@ -63,13 +67,13 @@ private:
     pcl::PointCloud<pcl::PointXYZI>::Ptr point_cloud_ = std::make_shared<pcl::PointCloud<pcl::PointXYZI>>();
 
     cv::Mat cameraMatrix = (cv::Mat_<double>(3, 3) <<
-    	1809.350937, 0, 584.042731,
-    	0, 1803.386013, 462.815584,
+    	1635.80929422889, 0, 709.797419508020,
+    	0, 1636.89792281429, 533.441903861457,
     	0, 0, 1);
 	cv::Mat distCoeffs = (cv::Mat_<double>(5, 1) << 
-    	-0.038871, 0.354031, -0.009067, -0.006690, 0.000000);
+    	-0.105728588814658, 0.642952312620478, 0.000000, 0.000000, 0.000000);
 
 };
 
 
-#endif
+#endif //RADAR_STATION_HPP_

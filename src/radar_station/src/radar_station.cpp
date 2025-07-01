@@ -1,30 +1,14 @@
-//opencv
-#include <opencv4/opencv2/opencv.hpp>
-//ros2
-#include <rclcpp/rclcpp.hpp>
-#include <sensor_msgs/msg/image.hpp>
-#include "sensor_msgs/msg/point_cloud2.hpp"
-#include "pcl_conversions/pcl_conversions.h"
-#include "pcl/point_cloud.h"
-#include "pcl/point_types.h"
-#include "pcl/filters/voxel_grid.h"
-#include <cv_bridge/cv_bridge.h>
-
-//math
-#include <Eigen/Geometry>
-
 //user
 #include "../include/radar_station/radar_station.hpp"
-//c++
-#include <iostream>
-#include <vector>
 
 using namespace std;
 
 RadarStation::RadarStation() : Node("radar_station")
 {
     this->declare_parameter("save_cloud_and_image", 0);
-
+    this->declare_parameter("T_add_x", 0.0f);
+    this->declare_parameter("T_add_y", 0.0f);
+    this->declare_parameter("T_add_z", 0.0f);
     this->get_parameter("save_cloud_and_image", save_cloud_and_image_);
 
     point_cloud_sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
@@ -40,6 +24,9 @@ RadarStation::RadarStation() : Node("radar_station")
 void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
 {
     this->get_parameter("save_cloud_and_image", save_cloud_and_image_);
+    this->get_parameter("T_add_x", T_add_x_);
+    this->get_parameter("T_add_y", T_add_y_);
+    this->get_parameter("T_add_z", T_add_z_);
 
     if (!point_cloud_ || point_cloud_->empty()) {
         RCLCPP_WARN(this->get_logger(), "Point cloud is empty or null");
@@ -62,39 +49,35 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
             pcl::io::savePCDFileBinary(cloud_filename, *point_cloud_);
             cv::imwrite(image_filename, frame_);
             save_count++;
+            std::cout << "Save point cloud and image" << save_count << std::endl;
+            cv::waitKey(500);
         }
-        
-        Eigen::Matrix3f R;
-        // R << -0.0173, -0.9998, 0.0043,
-        //      0.0053, -0.0044, -1.0000,
-        //      0.9998, -0.0173, 0.0054;
-        R << -0.0173, 0.0053, 0.9998,
-             -0.0098, -0.0044, -0.0173,
-             0.0043, -1.0000, 0.0054;
 
-        // R << 1.0, 0.0, 0.0,
-        //      0.0, 1.0, 0.0,
-        //      0.0, 0.0, 1.0;
-        //Eigen::Vector3f T(lidar_x_, lidar_y_, lidar_z_);
-        Eigen::Vector3f T(0.1098, 0.0189, -0.5067);
-        //Eigen::Vector3f T(0.0, 0.0, 0.0);
-        // Eigen::Vector3f T(-0.1098, -0.0189, 0.5067);
+        Eigen::Matrix3f R_lidar_to_camera;
+
+        R_lidar_to_camera <<    -0.0318712393232544, -0.999474459707108, 0.00591848774478551,
+                                0.0111232139656527, -0.00627581384510766, -0.999918440809877,
+                                0.999430086706956, -0.0318028073252486, 0.0113173862335329;
+        
+        Eigen::Vector3f T_lidar_to_camera(0.0428245893583569 + T_add_x_, 0.0104154355328730 + T_add_y_, -0.638969767020652 + T_add_z_);
 
         std::vector<cv::Point3f> lidar_points;
         std::vector<cv::Point2f> lidar_points_projection;
         std::vector<float> intensity_values;
-
+        int z_count = 0;
         for(size_t i = 0; i < point_cloud_->points.size(); i++){
             const auto& p = point_cloud_->points[i];
             intensity_values.push_back(p.intensity);
             //livox雷达坐标系与opencv坐标系定义不同，转换livox坐标系为opencv坐标系
-            Eigen::Vector3f lidar_point(-p.y, -p.z, p.x);
-            Eigen::Vector3f lidar_point_in_camera = R * lidar_point + T;
+            Eigen::Vector3f lidar_point(p.x, p.y, p.z);
+            Eigen::Vector3f lidar_point_in_camera = R_lidar_to_camera * lidar_point + T_lidar_to_camera;
             cv::Point3f point_lidar_in_camera(lidar_point_in_camera.x(), lidar_point_in_camera.y(), lidar_point_in_camera.z());
-
+            if(point_lidar_in_camera.z < 0){
+                z_count++;
+            }
             lidar_points.push_back(point_lidar_in_camera);
         }
-        
+
         cv::projectPoints(lidar_points, cv::Mat::zeros(3, 1, CV_64F), cv::Mat::zeros(3, 1, CV_64F), cameraMatrix, distCoeffs, lidar_points_projection);
         
         for(size_t i = 0; i < lidar_points_projection.size(); i++){
@@ -109,13 +92,11 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
             cv::circle(frame_, lidar_points_projection[i], 1.5, color, -1);
         }
 
-        
         cv::putText(frame_, "Latency: " + to_string(dt) + "ms", cv::Point2f(5, 30), cv::FONT_HERSHEY_SIMPLEX, 0.7, cv::Scalar(0, 255, 0), 2, 8);
         end_image_time_ = cv::getTickCount();	
 	    dt = (end_image_time_ - start_image_time_) * 1000 / cv::getTickFrequency();
     }
     publish_image();
-    cout << "save_cloud_and_image_ = " << save_cloud_and_image_ << endl;
 }
 void RadarStation::point_cloud_callback(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
 {
