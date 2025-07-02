@@ -31,7 +31,7 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-add_executable(radar_station src/radar_station.cpp)
+add_executable(radar_station src/radar_station.cpp src/onnx_box.cpp src/robot.cpp)
 ament_target_dependencies(radar_station rclcpp OpenCV sensor_msgs cv_bridge image_transport PCL pcl_conversions)
 
 install(TARGETS
