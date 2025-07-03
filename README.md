@@ -241,7 +241,93 @@ K = 1635.80929422889	0					709.797419508020
 
 <img src="doc/IMG_20250702_211132.jpg" alt="IMG_20250702_211132" style="zoom:25%;" />
 
-经过反复测试，误差在20cm到50cm之间，激光雷达手册里面的随机误差在1-3cm之间波动，误差有可能来自点云对齐的误差和分割过程中还是混进去了无关点，明天尝试多采集数据来标定，看看是不是坐标系转换所带来的误差（标定板是KT板材质，会形变，之前很多数据在matlab里面大部分都舍弃了）
+经过反复测试，误差在50cm之左右，而且误差基本不变，激光雷达手册里面的随机误差在1-3cm之间波动，误差有可能来自点云对齐的误差和分割过程中还是混进去了无关点，明天尝试多采集数据来标定，看看是不是坐标系转换所带来的误差（手动给补偿值可以把误差补偿掉，而且很稳定，感觉最大可能是外参的误差）（标定板是KT板材质，会形变，之前很多数据在matlab里面大部分都舍弃了）
+
+## 7.3
+
+发现一个BUG，当装甲板被遮挡的时候出现double free的内存错误，用gdb调式在崩溃位置输出：
+
+```bash
+msg=std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> >> (use count 4, weak count 0) = {...}) at /home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:138
+#15 0x00005555555ea5bf in std::__invoke_impl<void, void (RadarStation::*&)(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > >), RadarStation*&, std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > > >(std::__invoke_memfun_deref, void (RadarStation::*&)(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > >), RadarStation*&, std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > >&&)
+
+```
+
+其中定位到138行的操作
+
+```bash
+/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:138
+```
+
+```c++
+target_[j].robot_points_roi_.push_back(lidar_points[i]);
+```
+
+问了下AI：[自己创建了裸指针的 vector，并重复用了它的 buffer]
+
+重新走了一遍机器人类Robot实例化的过程
+
+```c++
+if(!onnx_boxes_armor.empty()){
+                onnx_boxes_car[i].class_id = onnx_boxes_armor[0].class_id;
+                robot_temp.id_ = onnx_boxes_car[i].class_id;
+                target_temp.push_back(robot_temp);
+            }else{
+                onnx_boxes_car[i].class_id = -1;
+            }
+```
+
+只有当检测到机器人并且检测到装甲板的时候，将装甲板的ID给到Robot并且pushback到全局"std::vector<Robot> target_",但是如果只检测到机器人，没有检测到装甲板，target的vector里就是空的，然后由于检测到了机器人，在上面点云聚类的时候就会进到这个for循环里面
+
+```c++
+for(size_t j = 0; j < min_dis_point_id.size(); j++){
+	float dis_3D = std::sqrt(std::pow(lidar_points[i].x - 		lidar_points[min_dis_point_id[j]].x, 2) + std::pow(lidar_points[i].y - lidar_points[min_dis_point_id[j]].y, 2) + std::pow(lidar_points[i].z - lidar_points[min_dis_point_id[j]].z, 2));
+                if(dis_3D < range_of_roi_){
+                    target_[j].robot_points_roi_.push_back(lidar_points[i]);
+                    target_[j].get_real_pos();
+                    float dis = std::sqrt(std::pow(target_[j].real_pos_.x, 2) + std::pow(target_[j].real_pos_.y, 2) + std::pow(target_[j].real_pos_.z, 2));
+                    std::cout << "dis = " << dis << std::endl;
+                    colored_point.r = 255;
+                    colored_point.g = 0;
+                    colored_point.b = 0;
+                }else{
+                    colored_point.r = 0;
+                    colored_point.g = 255;
+                    colored_point.b = 0;
+                }
+            }    
+```
+
+里面有对target_[j]的操作，但是他是空的，所以程序爆了
+
+所以补上当没有检测到装甲板的时候的逻辑就行：
+
+```c++
+            //修复如果没有装甲板识别到的情况
+            if(!onnx_boxes_armor.empty()){
+                onnx_boxes_car[i].class_id = onnx_boxes_armor[0].class_id;
+                robot_temp.id_ = onnx_boxes_car[i].class_id;
+                target_temp.push_back(robot_temp);
+            }else{
+                onnx_boxes_car[i].class_id = -1;
+                robot_temp.id_ = -1;
+                target_temp.push_back(robot_temp);
+            }
+```
+
+测试后这个问题解决
+
+发现点云数据会堆积在ros的消息队列里面，当资源空闲的时候会突然爆发式的接受，一次可以接受10帧点云，目前找到原因，但是还没有解决思路（感觉是在进入相机帧处理的时候耗时太久了）
+
+雷达站程序运行的延迟在250ms左右，对程序分块测试发现点云聚类时间为1ms左右坐标系转换在10ms左右，而推理耗时将近200ms，基本上所有时间都在双层神经网络推理上
+
+尝试用OpenVINO推理，尝试失败（不会用啊啊啊啊啊  q_q）
+
+```bash
+ovc car.onnx
+```
+
+今天主要整理优化了一下前面写的代码，解决了一些之前埋下的坑（BUG），然后学习了OpenVINO的c++API，成功推理，但是对推理结果还无法正常解析。
 
 ###### git
 

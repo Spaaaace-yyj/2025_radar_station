@@ -6,6 +6,11 @@ void OnnxBox::draw(cv::Mat& dst){
         cv::putText(dst, "ID: " + std::to_string(class_id), P1, cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 255), 2);
         cv::putText(dst, std::to_string(conf), P2, cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 255), 2);
         cv::circle(dst, center, 5, cv::Scalar(0, 0, 255), 2);
+    }else{
+        cv::rectangle(dst, P2, P1, cv::Scalar(0, 255, 0), 2);
+        cv::putText(dst, "ID: ???", P1, cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 255), 2);
+        cv::putText(dst, std::to_string(conf), P2, cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 255), 2);
+        cv::circle(dst, center, 5, cv::Scalar(0, 0, 255), 2);
     }
     
 }

@@ -4,6 +4,9 @@
 //opencv
 #include <opencv4/opencv2/opencv.hpp>
 #include<opencv4/opencv2/dnn.hpp>
+
+#include "openvino/openvino.hpp"
+
 //ros2
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/image.hpp>
@@ -40,6 +43,7 @@ private:
 
     void publish_image();
     void publish_onnx_debug_image();
+    void publish_cloud();
 
     std::vector<OnnxBox> get_armor_box(const cv::Mat& src);
 
@@ -50,8 +54,10 @@ private:
     float get_iou(OnnxBox box1, OnnxBox box2);
 
     void nms(std::vector<OnnxBox>& boxes, float iou_threshold);
-    
 
+    void openvino_test(cv::Mat src);
+
+    ov::Tensor convert_mat_to_f16_tensor(const cv::Mat& float_rgb, const ov::Shape& shape);
 private:
     //ros topic
     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr point_cloud_sub_;
@@ -59,11 +65,12 @@ private:
     //ros publisher
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr image_pub_;
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr onnx_debug_pub_;
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr point_cloud_pub_;
 private:
     //save cloud
     int save_cloud_and_image_ = 0;
     int save_count = 0;
-    bool save_image_only = 1;
+    bool save_image_only = 0;
     std::string file_path = "/home/spaaaaace/Code/mid70/2025_radar_station/image_cloud";
     
     float range_of_roi_ = 0.35f;
@@ -74,12 +81,28 @@ private:
 
     cv::dnn::Net car_net;
     cv::dnn::Net armor_net;
+    
+    //openvino
+    std::string car_model_path_openvino_ = "/home/spaaaaace/Code/mid70/2025_radar_station/models/car.xml";
+    std::string armor_model_path_openvino_ = "/home/spaaaaace/Code/mid70/2025_radar_station/models/armor.xml";
+
+    ov::Core car_core_;
+    ov::Core armor_core_;
+
+    std::shared_ptr<ov::Model> car_model_;
+    std::shared_ptr<ov::Model> armor_model_;
+
+    ov::CompiledModel compiled_car_model_;
+    ov::CompiledModel compiled_armor_model_;
+
+    ov::InferRequest infer_request_car_ ;
+    ov::InferRequest infer_request_armor_;
 
     float car_confidence_threshold_ = 0.5f;
     float armor_confidence_threshold_ = 0.5f;
 
     //lidar_sum_frame_num
-    int lidar_frame_add_num_ = 2;
+    int lidar_frame_add_num_ = 0;
 
     //stastic_point_fix
     float T_add_x_ = 0.0f;
@@ -103,7 +126,7 @@ private:
     
     //point cloud    
     pcl::PointCloud<pcl::PointXYZI>::Ptr point_cloud_ = std::make_shared<pcl::PointCloud<pcl::PointXYZI>>();
-
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_pub_ = std::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
     //camera intrinsic
     cv::Mat cameraMatrix = (cv::Mat_<double>(3, 3) <<
     	1635.80929422889, 0, 709.797419508020,

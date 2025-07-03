@@ -1,3 +1,7 @@
+## set OpenVINO_LIBRARIES
+set(OpenVINO_LIBRARIES openvino::runtime)
+
+add_compile_options(-g)
 cmake_minimum_required(VERSION 3.8)
 project(radar_station)
 
@@ -14,6 +18,19 @@ find_package(cv_bridge REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(PCL REQUIRED)
 find_package(pcl_conversions REQUIRED)
+find_package(OpenVINO REQUIRED)
+
+
+
+set(OpenVINO_DIR $ENV{INTEL_OPENVINO_DIR})
+
+include_directories(
+  ${OpenVINO_DIR}/runtime/include
+)
+
+link_directories(
+  ${OpenVINO_DIR}/runtime/lib/intel64  # 注意路径是否正确，确认 lib 目录位置
+)
 
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -32,7 +49,7 @@ if(BUILD_TESTING)
 endif()
 
 add_executable(radar_station src/radar_station.cpp src/onnx_box.cpp src/robot.cpp)
-ament_target_dependencies(radar_station rclcpp OpenCV sensor_msgs cv_bridge image_transport PCL pcl_conversions)
+ament_target_dependencies(radar_station rclcpp OpenCV sensor_msgs cv_bridge image_transport PCL pcl_conversions OpenVINO)
 
 install(TARGETS
   TARGETS radar_station
