@@ -13,6 +13,13 @@ RadarStation::RadarStation() : Node("radar_station")
 
     this->get_parameter("save_cloud_and_image", save_cloud_and_image_);
 
+    R_world_camera_ <<
+        0.8247006169725153, -0.5655652163937008, 0.002208703397856504,
+        -0.205612011285247, -0.3034545250795683, -0.9303972549529418,
+        0.5268705658702038, 0.7668450542412595, -0.3665461357119062;
+    
+    T_world_camera_ << -0.461134991929606, 0.7398674438216045, 2.69663561109071;
+
     generate_color_map();
 
     load_onnx_model();
@@ -77,8 +84,6 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
         
         end_image_time_ = cv::getTickCount();	
 
-        openvino_test(onnx_debug_frame_);
-
         Eigen::Matrix3f R_lidar_to_camera;
 
         R_lidar_to_camera <<    -0.0318712393232544, -0.999474459707108, 0.00591848774478551,
@@ -108,18 +113,19 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
         std::vector<float> min_dis_in_screen(onnx_boxes.size(), 10000);
         std::vector<int> min_dis_point_id(onnx_boxes.size());
         for(size_t i = 0; i < lidar_points_projection.size(); i++){
-                //筛选点云roi
-                for(size_t j = 0; j < onnx_boxes.size(); j++){
-                    if(lidar_points_projection[i].x > onnx_boxes[j].P1.x && lidar_points_projection[i].x < onnx_boxes[j].P2.x &&
-                        lidar_points_projection[i].y > onnx_boxes[j].P1.y && lidar_points_projection[i].y < onnx_boxes[j].P2.y){
-                            float dis = std::sqrt(std::pow(lidar_points_projection[i].x - onnx_boxes[j].center.x, 2) + std::pow(lidar_points_projection[i].y - onnx_boxes[j].center.y, 2));
-                            if(dis < min_dis_in_screen[j]){
-                                min_dis_in_screen[j] = dis;
-                                min_dis_point_id[j] = i;
-                            }
-                        }
+            //筛选点云roi
+            for(size_t j = 0; j < onnx_boxes.size(); j++){
+                if(lidar_points_projection[i].x > onnx_boxes[j].P1.x && lidar_points_projection[i].x < onnx_boxes[j].P2.x &&
+                    lidar_points_projection[i].y > onnx_boxes[j].P1.y && lidar_points_projection[i].y < onnx_boxes[j].P2.y){
+                    float dis = std::sqrt(std::pow(lidar_points_projection[i].x - onnx_boxes[j].center.x, 2) + std::pow(lidar_points_projection[i].y - onnx_boxes[j].center.y, 2));
+                    if(dis < min_dis_in_screen[j]){
+                        min_dis_in_screen[j] = dis;
+                        min_dis_point_id[j] = i;
+                    }
                 }
+            }
         }
+
         cloud_pub_->header = point_cloud_->header;
         cloud_pub_->is_dense = point_cloud_->is_dense;
         cloud_pub_->clear();
@@ -136,19 +142,17 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
                 if(dis_3D < range_of_roi_){
                     target_[j].robot_points_roi_.push_back(lidar_points[i]);
                     target_[j].get_real_pos();
-                    float dis = std::sqrt(std::pow(target_[j].real_pos_.x, 2) + std::pow(target_[j].real_pos_.y, 2) + std::pow(target_[j].real_pos_.z, 2));
-                    //std::cout << "dis = " << dis << std::endl;
+                    target_[j].get_world_location(R_world_camera_, T_world_camera_);
+                    std::cout << "world_pos_ = " << target_[j].world_pos_ << std::endl;
+                    std::cout << "camera_pos_ = " << target_[j].real_pos_ << std::endl;
                     colored_point.r = 255;
                     colored_point.g = 0;
-                    colored_point.b = 0;
-                }else{
-                    colored_point.r = 0;
-                    colored_point.g = 255;
                     colored_point.b = 0;
                 }
             }    
             cloud_pub_->push_back(colored_point);
         }
+
         std::vector<cv::Point2f> point_3d_roi_projection;
         for(size_t i = 0; i < target_.size(); i++){
             cv::projectPoints(target_[i].robot_points_roi_, cv::Mat::zeros(3, 1, CV_64F), cv::Mat::zeros(3, 1, CV_64F), cameraMatrix, distCoeffs, point_3d_roi_projection);
@@ -356,106 +360,16 @@ void RadarStation::nms(std::vector<OnnxBox>& boxes, float iou_threshold){
     boxes = boxes_temp;
 }
 
-ov::Tensor RadarStation::convert_mat_to_f16_tensor(const cv::Mat& float_rgb, const ov::Shape& shape) {
-    ov::Tensor tensor(ov::element::f16, shape);
-    ov::float16* data_ptr = tensor.data<ov::float16>();
-    const float* src_ptr = reinterpret_cast<const float*>(float_rgb.data);
-
-    size_t num_elements = shape[1] * shape[2] * shape[3];  // [N,C,H,W]
-    for (size_t i = 0; i < num_elements; ++i) {
-        data_ptr[i] = ov::float16(src_ptr[i]);  // 显式 float32 → float16
-    }
-    return tensor;
-}
-
-void RadarStation::openvino_test(cv::Mat src){
-    ov::Output<const ov::Node> input_port = compiled_car_model_.input();
-    auto input_shape = input_port.get_shape();  // e.g. [1, 3, 640, 640]
-
-    cv::Mat resized;
-    cv::resize(src, resized, cv::Size(input_shape[3], input_shape[2]));
-
-    resized.convertTo(resized, CV_32F, 1.0 / 255.0);
-
-    ov::Tensor input_tensor = convert_mat_to_f16_tensor(resized, input_shape);
-    infer_request_car_.set_input_tensor(input_tensor);
-    infer_request_car_.infer();
-
-    ov::Tensor output = infer_request_car_.get_output_tensor();
-
-    std::vector<float> output_data;
-
-    if (output.get_element_type() == ov::element::f16) {
-        const ov::float16* f16_data = output.data<const ov::float16>();
-        size_t num_elements = output.get_size();
-        output_data.resize(num_elements);
-        for (size_t i = 0; i < num_elements; ++i) {
-            output_data[i] = static_cast<float>(f16_data[i]);  // f16 -> f32
-        }
-    } else if (output.get_element_type() == ov::element::f32) {
-        const float* data_ptr = output.data<const float>();
-        output_data.assign(data_ptr, data_ptr + output.get_size());
-    } else {
-        throw std::runtime_error("Unsupported output tensor type!");
-    }
-
-    const auto& out_shape = output.get_shape(); // [1, N, M]
-    size_t num_detections = out_shape[1];
-    size_t dim = out_shape[2]; // YOLOv8 是 [1, 25200, 6~17]
-    size_t num_classes = dim - 5;
-    // for (size_t i = 0; i < num_detections; ++i) {
-    //     float x = output_data[i * dim + 0];
-    //     float y = output_data[i * dim + 1];
-    //     float w = output_data[i * dim + 2];
-    //     float h = output_data[i * dim + 3];
-    //     float obj_conf = output_data[i * dim + 4];
-    //     if(obj_conf < 1e-4) continue;
-    //     cout << "x: " << x << " y: " << y << " w: " << w << " h: " << h << " obj_conf: " << obj_conf << endl;
-    //     // 找出 class 分数最大的类别和置信度
-    //     float max_cls_score = 0.0f;
-    //     int class_id = -1;
-    //     for (int j = 0; j < num_classes; ++j) {
-    //         float cls_score = output_data[i * dim + 5 + j];
-    //         if (cls_score > max_cls_score) {
-    //             max_cls_score = cls_score;
-    //             class_id = j;
-    //         }
-    //     }
-
-    //     float conf = obj_conf * max_cls_score;
-    //     if (conf < 1e-3) continue;
-    //     // 坐标是相对的，乘图像尺寸
-    //     int left = static_cast<int>((x - w / 2.0) * src.cols);
-    //     int top = static_cast<int>((y - h / 2.0) * src.rows);
-    //     int width = static_cast<int>(w * src.cols);
-    //     int height = static_cast<int>(h * src.rows);
-
-    //     cv::rectangle(src, cv::Rect(left, top, width, height), cv::Scalar(0, 255, 0), 2);
-    //     std::string label = cv::format("cls:%d %.2f", class_id, conf);
-    //     cv::putText(src, label, cv::Point(left, top - 5), cv::FONT_HERSHEY_SIMPLEX, 0.5, {0, 255, 0}, 1);
-    //     }
-    for(int i = 0; i < output_data.size(); i++){
-        if(output_data[i] >= 0.1 && output_data[i] <= 1){
-            cout << "output_data[" << i << "] = " << output_data[i] << endl;
-        }
-    }
-        cv::imshow("openvino", src);
-        cv::waitKey(1);
-}
-
 void RadarStation::load_onnx_model(){
+    RCLCPP_INFO(this->get_logger(), "Loading onnx model...");
     car_net = cv::dnn::readNet(car_model_path_);
     armor_net = cv::dnn::readNet(armor_model_path_);
-    
-    car_model_ = car_core_.read_model(car_model_path_openvino_);
-    armor_model_ = armor_core_.read_model(armor_model_path_openvino_);
-    
-    compiled_car_model_ = car_core_.compile_model(car_model_, "AUTO");
-    compiled_armor_model_ = armor_core_.compile_model(armor_model_, "AUTO");
 
-    infer_request_car_ = compiled_car_model_.create_infer_request();
-    infer_request_armor_ = compiled_armor_model_.create_infer_request();
-    
+    car_net.setPreferableBackend(cv::dnn::DNN_BACKEND_CUDA);
+    car_net.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA);
+
+    armor_net.setPreferableBackend(cv::dnn::DNN_BACKEND_CUDA);
+    armor_net.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA);
 }
 
 int main(int argc, char **argv){

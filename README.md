@@ -58,7 +58,7 @@ ros2 run camera_calibration cameracalibrator --size 8x11 --square 0.02000 image:
 
 具体效果图
 
-![截图 2025-06-30 11-49-18](doc/lidar_rviz.png)
+![截图 2025-06-30 11-49-18](./doc/lidar_rviz.png)
 
 对于数据同步部分，由于相机帧率非常高，所以采用抽帧法来实现软同步，当雷达点云帧累积2帧时，抽取一帧相机帧（抽取帧数可调）
 
@@ -97,13 +97,13 @@ for(size_t i = 0; i < point_cloud_->points.size(); i++){
 
 **融合效果**
 
-<img src="doc/image1.png" alt="截图 2025-06-30 12-53-54" style="zoom:33%;" />
+<img src="./doc/image1.png" alt="截图 2025-06-30 12-53-54" style="zoom:33%;" />
 
 将debug图像由opencv的imshow转为用ros2的话题发布
 
 买了块巨大的标定板（花我95    o.O）
 
-<img src="doc/76.jpg" alt="76" style="zoom: 25%;" />
+<img src="./doc/76.jpg" alt="76" style="zoom: 25%;" />
 
 用来标定雷达和相机之间的外参，标定用matlab的雷达外参标定算法
 
@@ -146,7 +146,7 @@ Eigen::Vector3f lidar_point_in_camera = R_lidar_to_camera * lidar_point + T_lida
 
 重新采集了一次点云和图像进行标定
 
-<img src="doc/capture_20250630205635268.bmp" alt="capture_20250630205635268" style="zoom: 33%;" />
+<img src="./doc/capture_20250630205635268.bmp" alt="capture_20250630205635268" style="zoom: 33%;" />
 
 最后重新算出来的旋转和平移矩阵
 
@@ -207,7 +207,7 @@ K = 1635.80929422889	0					709.797419508020
 
 ~~**（总算对齐了，cao）**~~
 
-<img src="doc/cap.png" alt="cap" style="zoom: 33%;" />
+<img src="./doc/cap.png" alt="cap" style="zoom: 33%;" />
 
 ## 7.2
 
@@ -225,21 +225,21 @@ K = 1635.80929422889	0					709.797419508020
 
 第一次的尝试用直接用神经网络推理出来的ROI，筛选点云投影到图像中，落在ROI的点，然后找到对应的点云
 
-<img src="doc/1.png" alt="1" style="zoom: 50%;" />
+<img src="./doc/1.png" alt="1" style="zoom: 50%;" />
 
 但是这样很多前景和背景的点云都筛选进去了，导致误差会随着背景的情况变化，而且不准确
 
 第二次尝试的思路是先找到在图像平面中距离神经网络推理得到的图片中心最近的投影点，然后找到这个点对应的3D位置，以这个点做球形区域，取落在球形区域内的点求平均作为机器人位置（感觉后面可以优化一下，是否可以不遍历所有点云，缩小范围，减小时间开销）
 
-<img src="doc/roi.png" alt="roi" style="zoom: 50%;" />
+<img src="./doc/roi.png" alt="roi" style="zoom: 50%;" />
 
 就投影点效果来看比第一次好，由于真实坐标值不好测量，所以通过求距离来评估误差，以下是通过求平均点云位置到相机的距离（单位：米）
 
-![dis](doc/dis.png)
+![dis](./doc/dis.png)
 
 然后是现实中用激光测距测出来的距离
 
-<img src="doc/IMG_20250702_211132.jpg" alt="IMG_20250702_211132" style="zoom:25%;" />
+<img src="./doc/IMG_20250702_211132.jpg" alt="IMG_20250702_211132" style="zoom:25%;" />
 
 经过反复测试，误差在50cm之左右，而且误差基本不变，激光雷达手册里面的随机误差在1-3cm之间波动，误差有可能来自点云对齐的误差和分割过程中还是混进去了无关点，明天尝试多采集数据来标定，看看是不是坐标系转换所带来的误差（手动给补偿值可以把误差补偿掉，而且很稳定，感觉最大可能是外参的误差）（标定板是KT板材质，会形变，之前很多数据在matlab里面大部分都舍弃了）
 
@@ -324,10 +324,44 @@ for(size_t j = 0; j < min_dis_point_id.size(); j++){
 尝试用OpenVINO推理，尝试失败（不会用啊啊啊啊啊  q_q）
 
 ```bash
-ovc car.onnx
+ovc car.onnx #RT模型转换
 ```
 
 今天主要整理优化了一下前面写的代码，解决了一些之前埋下的坑（BUG），然后学习了OpenVINO的c++API，成功推理，但是对推理结果还无法正常解析。
+
+## 7.4
+
+放弃OpenVINO，改用opencv使用GPU加速，但是现在环境的opencv没有编译GPU加速，所以要重新编译
+
+（和编译报错折腾一早上）为了不影响当前环境的opencv（防止别的项目编译不了），所以不直接修改环境的opencv，每次运行前使用：
+
+```bash
+export LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/env/opencv/install/lib:$LD_LIBRARY_PATH
+```
+
+指定opencv环境
+
+最后推理速度从200ms将到平均50ms左右
+
+<img src="./doc/50.png" alt="50" style="zoom:33%;" />
+
+最后整理了一下代码，最后效果
+
+<img src="/home/spaaaaace/Code/mid70/2025_radar_station/doc/2.png" alt="2" style="zoom:33%;" />
+
+点云聚类效果：
+
+<img src="/home/spaaaaace/Code/mid70/2025_radar_station/doc/3.png" alt="3" style="zoom: 25%;" />
+
+定位模块算法目前基本完成，后续有优化算法等到所有流程都开发完成再尝试，也更好测试比较
+
+接下来是尝试
+
+
+
+
+
+
 
 ###### git
 

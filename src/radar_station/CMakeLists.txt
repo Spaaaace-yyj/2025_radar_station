@@ -9,6 +9,8 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+set(OpenCV_DIR "/home/spaaaaace/Code/mid70/2025_radar_station/env/opencv/install/lib/cmake/opencv4")
+
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -20,8 +22,6 @@ find_package(PCL REQUIRED)
 find_package(pcl_conversions REQUIRED)
 find_package(OpenVINO REQUIRED)
 
-
-
 set(OpenVINO_DIR $ENV{INTEL_OPENVINO_DIR})
 
 include_directories(
@@ -31,7 +31,6 @@ include_directories(
 link_directories(
   ${OpenVINO_DIR}/runtime/lib/intel64  # 注意路径是否正确，确认 lib 目录位置
 )
-
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -49,7 +48,8 @@ if(BUILD_TESTING)
 endif()
 
 add_executable(radar_station src/radar_station.cpp src/onnx_box.cpp src/robot.cpp)
-ament_target_dependencies(radar_station rclcpp OpenCV sensor_msgs cv_bridge image_transport PCL pcl_conversions OpenVINO)
+target_link_libraries(radar_station ${OpenCV_LIBS})
+ament_target_dependencies(radar_station rclcpp sensor_msgs cv_bridge image_transport PCL pcl_conversions OpenVINO)
 
 install(TARGETS
   TARGETS radar_station

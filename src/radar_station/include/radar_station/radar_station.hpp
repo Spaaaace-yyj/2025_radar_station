@@ -55,9 +55,6 @@ private:
 
     void nms(std::vector<OnnxBox>& boxes, float iou_threshold);
 
-    void openvino_test(cv::Mat src);
-
-    ov::Tensor convert_mat_to_f16_tensor(const cv::Mat& float_rgb, const ov::Shape& shape);
 private:
     //ros topic
     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr point_cloud_sub_;
@@ -81,28 +78,12 @@ private:
 
     cv::dnn::Net car_net;
     cv::dnn::Net armor_net;
-    
-    //openvino
-    std::string car_model_path_openvino_ = "/home/spaaaaace/Code/mid70/2025_radar_station/models/car.xml";
-    std::string armor_model_path_openvino_ = "/home/spaaaaace/Code/mid70/2025_radar_station/models/armor.xml";
-
-    ov::Core car_core_;
-    ov::Core armor_core_;
-
-    std::shared_ptr<ov::Model> car_model_;
-    std::shared_ptr<ov::Model> armor_model_;
-
-    ov::CompiledModel compiled_car_model_;
-    ov::CompiledModel compiled_armor_model_;
-
-    ov::InferRequest infer_request_car_ ;
-    ov::InferRequest infer_request_armor_;
 
     float car_confidence_threshold_ = 0.5f;
     float armor_confidence_threshold_ = 0.5f;
 
     //lidar_sum_frame_num
-    int lidar_frame_add_num_ = 0;
+    int lidar_frame_add_num_ = 3;
 
     //stastic_point_fix
     float T_add_x_ = 0.0f;
@@ -134,6 +115,11 @@ private:
     	0, 0, 1);
 	cv::Mat distCoeffs = (cv::Mat_<double>(5, 1) << 
     	-0.105728588814658, 0.642952312620478, 0.000000, 0.000000, 0.000000);
+
+    Eigen::Matrix3f R_world_camera_;
+
+
+    Eigen::Vector3f T_world_camera_;
 
     int image_width = 1280;
     int image_height = 1024;
