@@ -341,23 +341,37 @@ export LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/env/opencv/
 
 指定opencv环境
 
-最后推理速度从200ms将到平均50ms左右
+最后推理速度从200ms降低到平均50ms左右
 
 <img src="./doc/50.png" alt="50" style="zoom:33%;" />
 
 最后整理了一下代码，最后效果
 
-<img src="/home/spaaaaace/Code/mid70/2025_radar_station/doc/2.png" alt="2" style="zoom:33%;" />
+<img src="./doc/2.png" alt="2" style="zoom:33%;" />
 
 点云聚类效果：
 
-<img src="/home/spaaaaace/Code/mid70/2025_radar_station/doc/3.png" alt="3" style="zoom: 25%;" />
+<img src="./doc/3.png" alt="3" style="zoom: 25%;" />
 
 定位模块算法目前基本完成，后续有优化算法等到所有流程都开发完成再尝试，也更好测试比较
 
-接下来是尝试
+下午写了一个单独的场地标定模块radar_world_calib,能实现手动标定场地点，然后通过PNP解算出世界坐标系到相机坐标系的旋转和平移矩阵，然后在radar_station里新增相机坐标系到世界坐标系的变换功能，可以求出机器人在世界坐标系的坐标
 
+测试效果:测量出地板上几个点的坐标（以左下角的那个黑色的胶带为原点，向右为X正，向上为Y正）
 
+雷达站测量出的坐标[x, y] = [3.2, 2.3]
+
+<img src="./doc/5.png" alt="5"  />
+
+实际测量坐标[x , y] = [2.9, 2.0] 
+
+<img src="./doc/IMG_20250704_205359.jpg" alt="IMG_20250704_205359" style="zoom:25%;" />
+
+<img src="./doc/IMG_20250704_205412.jpg" alt="IMG_20250704_205412" style="zoom:25%;" />
+
+多测量了几个点，误差有的时候在10cm，有的时候在40cm，而且发现点云聚类有的时候出现跳变到背景。
+
+目前的变换矩阵（相机，雷达，世界等）还是要手动输入然后重新编译，后面要换成ros2的参数服务器传入（还要优化，目前只是验证算法），现在基本的定位模块的逻辑已经基本完成了，目前还差目标追踪和丢失逻辑，裁判系统通信模块
 
 
 
