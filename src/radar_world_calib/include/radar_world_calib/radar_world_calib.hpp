@@ -28,9 +28,9 @@ static std::vector<cv::Point2d> image_points_;
 
 static std::vector<cv::Point3f> world_points_ = {
     cv::Point3f(0, 0, 0),
-    cv::Point3f(2, 0, 0),
-    cv::Point3f(2, 3, 0),
-    cv::Point3f(0, 3, 0),
+    cv::Point3f(0.6, 0, 0),
+    cv::Point3f(0.6, 0.6, 0),
+    cv::Point3f(0, 0.6, 0),
 };
 
 cv::Mat cameraMatrix = (cv::Mat_<double>(3, 3) <<

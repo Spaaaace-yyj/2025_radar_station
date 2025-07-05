@@ -17,19 +17,9 @@ void Robot::get_real_pos(){
     real_pos_.y /= robot_points_roi_.size();
     real_pos_.z /= robot_points_roi_.size();
     dis_to_zero_ = sqrt(real_pos_.x * real_pos_.x + real_pos_.y * real_pos_.y + real_pos_.z * real_pos_.z);
-    get_bounding_cube(max_x - min_x, max_y - min_y, max_z - min_z);
-}
-
-void Robot::get_bounding_cube(float width, float height, float depth){
-    robot_rect_3d_.push_back(cv::Point3f(real_pos_.x - 0.5 * width, real_pos_.y - 0.5 * height, real_pos_.z - 0.5 * depth));
-    robot_rect_3d_.push_back(cv::Point3f(real_pos_.x + 0.5 * width, real_pos_.y - 0.5 * height, real_pos_.z - 0.5 * depth));
-    robot_rect_3d_.push_back(cv::Point3f(real_pos_.x + 0.5 * width, real_pos_.y + 0.5 * height, real_pos_.z - 0.5 * depth));
-    robot_rect_3d_.push_back(cv::Point3f(real_pos_.x - 0.5 * width, real_pos_.y + 0.5 * height, real_pos_.z - 0.5 * depth));
-    robot_rect_3d_.push_back(cv::Point3f(real_pos_.x - 0.5 * width, real_pos_.y - 0.5 * height, real_pos_.z + 0.5 * depth));
-    robot_rect_3d_.push_back(cv::Point3f(real_pos_.x + 0.5 * width, real_pos_.y + 0.5 * height, real_pos_.z + 0.5 * depth));
-    robot_rect_3d_.push_back(cv::Point3f(real_pos_.x + 0.5 * width, real_pos_.y - 0.5 * height, real_pos_.z + 0.5 * depth));
-    robot_rect_3d_.push_back(cv::Point3f(real_pos_.x - 0.5 * width, real_pos_.y + 0.5 * height, real_pos_.z + 0.5 * depth));
-    robot_rect_3d_.push_back(cv::Point3f(real_pos_.x - 0.5 * width, real_pos_.y - 0.5 * height, real_pos_.z + 0.5 * depth));
+    width_ = max_x - min_x;
+    height_ = max_y - min_y;
+    depth_ = max_z - min_z;
 }
 
 void Robot::get_world_location(Eigen::Matrix3f& R_world_camera_, Eigen::Vector3f& T_world_camera_){

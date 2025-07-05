@@ -17,12 +17,21 @@
 #include "pcl/filters/voxel_grid.h"
 #include <cv_bridge/cv_bridge.h>
 
+#include <visualization_msgs/msg/marker_array.hpp>
+#include <geometry_msgs/msg/pose.hpp>
+#include <tf2_ros/transform_broadcaster.h>
+#include <tf2/LinearMath/Quaternion.h>
+#include <geometry_msgs/msg/transform_stamped.hpp>
+
+
 //math
 #include <Eigen/Geometry>
 
 //user
 #include "onnx_box.hpp"
 #include "robot.hpp"
+#include "radar_station_interface/msg/robot_position.hpp"
+#include "radar_station_interface/msg/robot_position_array.hpp"
 
 //c++
 #include <iostream>
@@ -41,9 +50,20 @@ private:
 
     void generate_color_map();
 
+    void init_parameters();
+
+    void update_parameters();
+
     void publish_image();
-    void publish_onnx_debug_image();
     void publish_cloud();
+    void publish_marker_array();
+    void publish_robot_position_array();
+
+    void publish_transform(
+    	const cv::Mat& rvec,     //rotation
+    	const cv::Mat& tvec,     //transmision
+    	const std::string& frame_id, //world frame
+    	const std::string& child_frame_id );
 
     std::vector<OnnxBox> get_armor_box(const cv::Mat& src);
 
@@ -61,8 +81,12 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr image_sub_;
     //ros publisher
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr image_pub_;
-    rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr onnx_debug_pub_;
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr point_cloud_pub_;
+    rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr marker_array_pub_;
+    rclcpp::Publisher<radar_station_interface::msg::RobotPositionArray>::SharedPtr robot_position_array_pub_;
+
+    std::shared_ptr<tf2_ros::TransformBroadcaster> broadcaster_tf_; 
+
 private:
     //save cloud
     int save_cloud_and_image_ = 0;
@@ -108,18 +132,15 @@ private:
     //point cloud    
     pcl::PointCloud<pcl::PointXYZI>::Ptr point_cloud_ = std::make_shared<pcl::PointCloud<pcl::PointXYZI>>();
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_pub_ = std::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-    //camera intrinsic
-    cv::Mat cameraMatrix = (cv::Mat_<double>(3, 3) <<
-    	1635.80929422889, 0, 709.797419508020,
-    	0, 1636.89792281429, 533.441903861457,
-    	0, 0, 1);
-	cv::Mat distCoeffs = (cv::Mat_<double>(5, 1) << 
-    	-0.105728588814658, 0.642952312620478, 0.000000, 0.000000, 0.000000);
-
+    
+    cv::Mat cameraMatrix;
+	cv::Mat distCoeffs;
+    
     Eigen::Matrix3f R_world_camera_;
-
-
     Eigen::Vector3f T_world_camera_;
+
+    Eigen::Matrix3f R_lidar_to_camera_;
+    Eigen::Vector3f T_lidar_to_camera_;
 
     int image_width = 1280;
     int image_height = 1024;

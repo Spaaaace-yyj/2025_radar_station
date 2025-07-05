@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(radar_world_calib)
+project(radar_station_interface)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -7,12 +7,10 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(OpenCV REQUIRED)
-find_package(rclcpp REQUIRED)
-find_package(sensor_msgs REQUIRED)
-find_package(cv_bridge REQUIRED)
-find_package(image_transport REQUIRED)
-
+find_package(rosidl_default_generators REQUIRED)
+# uncomment the following section in order to fill in
+# further dependencies manually.
+# find_package(<dependency> REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -26,12 +24,9 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-add_executable(radar_world_calib src/radar_world_calib.cpp)
-ament_target_dependencies(radar_world_calib rclcpp sensor_msgs cv_bridge image_transport OpenCV)
-
-install(TARGETS
-  radar_world_calib
-  DESTINATION lib/${PROJECT_NAME}
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/RobotPosition.msg"
+  "msg/RobotPositionArray.msg"
 )
 
 ament_package()

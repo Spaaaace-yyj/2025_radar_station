@@ -12,8 +12,6 @@ public:
 
     void get_real_pos();
 
-    void get_bounding_cube(float width, float height, float depth);
-
     void get_world_location(Eigen::Matrix3f& R_world_camera_, Eigen::Vector3f& T_world_camera_);
 
 public:
@@ -26,6 +24,10 @@ public:
     cv::Point3f world_pos_;
 
     float dis_to_zero_ = 0.0;
+
+    float width_ = 0.0;
+    float height_ = 0.0;
+    float depth_ = 0.0;
 
 };
 

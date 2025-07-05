@@ -5,24 +5,14 @@ using namespace std;
 
 RadarStation::RadarStation() : Node("radar_station")
 {
-    this->declare_parameter("save_cloud_and_image", 0);
-    this->declare_parameter("T_add_x", -0.02f);
-    this->declare_parameter("T_add_y", 0.02f);
-    this->declare_parameter("T_add_z", 0.6f);
-    this->declare_parameter("range_of_roi", 0.35f);
 
-    this->get_parameter("save_cloud_and_image", save_cloud_and_image_);
-
-    R_world_camera_ <<
-        0.8247006169725153, -0.5655652163937008, 0.002208703397856504,
-        -0.205612011285247, -0.3034545250795683, -0.9303972549529418,
-        0.5268705658702038, 0.7668450542412595, -0.3665461357119062;
-    
-    T_world_camera_ << -0.461134991929606, 0.7398674438216045, 2.69663561109071;
+    init_parameters();
 
     generate_color_map();
 
     load_onnx_model();
+
+    broadcaster_tf_ = std::make_shared<tf2_ros::TransformBroadcaster>(this);
 
     point_cloud_sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
         "livox/lidar", 1, std::bind(&RadarStation::point_cloud_callback, this, std::placeholders::_1));
@@ -32,18 +22,15 @@ RadarStation::RadarStation() : Node("radar_station")
 
     image_pub_ = this->create_publisher<sensor_msgs::msg::Image>("/radar_station/image_debug/point_cloud_projection", 10);
 
-    onnx_debug_pub_ = this->create_publisher<sensor_msgs::msg::Image>("/radar_station/image_debug/onnx_result", 10);
+    marker_array_pub_ = this->create_publisher<visualization_msgs::msg::MarkerArray>("/radar_station/marker_array", 10);
 
+    robot_position_array_pub_ = this->create_publisher<radar_station_interface::msg::RobotPositionArray>("/radar_station/robot_position_array", 10);
 
     RCLCPP_INFO(this->get_logger(), "Radar station node has been created");
 }
 void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
 {
-    this->get_parameter("save_cloud_and_image", save_cloud_and_image_);
-    this->get_parameter("T_add_x", T_add_x_);
-    this->get_parameter("T_add_y", T_add_y_);
-    this->get_parameter("T_add_z", T_add_z_);
-    this->get_parameter("range_of_roi", range_of_roi_);
+    update_parameters();
 
     if (!point_cloud_ || point_cloud_->empty()) {
         RCLCPP_WARN(this->get_logger(), "Point cloud is empty or null");
@@ -86,11 +73,11 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
 
         Eigen::Matrix3f R_lidar_to_camera;
 
-        R_lidar_to_camera <<    -0.0318712393232544, -0.999474459707108, 0.00591848774478551,
-                                0.0111232139656527, -0.00627581384510766, -0.999918440809877,
-                                0.999430086706956, -0.0318028073252486, 0.0113173862335329;
+        // R_lidar_to_camera <<    -0.0318712393232544, -0.999474459707108, 0.00591848774478551,
+        //                         0.0111232139656527, -0.00627581384510766, -0.999918440809877,
+        //                         0.999430086706956, -0.0318028073252486, 0.0113173862335329;
         
-        Eigen::Vector3f T_lidar_to_camera(0.0428245893583569 + T_add_x_, 0.0104154355328730 + T_add_y_, -0.638969767020652 + T_add_z_);
+        // Eigen::Vector3f T_lidar_to_camera(0.0428245893583569 + T_add_x_, 0.0104154355328730 + T_add_y_, -0.638969767020652 + T_add_z_);
 
         std::vector<cv::Point3f> lidar_points;
         std::vector<cv::Point2f> lidar_points_projection;
@@ -100,7 +87,7 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
 
             //livox雷达坐标系与opencv坐标系定义不同，转换livox坐标系为opencv坐标系
             Eigen::Vector3f lidar_point(p.x, p.y, p.z);
-            Eigen::Vector3f lidar_point_in_camera = R_lidar_to_camera * lidar_point + T_lidar_to_camera;
+            Eigen::Vector3f lidar_point_in_camera = R_lidar_to_camera_ * lidar_point + T_lidar_to_camera_;
             cv::Point3f point_lidar_in_camera(lidar_point_in_camera.x(), lidar_point_in_camera.y(), lidar_point_in_camera.z());
 
             lidar_points.push_back(point_lidar_in_camera);
@@ -131,9 +118,14 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
         cloud_pub_->clear();
         for(size_t i = 0; i < lidar_points.size(); i++){
             pcl::PointXYZRGB colored_point;
-            colored_point.x = lidar_points[i].x;
-            colored_point.y = lidar_points[i].y;
-            colored_point.z = lidar_points[i].z;
+            Eigen::Matrix3f R_camera_world = R_world_camera_.transpose();
+            Eigen::Vector3f T_camera_world = - R_camera_world * T_world_camera_;
+            Eigen::Vector3f world_pos;
+            Eigen::Vector3f real_pos(lidar_points[i].x, lidar_points[i].y, lidar_points[i].z);
+            world_pos = R_camera_world * real_pos + T_camera_world;
+            colored_point.x = world_pos.x();
+            colored_point.y = world_pos.y();
+            colored_point.z = world_pos.z();
             colored_point.r = 0;
             colored_point.g = 0;
             colored_point.b = 255;
@@ -143,8 +135,6 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
                     target_[j].robot_points_roi_.push_back(lidar_points[i]);
                     target_[j].get_real_pos();
                     target_[j].get_world_location(R_world_camera_, T_world_camera_);
-                    std::cout << "world_pos_ = " << target_[j].world_pos_ << std::endl;
-                    std::cout << "camera_pos_ = " << target_[j].real_pos_ << std::endl;
                     colored_point.r = 255;
                     colored_point.g = 0;
                     colored_point.b = 0;
@@ -168,6 +158,7 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
     }
     publish_image();
     publish_cloud();
+    publish_marker_array();
 }
 
 void RadarStation::point_cloud_callback(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
@@ -214,16 +205,6 @@ void RadarStation::publish_cloud(){
     output_msg.header.stamp = this->get_clock()->now();
     output_msg.header.frame_id = "map";
     point_cloud_pub_->publish(output_msg);
-}
-
-
-void RadarStation::publish_onnx_debug_image(){
-    std_msgs::msg::Header header;
-    header.stamp = this->get_clock()->now();
-    header.frame_id = "livox_frame";
-    sensor_msgs::msg::Image::SharedPtr msg =
-            cv_bridge::CvImage(header, "bgr8", onnx_debug_frame_).toImageMsg();
-    onnx_debug_pub_->publish(*msg);
 }
 
 std::vector<OnnxBox> RadarStation::get_armor_box(const cv::Mat& src){
@@ -287,7 +268,7 @@ std::vector<OnnxBox> RadarStation::process_onnx_result(const cv::Mat& onnx_resul
 
     float* data = (float*)onnx_result.data;
         for(int j = 0; j < num_attributes; j++){
-            if(data[j * num_anchors + 4] > 0.7){
+            if(data[j * num_anchors + 4] > 0.6){
                 OnnxBox box;
 
                 float x_center = (data[j * num_anchors + 0] / 640) * src.cols;
@@ -313,7 +294,6 @@ std::vector<OnnxBox> RadarStation::process_onnx_result(const cv::Mat& onnx_resul
                 box.conf = max_class_conf;
                 box.class_id = class_id_temp;
                 onnx_boxes_temp.push_back(box);
-                publish_onnx_debug_image();
             }else{
                 continue;
             }
@@ -370,6 +350,201 @@ void RadarStation::load_onnx_model(){
 
     armor_net.setPreferableBackend(cv::dnn::DNN_BACKEND_CUDA);
     armor_net.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA);
+}
+
+void RadarStation::init_parameters(){
+    RCLCPP_INFO(this->get_logger(), "Initializing parameters...");
+    this->declare_parameter("save_cloud_and_image", 0);
+    this->declare_parameter("range_of_roi", 0.35f);
+    this->declare_parameter("camera.camera_matrix.data", std::vector<double>(9, 0.0));
+    this->declare_parameter("camera.distortion_coefficients.data", std::vector<double>(5, 0.0));
+    this->declare_parameter("T_radar2camera.T_add_x", -0.02f);
+    this->declare_parameter("T_radar2camera.T_add_y", 0.02f);
+    this->declare_parameter("T_radar2camera.T_add_z", 0.6f);
+    this->declare_parameter("T_radar2camera.Rotation.data", std::vector<double>(9, 0.0));
+    this->declare_parameter("T_radar2camera.Translation.data", std::vector<double>(3, 0.0));
+    this->declare_parameter("T_world2camera.Rotation.data", std::vector<double>(9, 0.0));
+    this->declare_parameter("T_world2camera.Translation.data", std::vector<double>(3, 0.0));
+    update_parameters();
+}
+
+
+void RadarStation::update_parameters(){
+    this->get_parameter("T_radar2camera.T_add_x", T_add_x_);
+    this->get_parameter("T_radar2camera.T_add_y", T_add_y_);
+    this->get_parameter("T_radar2camera.T_add_z", T_add_z_);
+    this->get_parameter("range_of_roi", range_of_roi_);
+
+
+    std::vector<double> R_lidar2camera;
+    std::vector<double> T_lidar2camera;
+    this->get_parameter("T_radar2camera.Rotation.data", R_lidar2camera);
+    this->get_parameter("T_radar2camera.Translation.data", T_lidar2camera);
+    R_lidar_to_camera_ << R_lidar2camera[0], R_lidar2camera[1], R_lidar2camera[2],
+        R_lidar2camera[3], R_lidar2camera[4], R_lidar2camera[5],
+        R_lidar2camera[6], R_lidar2camera[7], R_lidar2camera[8];
+    T_lidar_to_camera_ << T_lidar2camera[0], T_lidar2camera[1], T_lidar2camera[2];
+    T_lidar_to_camera_.x() += T_add_x_;
+    T_lidar_to_camera_.y() += T_add_y_;
+    T_lidar_to_camera_.z() += T_add_z_;
+
+    std::vector<double> camera_matrix;
+    std::vector<double> distortion_coefficients;
+    this->get_parameter("camera.camera_matrix.data", camera_matrix);
+    this->get_parameter("camera.distortion_coefficients.data", distortion_coefficients);
+    cameraMatrix = (cv::Mat_<double>(3, 3) << camera_matrix[0], camera_matrix[1], camera_matrix[2],
+        camera_matrix[3], camera_matrix[4], camera_matrix[5],
+        camera_matrix[6], camera_matrix[7], camera_matrix[8]);
+    distCoeffs = (cv::Mat_<double>(5, 1) << distortion_coefficients[0], distortion_coefficients[1], distortion_coefficients[2],
+        distortion_coefficients[3], distortion_coefficients[4]);
+
+    std::vector<double> R_world2camera;
+    std::vector<double> T_world2camera;
+    this->get_parameter("T_world2camera.Rotation.data", R_world2camera);
+    this->get_parameter("T_world2camera.Translation.data", T_world2camera);
+    R_world_camera_ << R_world2camera[0], R_world2camera[1], R_world2camera[2],
+        R_world2camera[3], R_world2camera[4], R_world2camera[5],
+        R_world2camera[6], R_world2camera[7], R_world2camera[8];
+    T_world_camera_ << T_world2camera[0], T_world2camera[1], T_world2camera[2];
+}   
+
+void RadarStation::publish_marker_array(){
+    visualization_msgs::msg::MarkerArray marker_array;
+
+    for(size_t i = 0; i < target_.size(); i++){
+        visualization_msgs::msg::Marker marker_box;
+        marker_box.header.frame_id = "map";
+        marker_box.header.stamp = this->get_clock()->now();
+        marker_box.ns = "target_box" + std::to_string(i);
+        marker_box.id = i; 
+        marker_box.type = visualization_msgs::msg::Marker::CUBE;
+        marker_box.action = visualization_msgs::msg::Marker::ADD;
+
+        marker_box.pose.position.x = target_[i].world_pos_.x;
+        marker_box.pose.position.y = target_[i].world_pos_.y;
+        marker_box.pose.position.z = target_[i].world_pos_.z;
+        marker_box.pose.orientation.w = 1.0;
+
+        marker_box.scale.x = target_[i].width_;
+        marker_box.scale.z = target_[i].height_;
+        marker_box.scale.y = target_[i].depth_;
+
+        marker_box.color.r = 0.1f * i;
+        marker_box.color.g = 0.5f;
+        marker_box.color.b = 1.0f - 0.2f * i;
+        marker_box.color.a = 0.5f;
+        marker_box.lifetime = rclcpp::Duration::from_seconds(1); // 永久显示
+        marker_array.markers.push_back(marker_box);
+
+        visualization_msgs::msg::Marker marker_center;
+        marker_center.header.frame_id = "map";
+        marker_center.header.stamp = this->get_clock()->now();
+        marker_center.ns = "target_center" + std::to_string(i);
+        marker_center.id = i;
+        marker_center.type = visualization_msgs::msg::Marker::SPHERE;
+        marker_center.action = visualization_msgs::msg::Marker::ADD;
+
+        marker_center.pose.position.x = target_[i].world_pos_.x;
+        marker_center.pose.position.y = target_[i].world_pos_.y;
+        marker_center.pose.position.z = target_[i].world_pos_.z;
+        marker_center.pose.orientation.w = 1.0;
+
+        marker_center.scale.x = 0.1;
+        marker_center.scale.y = 0.1;
+        marker_center.scale.z = 0.1;
+
+        marker_center.color.r = 1.0f;
+        marker_center.color.g = 1.0f;
+        marker_center.color.b = 0.0f;
+        marker_center.color.a = 1.0f; 
+        marker_center.lifetime = rclcpp::Duration::from_seconds(1); 
+        marker_array.markers.push_back(marker_center);
+        
+        visualization_msgs::msg::Marker marker_text;
+        marker_text.header.frame_id = "map";
+        marker_text.header.stamp = this->get_clock()->now();
+        marker_text.ns = "target_text" + std::to_string(i);
+        marker_text.id = i;
+        marker_text.type = visualization_msgs::msg::Marker::TEXT_VIEW_FACING;
+        marker_text.action = visualization_msgs::msg::Marker::ADD;
+
+        marker_text.pose.position.x = target_[i].world_pos_.x;
+        marker_text.pose.position.y = target_[i].world_pos_.y;
+        marker_text.pose.position.z = target_[i].world_pos_.z + 0.5;
+
+        marker_text.scale.z = 0.1;
+
+        marker_text.color.r = 1.0f;
+        marker_text.color.g = 1.0f;
+        marker_text.color.b = 0.0f;
+        marker_text.color.a = 1.0f;  // 不透明
+        marker_text.text = "ID:" + std::to_string(target_[i].id_) + "\n" + 
+                            " x:" + std::to_string(target_[i].world_pos_.x) + "\n" + 
+                            " y:" + std::to_string(target_[i].world_pos_.y) + "\n" + 
+                            " z:" + std::to_string(target_[i].world_pos_.z);
+        marker_text.lifetime = rclcpp::Duration::from_seconds(1); // 永久显示
+        marker_array.markers.push_back(marker_text);
+    }
+    cv::Mat R_world_camera_cv = (cv::Mat_<double>(3, 3) << R_world_camera_(0, 0), R_world_camera_(0, 1), R_world_camera_(0, 2),
+                                                            R_world_camera_(1, 0), R_world_camera_(1, 1), R_world_camera_(1, 2),
+                                                            R_world_camera_(2, 0), R_world_camera_(2, 1), R_world_camera_(2, 2));
+    cv::Mat T_world_camera_cv = (cv::Mat_<double>(3, 1) << T_world_camera_(0, 0), T_world_camera_(1, 0), T_world_camera_(2, 0));
+
+    // 发布变换
+    publish_transform(R_world_camera_cv, T_world_camera_cv, "map", "camera_link");
+
+    marker_array_pub_->publish(marker_array);
+}
+
+void RadarStation::publish_transform(
+    	const cv::Mat& rvec,     //rotation
+    	const cv::Mat& tvec,     //transmision
+    	const std::string& frame_id, //world frame
+    	const std::string& child_frame_id ) {
+			// publish translation and rotation information
+			cv::Mat rvecs = rvec;  // 旋转向量（3x1矩阵）
+			cv::Mat R;
+			cv::Rodrigues(rvecs, R);  // 转换为3x3旋转矩阵
+
+			// 将OpenCV矩阵转换为Eigen矩阵
+			Eigen::Matrix3d eigen_R;
+			eigen_R << R.at<double>(0,0), R.at<double>(0,1), R.at<double>(0,2),
+            R.at<double>(1,0), R.at<double>(1,1), R.at<double>(1,2),
+	        R.at<double>(2,0), R.at<double>(2,1), R.at<double>(2,2);
+
+			// 从旋转矩阵创建四元数
+			Eigen::Quaterniond q(eigen_R);
+
+    		// 创建静态坐标变换（世界坐标系 -> 相机坐标系）
+    		geometry_msgs::msg::TransformStamped transform_stamped;
+    		transform_stamped.header.stamp = this->get_clock()->now();
+    		transform_stamped.header.frame_id = frame_id; // 世界坐标系名称（需与 RViz 一致）
+    		transform_stamped.child_frame_id = child_frame_id; // 相机坐标系名称
+
+    		// 设置平移
+    		transform_stamped.transform.translation.x = tvec.at<double>(0, 0);
+    		transform_stamped.transform.translation.y = -tvec.at<double>(2, 0);
+    		transform_stamped.transform.translation.z = tvec.at<double>(1, 0);
+
+    		// 设置旋转（四元数）
+    		transform_stamped.transform.rotation.x = q.x();
+    		transform_stamped.transform.rotation.y = q.y();
+    		transform_stamped.transform.rotation.z = q.z();
+    		transform_stamped.transform.rotation.w = q.w();
+
+    				
+    		broadcaster_tf_->sendTransform(transform_stamped);
+	}
+
+void RadarStation::publish_robot_position_array(){
+    for(size_t i = 0; i < target_.size(); i++){
+        radar_station_interface::msg::RobotPosition robot_info;
+        robot_info.x = target_[i].world_pos_.x;
+        robot_info.y = target_[i].world_pos_.y;
+        robot_info.z = target_[i].world_pos_.z;
+        robot_info.id = target_[i].id_;
+    }
+    
 }
 
 int main(int argc, char **argv){

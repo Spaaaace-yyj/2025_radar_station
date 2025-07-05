@@ -21,6 +21,15 @@ find_package(image_transport REQUIRED)
 find_package(PCL REQUIRED)
 find_package(pcl_conversions REQUIRED)
 find_package(OpenVINO REQUIRED)
+find_package(visualization_msgs REQUIRED)
+
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
+
+find_package(radar_station_interface REQUIRED)
+
 
 set(OpenVINO_DIR $ENV{INTEL_OPENVINO_DIR})
 
@@ -49,11 +58,24 @@ endif()
 
 add_executable(radar_station src/radar_station.cpp src/onnx_box.cpp src/robot.cpp)
 target_link_libraries(radar_station ${OpenCV_LIBS})
-ament_target_dependencies(radar_station rclcpp sensor_msgs cv_bridge image_transport PCL pcl_conversions OpenVINO)
+
+ament_target_dependencies(radar_station rclcpp sensor_msgs cv_bridge 
+                              image_transport PCL pcl_conversions OpenVINO 
+                              visualization_msgs tf2 tf2_ros geometry_msgs tf2_geometry_msgs
+                              radar_station_interface)
 
 install(TARGETS
-  TARGETS radar_station
-	DESTINATION lib/${PROJECT_NAME}
-	)
+  radar_station
+  DESTINATION lib/${PROJECT_NAME}
+  )
+
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
+  )
+  install(DIRECTORY
+    config
+    DESTINATION share/${PROJECT_NAME}
+    )
 
 ament_package()

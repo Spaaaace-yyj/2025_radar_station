@@ -1,0 +1,2 @@
+#msg/RobotPositionArray
+RobotPosition[] positions
