@@ -74,6 +74,11 @@
         "core": "cpp",
         "geometry": "cpp",
         "*.inc": "cpp",
-        "version": "cpp"
+        "version": "cpp",
+        "valarray": "cpp",
+        "specialfunctions": "cpp",
+        "*.txx": "cpp",
+        "dense": "cpp",
+        "span": "cpp"
     }
 }

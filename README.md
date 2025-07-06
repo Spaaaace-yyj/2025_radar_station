@@ -43,9 +43,37 @@ ros2 launch mindvision_camera mv_launch.py
 ros2 run camera_calibration cameracalibrator --size 8x11 --square 0.02000 image:=/image_raw
 ```
 
+### 场地坐标标定
+
+开启radar_world_calib和相机ros包
+
+```bash
+source install/setup.bash 
+ros2 run radar_world_calib radar_world_calib 
+```
+
+左键标定，右键清除所有点，鼠标中键计算旋转和平移矩阵（标定点的数量需要等于在代码里面定义的现实中的点的数量，顺序也要对应）。将输出的旋转矩阵复制到radar_station的config中的参数里（如果标定后动了雷达的位置，就要重新标定）
+
+### 启动雷达站
+
+```bash
+source install/setup.bash 
+bash radar_station.sh
+```
+
 
 
 ## 开发日志
+
+雷达站裁判系统判定流程
+
+<img src="/home/spaaaaace/Code/mid70/2025_radar_station/doc/pipline_1.png" alt="pipline_1"  />
+
+#### **赛场俯视图**
+
+<img src="/home/spaaaaace/Code/mid70/2025_radar_station/doc/map.png" alt="map" style="zoom:33%;" />
+
+
 
 ## 6.29
 

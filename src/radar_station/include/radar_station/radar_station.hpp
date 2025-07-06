@@ -107,7 +107,7 @@ private:
     float armor_confidence_threshold_ = 0.5f;
 
     //lidar_sum_frame_num
-    int lidar_frame_add_num_ = 3;
+    int lidar_frame_add_num_ = 1;
 
     //stastic_point_fix
     float T_add_x_ = 0.0f;

@@ -21,6 +21,7 @@ find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
+find_package(radar_station_interface REQUIRED)
 
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -38,10 +39,11 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-add_executable(robot_tracker src/robot_tracker.cpp)
+add_executable(robot_tracker src/robot_tracker.cpp src/kalman_fliter.cpp)
 ament_target_dependencies(robot_tracker rclcpp sensor_msgs cv_bridge 
                               image_transport PCL pcl_conversions OpenVINO 
-                              visualization_msgs tf2 tf2_ros geometry_msgs tf2_geometry_msgs)
+                              visualization_msgs tf2 tf2_ros geometry_msgs tf2_geometry_msgs
+                              radar_station_interface)
 
 install(TARGETS robot_tracker
   DESTINATION lib/${PROJECT_NAME})

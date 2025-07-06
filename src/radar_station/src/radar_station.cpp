@@ -65,19 +65,10 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
             cv::waitKey(500);
         }
 
-
         start_image_time_ = cv::getTickCount();
         std::vector<OnnxBox> onnx_boxes = get_armor_box(frame_);
         
         end_image_time_ = cv::getTickCount();	
-
-        Eigen::Matrix3f R_lidar_to_camera;
-
-        // R_lidar_to_camera <<    -0.0318712393232544, -0.999474459707108, 0.00591848774478551,
-        //                         0.0111232139656527, -0.00627581384510766, -0.999918440809877,
-        //                         0.999430086706956, -0.0318028073252486, 0.0113173862335329;
-        
-        // Eigen::Vector3f T_lidar_to_camera(0.0428245893583569 + T_add_x_, 0.0104154355328730 + T_add_y_, -0.638969767020652 + T_add_z_);
 
         std::vector<cv::Point3f> lidar_points;
         std::vector<cv::Point2f> lidar_points_projection;
@@ -94,7 +85,6 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
         }
 
         cv::projectPoints(lidar_points, cv::Mat::zeros(3, 1, CV_64F), cv::Mat::zeros(3, 1, CV_64F), cameraMatrix, distCoeffs, lidar_points_projection);
-        
         
         //遍历屏幕投影点云，id与实际3D点云对应
         std::vector<float> min_dis_in_screen(onnx_boxes.size(), 10000);
@@ -159,6 +149,7 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
     publish_image();
     publish_cloud();
     publish_marker_array();
+    publish_robot_position_array();
 }
 
 void RadarStation::point_cloud_callback(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
@@ -425,15 +416,15 @@ void RadarStation::publish_marker_array(){
         marker_box.pose.position.z = target_[i].world_pos_.z;
         marker_box.pose.orientation.w = 1.0;
 
-        marker_box.scale.x = target_[i].width_;
-        marker_box.scale.z = target_[i].height_;
+        marker_box.scale.z = target_[i].width_;
+        marker_box.scale.x = target_[i].height_;
         marker_box.scale.y = target_[i].depth_;
 
         marker_box.color.r = 0.1f * i;
         marker_box.color.g = 0.5f;
         marker_box.color.b = 1.0f - 0.2f * i;
         marker_box.color.a = 0.5f;
-        marker_box.lifetime = rclcpp::Duration::from_seconds(1); // 永久显示
+        marker_box.lifetime = rclcpp::Duration::from_seconds(1); 
         marker_array.markers.push_back(marker_box);
 
         visualization_msgs::msg::Marker marker_center;
@@ -456,8 +447,8 @@ void RadarStation::publish_marker_array(){
         marker_center.color.r = 1.0f;
         marker_center.color.g = 1.0f;
         marker_center.color.b = 0.0f;
-        marker_center.color.a = 1.0f; 
-        marker_center.lifetime = rclcpp::Duration::from_seconds(1); 
+        marker_center.color.a = 4.0f; 
+        marker_center.lifetime = rclcpp::Duration::from_seconds(3); 
         marker_array.markers.push_back(marker_center);
         
         visualization_msgs::msg::Marker marker_text;
@@ -477,12 +468,12 @@ void RadarStation::publish_marker_array(){
         marker_text.color.r = 1.0f;
         marker_text.color.g = 1.0f;
         marker_text.color.b = 0.0f;
-        marker_text.color.a = 1.0f;  // 不透明
+        marker_text.color.a = 1.0f; 
         marker_text.text = "ID:" + std::to_string(target_[i].id_) + "\n" + 
                             " x:" + std::to_string(target_[i].world_pos_.x) + "\n" + 
                             " y:" + std::to_string(target_[i].world_pos_.y) + "\n" + 
                             " z:" + std::to_string(target_[i].world_pos_.z);
-        marker_text.lifetime = rclcpp::Duration::from_seconds(1); // 永久显示
+        marker_text.lifetime = rclcpp::Duration::from_seconds(1); 
         marker_array.markers.push_back(marker_text);
     }
     cv::Mat R_world_camera_cv = (cv::Mat_<double>(3, 3) << R_world_camera_(0, 0), R_world_camera_(0, 1), R_world_camera_(0, 2),
@@ -537,14 +528,19 @@ void RadarStation::publish_transform(
 	}
 
 void RadarStation::publish_robot_position_array(){
+    radar_station_interface::msg::RobotPositionArray robot_position_array;
     for(size_t i = 0; i < target_.size(); i++){
         radar_station_interface::msg::RobotPosition robot_info;
         robot_info.x = target_[i].world_pos_.x;
         robot_info.y = target_[i].world_pos_.y;
         robot_info.z = target_[i].world_pos_.z;
         robot_info.id = target_[i].id_;
+        robot_info.width = target_[i].width_;
+        robot_info.height = target_[i].height_;
+        robot_info.depth = target_[i].depth_;
+        robot_position_array.positions.push_back(robot_info);
     }
-    
+    robot_position_array_pub_->publish(robot_position_array);
 }
 
 int main(int argc, char **argv){
