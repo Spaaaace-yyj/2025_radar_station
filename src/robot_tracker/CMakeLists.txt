@@ -1,3 +1,4 @@
+add_compile_options(-g)
 cmake_minimum_required(VERSION 3.8)
 project(robot_tracker)
 
@@ -39,7 +40,7 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-add_executable(robot_tracker src/robot_tracker.cpp src/kalman_fliter.cpp)
+add_executable(robot_tracker src/robot_tracker.cpp src/kalman_fliter.cpp src/robot_state.cpp)
 ament_target_dependencies(robot_tracker rclcpp sensor_msgs cv_bridge 
                               image_transport PCL pcl_conversions OpenVINO 
                               visualization_msgs tf2 tf2_ros geometry_msgs tf2_geometry_msgs

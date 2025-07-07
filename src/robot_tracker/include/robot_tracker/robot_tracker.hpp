@@ -31,6 +31,7 @@
 #include "radar_station_interface/msg/robot_position.hpp"
 #include "radar_station_interface/msg/robot_position_array.hpp"
 #include "kalman_fliter.hpp"
+#include "robot_state.hpp"
 
 class RobotTracker : public rclcpp::Node{
 public:
@@ -43,25 +44,19 @@ public:
 
     void init_params();
 
+    void init_robot_list();
+
     void update_params();
 
 private:
-    double alpha_q_ = 1.0;
-    double alpha_r_ = 1.0;
-    double dt_ = 0.1;
+    double dt_ = 0.2;
 
-    Eigen::Vector4d pridict_position_;
-
-    //temp test
-    cv::Point3f robot_position_;
-    cv::Point3f robot_velocity_;
-
-    double width_;
-    double height_ ;
-    double depth_;
+    std::vector<Robot> robot_list_;
 
 private:
     rclcpp::Subscription<radar_station_interface::msg::RobotPositionArray>::SharedPtr robot_position_array_sub_;
+
+    rclcpp::TimerBase::SharedPtr timer_;
 
     rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr marker_array_pub_;
 

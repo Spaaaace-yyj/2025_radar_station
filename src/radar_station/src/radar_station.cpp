@@ -403,30 +403,6 @@ void RadarStation::publish_marker_array(){
     visualization_msgs::msg::MarkerArray marker_array;
 
     for(size_t i = 0; i < target_.size(); i++){
-        visualization_msgs::msg::Marker marker_box;
-        marker_box.header.frame_id = "map";
-        marker_box.header.stamp = this->get_clock()->now();
-        marker_box.ns = "target_box" + std::to_string(i);
-        marker_box.id = i; 
-        marker_box.type = visualization_msgs::msg::Marker::CUBE;
-        marker_box.action = visualization_msgs::msg::Marker::ADD;
-
-        marker_box.pose.position.x = target_[i].world_pos_.x;
-        marker_box.pose.position.y = target_[i].world_pos_.y;
-        marker_box.pose.position.z = target_[i].world_pos_.z;
-        marker_box.pose.orientation.w = 1.0;
-
-        marker_box.scale.z = target_[i].width_;
-        marker_box.scale.x = target_[i].height_;
-        marker_box.scale.y = target_[i].depth_;
-
-        marker_box.color.r = 0.1f * i;
-        marker_box.color.g = 0.5f;
-        marker_box.color.b = 1.0f - 0.2f * i;
-        marker_box.color.a = 0.5f;
-        marker_box.lifetime = rclcpp::Duration::from_seconds(1); 
-        marker_array.markers.push_back(marker_box);
-
         visualization_msgs::msg::Marker marker_center;
         marker_center.header.frame_id = "map";
         marker_center.header.stamp = this->get_clock()->now();
@@ -440,41 +416,16 @@ void RadarStation::publish_marker_array(){
         marker_center.pose.position.z = target_[i].world_pos_.z;
         marker_center.pose.orientation.w = 1.0;
 
-        marker_center.scale.x = 0.1;
-        marker_center.scale.y = 0.1;
-        marker_center.scale.z = 0.1;
+        marker_center.scale.x = 0.05;
+        marker_center.scale.y = 0.05;
+        marker_center.scale.z = 0.05;
 
         marker_center.color.r = 1.0f;
         marker_center.color.g = 1.0f;
         marker_center.color.b = 0.0f;
-        marker_center.color.a = 4.0f; 
+        marker_center.color.a = 1.0f; 
         marker_center.lifetime = rclcpp::Duration::from_seconds(3); 
         marker_array.markers.push_back(marker_center);
-        
-        visualization_msgs::msg::Marker marker_text;
-        marker_text.header.frame_id = "map";
-        marker_text.header.stamp = this->get_clock()->now();
-        marker_text.ns = "target_text" + std::to_string(i);
-        marker_text.id = i;
-        marker_text.type = visualization_msgs::msg::Marker::TEXT_VIEW_FACING;
-        marker_text.action = visualization_msgs::msg::Marker::ADD;
-
-        marker_text.pose.position.x = target_[i].world_pos_.x;
-        marker_text.pose.position.y = target_[i].world_pos_.y;
-        marker_text.pose.position.z = target_[i].world_pos_.z + 0.5;
-
-        marker_text.scale.z = 0.1;
-
-        marker_text.color.r = 1.0f;
-        marker_text.color.g = 1.0f;
-        marker_text.color.b = 0.0f;
-        marker_text.color.a = 1.0f; 
-        marker_text.text = "ID:" + std::to_string(target_[i].id_) + "\n" + 
-                            " x:" + std::to_string(target_[i].world_pos_.x) + "\n" + 
-                            " y:" + std::to_string(target_[i].world_pos_.y) + "\n" + 
-                            " z:" + std::to_string(target_[i].world_pos_.z);
-        marker_text.lifetime = rclcpp::Duration::from_seconds(1); 
-        marker_array.markers.push_back(marker_text);
     }
     cv::Mat R_world_camera_cv = (cv::Mat_<double>(3, 3) << R_world_camera_(0, 0), R_world_camera_(0, 1), R_world_camera_(0, 2),
                                                             R_world_camera_(1, 0), R_world_camera_(1, 1), R_world_camera_(1, 2),

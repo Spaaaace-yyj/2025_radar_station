@@ -10,32 +10,28 @@
 
 class EKF {
 public:
-    EKF(double alpha_q = 1e-5, double alpha_r = 1e-2, int state_size = 6, int meas_size = 3);
+    using Vector6d = Eigen::Matrix<double, 6, 1>;
+    using Matrix6d = Eigen::Matrix<double, 6, 6>;
+    using Matrix3x6d = Eigen::Matrix<double, 3, 6>;
 
-    void update(const Eigen::VectorXd& measurement, double dt);
-    Eigen::Vector3d getCurrentPosition() const;
-    Eigen::Vector3d predictFuturePosition(double extrapolate_dt, double scale) const;
-    Eigen::VectorXd getCurrentState() const;
-    Eigen::VectorXd getFutureState(double extrapolate_dt, double scale) const;
-    void reset();
+    EKF(double dt);
 
-private:
+    void init(const Vector6d& x0, const Matrix6d& P0);
+    void predict();
+    void update(const Eigen::Vector3d& z);
 
-    Eigen::VectorXd f(const Eigen::VectorXd& x, double dt) const;
-    Eigen::MatrixXd computeJacobianF(const Eigen::VectorXd& x, double dt) const;
+    const Vector6d& getState() const { return x_; }
 
 private:
-    int state_size_;
-    int meas_size_;
+    double dt_;           // time step
 
-    double alpha_q_;
-    double alpha_r_;
+    Vector6d x_;          // state vector [x, y, z, vx, vy, vz]
+    Matrix6d P_;          // covariance matrix
 
-    Eigen::VectorXd x_;  // 状态向量
-    Eigen::MatrixXd P_;  // 状态协方差矩阵
-    Eigen::MatrixXd Q_;  // 过程噪声协方差矩阵
-    Eigen::MatrixXd R_;  // 观测噪声协方差矩阵
-    Eigen::MatrixXd H_;  // 观测矩阵
+    Matrix6d Q_;          // process noise
+    Eigen::Matrix3d R_;   // observation noise
+    Matrix3x6d H_;        // observation matrix
 };
+
 
 #endif  // KALMAN_FILTER_HPP_

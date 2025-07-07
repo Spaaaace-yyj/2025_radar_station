@@ -2,6 +2,15 @@
 
 RadarWorldCalib::RadarWorldCalib() : Node("radar_world_calib")
 {
+
+    param_client_ = std::make_shared<rclcpp::SyncParametersClient>(this, "radar_station");
+    while (!param_client_->wait_for_service(2s)) {
+            if (!rclcpp::ok()) {
+                RCLCPP_ERROR(this->get_logger(), "Interrupted while waiting for parameter service.");
+                return;
+            }
+            RCLCPP_INFO(this->get_logger(), "Waiting for radar_station node ...");
+        }
     image_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
         "/image_raw", 10, std::bind(&RadarWorldCalib::image_callback, this, std::placeholders::_1));
 
@@ -26,6 +35,23 @@ void RadarWorldCalib::image_callback(const sensor_msgs::msg::Image::SharedPtr ms
         draw_point(image_mat, image_points_[i], i + 1);
     }
     
+    if(send_param){
+        auto result = param_client_->set_parameters({
+            rclcpp::Parameter("T_world2camera.Rotation.data", rvec_vector_),
+            rclcpp::Parameter("T_world2camera.Translation.data", tvec_vector_)
+        });
+
+        for (const auto & res : result) {
+            if (!res.successful) {
+                RCLCPP_ERROR(this->get_logger(), "set param failed");
+            } else {
+                RCLCPP_INFO(this->get_logger(), "set param success");
+            }
+        }
+
+        send_param = false;
+    }
+
     cv::imshow("src", image_mat);
     cv::waitKey(1);
 }
@@ -59,6 +85,28 @@ void RadarWorldCalib::onMouse(int event, int x, int y, int flags, void* userdata
             cv::Rodrigues(rvec, R);
             std::cout << "R: " << R << std::endl;
             std::cout << "t: " << tvec << std::endl;
+
+            rvec_vector_.clear();
+            tvec_vector_.clear();
+
+            rvec_vector_.push_back(R.at<double>(0, 0));
+            rvec_vector_.push_back(R.at<double>(0, 1));
+            rvec_vector_.push_back(R.at<double>(0, 2));
+
+            rvec_vector_.push_back(R.at<double>(1, 0));
+            rvec_vector_.push_back(R.at<double>(1, 1));
+            rvec_vector_.push_back(R.at<double>(1, 2));
+
+            rvec_vector_.push_back(R.at<double>(2, 0));
+            rvec_vector_.push_back(R.at<double>(2, 1));
+            rvec_vector_.push_back(R.at<double>(2, 2));
+
+            tvec_vector_.push_back(tvec.at<double>(0));
+            tvec_vector_.push_back(tvec.at<double>(1));
+            tvec_vector_.push_back(tvec.at<double>(2));
+
+            send_param = true;
+
         }else{
             std::cout << "Please add more points." << std::endl;
         }

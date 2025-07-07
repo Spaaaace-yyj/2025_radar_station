@@ -18,9 +18,13 @@
 #include <iostream>
 #include <vector>
 
+using namespace std::chrono_literals;
+
 static bool left_button_is_down_;
 
-static int point_count = 1;
+static bool send_param = false;
+
+static int point_count = 0;
 
 static cv::Point2d mouse_point_;
 
@@ -42,9 +46,16 @@ cv::Mat distCoeffs = (cv::Mat_<double>(5, 1) <<
 
 cv::Mat rvec, tvec;
 
+
+
+static std::vector<double> rvec_vector_;
+static std::vector<double> tvec_vector_;
+
 class RadarWorldCalib : public rclcpp::Node
 {
 public:
+
+
     RadarWorldCalib();
     ~RadarWorldCalib() = default;
 
@@ -59,9 +70,11 @@ public:
 private:
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr image_sub_;
 
+    std::shared_ptr<rclcpp::SyncParametersClient> param_client_;
 
 
     bool flip_image = true;
+
 
 };
 

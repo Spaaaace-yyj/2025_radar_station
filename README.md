@@ -409,9 +409,15 @@ export LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/env/opencv/
 
 新建自定义接口和robot_tracker包，后面开始进行机器人追踪功能开发
 
+## 7.6
 
+添加了EKF模块，没测试
 
+## 7.7
 
+完成EKF模块，实现对机器人的状态观测
+
+通过状态机维护机器人的追踪，当丢失目标后会根据丢失时候的状态向后预测机器人的位置，后续可以继续完善每个机器人的丢失，预测时候的逻辑
 
 ###### git
 
