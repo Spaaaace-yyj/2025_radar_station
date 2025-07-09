@@ -9,11 +9,11 @@ EKF::EKF(double dt) : dt_(dt) {
 
     // Set process noise Q
     Q_.setIdentity();
-    Q_ *= 3e-5; // You can tune this
+    Q_ *= 3e-3; // You can tune this
 
     // Set observation noise R
     R_.setIdentity();
-    R_ *= 1e-1; // You can tune this
+    R_ *= 1e-2; // You can tune this
 }
 
 void EKF::init(const Vector6d& x0, const Matrix6d& P0) {

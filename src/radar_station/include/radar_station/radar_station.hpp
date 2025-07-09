@@ -69,7 +69,7 @@ private:
 
     void load_onnx_model();
 
-    std::vector<OnnxBox> process_onnx_result(const cv::Mat& onnx_result, cv::Mat src);
+    std::vector<OnnxBox> process_onnx_result(const cv::Mat& onnx_result, cv::Mat src, float conf_th, int mode);
 
     float get_iou(OnnxBox box1, OnnxBox box2);
 
@@ -97,8 +97,8 @@ private:
     float range_of_roi_ = 0.35f;
 
     //onnx
-    std::string car_model_path_ = "/home/spaaaaace/Code/mid70/2025_radar_station/models/car.onnx";
-    std::string armor_model_path_ = "/home/spaaaaace/Code/mid70/2025_radar_station/models/armor.onnx";
+    std::string car_model_path_ = "/home/spaaaaace/Code/mid70/2025_radar_station/models/car_v8.onnx";
+    std::string armor_model_path_ = "/home/spaaaaace/Code/mid70/2025_radar_station/models/armor_v8.onnx";
 
     cv::dnn::Net car_net;
     cv::dnn::Net armor_net;

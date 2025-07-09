@@ -419,6 +419,24 @@ export LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/env/opencv/
 
 通过状态机维护机器人的追踪，当丢失目标后会根据丢失时候的状态向后预测机器人的位置，后续可以继续完善每个机器人的丢失，预测时候的逻辑
 
+添加预测位置的可视化和机器人追踪状态的可视化
+
+## 7.9
+
+用官方数据集训练了一个yolov8的模型，修改了代码解析部分的逻辑，使适配yolov8的模型文件（现在不适配yolov5的了）
+
+第一层神经网络的验证集混淆矩阵
+
+<img src="./doc/confusion_matrix_normalizedcar.png" alt="confusion_matrix_normalizedcar" style="zoom:25%;" />
+
+第二层（装甲板）的神经网络验证集混淆矩阵,感觉效果不错
+
+<img src="./doc/confusion_matrix_normalized.png" alt="confusion_matrix_normalized" style="zoom:25%;" />
+
+发现这个模型只对赛场背景下误识别率才比较低，在实验室的环境背景的置信度可以到0.9以上，而且第二层的误识别也很高，泛化能力还要提高，后面可以采集一点自己的数据集拿来标注
+
+<img src="./doc/11.png" alt="11" style="zoom: 50%;" />
+
 ###### git
 
 ```bash

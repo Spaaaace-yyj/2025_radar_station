@@ -73,8 +73,8 @@ void RobotTracker::publish_marker_array(){
         marker_box.pose.position.z = robot_list_[i].predict_position_.z;
         marker_box.pose.orientation.w = 1.0;
 
-        marker_box.scale.z = robot_list_[i].height_;
-        marker_box.scale.x = robot_list_[i].width_;
+        marker_box.scale.x = robot_list_[i].height_;
+        marker_box.scale.z = robot_list_[i].width_;
         marker_box.scale.y = robot_list_[i].depth_;
 
         if(robot_list_[i].state_ == Robot::TRACKING){

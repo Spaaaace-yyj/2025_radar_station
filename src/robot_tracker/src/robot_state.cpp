@@ -59,6 +59,7 @@ void Robot::lost(){
             predict_position();
         }else{
             state_ = State::LOST;
+            init_ekf();
         }
     }
 }

@@ -122,6 +122,9 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
             for(size_t j = 0; j < min_dis_point_id.size(); j++){
                 float dis_3D = std::sqrt(std::pow(lidar_points[i].x - lidar_points[min_dis_point_id[j]].x, 2) + std::pow(lidar_points[i].y - lidar_points[min_dis_point_id[j]].y, 2) + std::pow(lidar_points[i].z - lidar_points[min_dis_point_id[j]].z, 2));
                 if(dis_3D < range_of_roi_){
+                    if(target_.empty()){
+                        break;
+                    }
                     target_[j].robot_points_roi_.push_back(lidar_points[i]);
                     target_[j].get_real_pos();
                     target_[j].get_world_location(R_world_camera_, T_world_camera_);
@@ -212,10 +215,14 @@ std::vector<OnnxBox> RadarStation::get_armor_box(const cv::Mat& src){
         std::vector<std::string> outNames = { "output0" };
         car_net.forward(outs_car, outNames);
         
-        onnx_boxes_car = process_onnx_result(outs_car[0], src);
+        onnx_boxes_car = process_onnx_result(outs_car[0], src, 0.95, 1);
 
         for(size_t i = 0; i < onnx_boxes_car.size(); i++){
+            
             Robot robot_temp;
+            if(onnx_boxes_car[i].P1.x < 0 || onnx_boxes_car[i].P1.y < 0 || onnx_boxes_car[i].P2.x > src.cols || onnx_boxes_car[i].P2.y > src.rows){
+                continue;
+            }
             cv::Rect roi(onnx_boxes_car[i].P1, onnx_boxes_car[i].P2);
             cv::Mat roi_img = src(roi);
             cv::Mat roi_img_resize;
@@ -227,7 +234,17 @@ std::vector<OnnxBox> RadarStation::get_armor_box(const cv::Mat& src){
             std::vector<std::string> outNames = { "output0" };
             armor_net.forward(outs_armor, outNames);
 
-            onnx_boxes_armor = process_onnx_result(outs_armor[0], roi_img);
+            onnx_boxes_armor = process_onnx_result(outs_armor[0], roi_img, 0.73, 2);
+            cv::Mat roi_show;
+            for(size_t j = 0; j < onnx_boxes_armor.size(); j++){
+                std::cout << "armor_onnx_id = " << onnx_boxes_armor[j].class_id << std::endl;
+                onnx_boxes_armor[j].draw(roi_img);
+                
+            }
+            cv::resize(roi_img, roi_show, cv::Size(640, 640));
+            cv::imshow("ROI", roi_show);
+            cv::waitKey(1);
+
             //修复如果没有装甲板识别到的情况
             if(!onnx_boxes_armor.empty()){
                 onnx_boxes_car[i].class_id = onnx_boxes_armor[0].class_id;
@@ -240,6 +257,7 @@ std::vector<OnnxBox> RadarStation::get_armor_box(const cv::Mat& src){
             }
             
         }
+
         target_ = target_temp;
         for(size_t i = 0; i < onnx_boxes_car.size(); i++){
             onnx_boxes_car[i].draw(frame_);
@@ -252,20 +270,33 @@ std::vector<OnnxBox> RadarStation::get_armor_box(const cv::Mat& src){
     }
 }
 
-std::vector<OnnxBox> RadarStation::process_onnx_result(const cv::Mat& onnx_result, cv::Mat src){
+std::vector<OnnxBox> RadarStation::process_onnx_result(const cv::Mat& onnx_result, cv::Mat src, float conf_th, int mode){
     int num_attributes = onnx_result.size[1];
     int num_anchors = onnx_result.size[2];
+    int class_num = num_attributes - 4;
+    //std::cout << "num_attributes = " << num_attributes << std::endl;
+    //std::cout << "num_anchors = " << num_anchors << std::endl;
     std::vector<OnnxBox> onnx_boxes_temp;
 
     float* data = (float*)onnx_result.data;
-        for(int j = 0; j < num_attributes; j++){
-            if(data[j * num_anchors + 4] > 0.6){
-                OnnxBox box;
+        for(int j = 0; j < num_anchors; j++){
+            int max_conf_id = 0;
+            for(int i = 1; i < class_num; i++){
+                if(data[j + num_anchors * (4 + i)] > data[j + num_anchors * (4 + max_conf_id)]){
+                    max_conf_id = i;
+                }
+            }
+            if(mode == 1 && max_conf_id != 2){
+                continue;   
+            }
 
-                float x_center = (data[j * num_anchors + 0] / 640) * src.cols;
-                float y_center = (data[j * num_anchors + 1] / 640) * src.rows;
-                float w = (data[j * num_anchors + 2] / 640) * src.cols;
-                float h = (data[j * num_anchors + 3] / 640) * src.rows;
+            if(data[j + num_anchors * (4 + max_conf_id)] > conf_th){
+                OnnxBox box;
+                float x_center = (data[j + num_anchors * 0] / 640) * src.cols;
+                float y_center = (data[j + num_anchors * 1] / 640) * src.rows;
+                float w = (data[j + num_anchors * 2] / 640) * src.cols;
+                float h = (data[j + num_anchors * 3] / 640) * src.rows;
+                float conf = data[j + num_anchors * (4 + max_conf_id)];
 
                 box.P1 = cv::Point2f(x_center - w / 2, y_center - h / 2);
                 box.P2 = cv::Point2f(x_center + w / 2, y_center + h / 2);
@@ -273,17 +304,9 @@ std::vector<OnnxBox> RadarStation::process_onnx_result(const cv::Mat& onnx_resul
                 box.height = h;
                 box.center = cv::Point2f(x_center, y_center);
 
-                float max_class_conf = 0;
-                int class_id_temp = 1;
-                for(int i = 1; i < 5; i++){
-                    if(data[j * num_anchors + 4 + i] * data[j * num_anchors + 4] > max_class_conf){
-                        max_class_conf = data[j * num_anchors + 4 + i] * data[j * num_anchors + 4];
-                        box.class_id = i;
-                        class_id_temp = i;
-                    }
-                }
-                box.conf = max_class_conf;
-                box.class_id = class_id_temp;
+                box.conf = conf;
+                box.class_id = max_conf_id;
+                //cout << "conf = " << conf << endl;
                 onnx_boxes_temp.push_back(box);
             }else{
                 continue;
