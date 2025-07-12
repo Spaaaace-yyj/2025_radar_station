@@ -1,9 +1,0 @@
-setup.py
-radar_station_interface/__init__.py
-radar_station_interface.egg-info/PKG-INFO
-radar_station_interface.egg-info/SOURCES.txt
-radar_station_interface.egg-info/dependency_links.txt
-radar_station_interface.egg-info/top_level.txt
-radar_station_interface/msg/__init__.py
-radar_station_interface/msg/_robot_position.py
-radar_station_interface/msg/_robot_position_array.py

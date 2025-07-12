@@ -1,2 +1,0 @@
-#msg/RobotPositionArray
-RobotPosition[] positions

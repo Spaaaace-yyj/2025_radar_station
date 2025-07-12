@@ -1,9 +1,0 @@
-/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup/CMakeFiles/uninstall.dir
-/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup/CMakeFiles/radar_station_bringup_uninstall.dir
-/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup/CMakeFiles/test.dir
-/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup/CMakeFiles/edit_cache.dir
-/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup/CMakeFiles/rebuild_cache.dir
-/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup/CMakeFiles/list_install_components.dir
-/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup/CMakeFiles/install.dir
-/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup/CMakeFiles/install/local.dir
-/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup/CMakeFiles/install/strip.dir

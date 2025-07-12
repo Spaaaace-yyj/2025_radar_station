@@ -1,7 +1,0 @@
-[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_world_calib/src/radar_world_calib.cpp:[m[K In static member function ‘[01m[Kstatic void RadarWorldCalib::onMouse(int, int, int, int, void*)[m[K’:
-[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_world_calib/src/radar_world_calib.cpp:58:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kflags[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
-   58 | void RadarWorldCalib::onMouse(int event, int x, int y, [01;35m[Kint flags[m[K, void* userdata)
-      |                                                        [01;35m[K~~~~^~~~~[m[K
-[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_world_calib/src/radar_world_calib.cpp:58:73:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kuserdata[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
-   58 | void RadarWorldCalib::onMouse(int event, int x, int y, int flags, [01;35m[Kvoid* userdata[m[K)
-      |                                                                   [01;35m[K~~~~~~^~~~~~~~[m[K

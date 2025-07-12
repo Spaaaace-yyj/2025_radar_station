@@ -1,3 +1,0 @@
-/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk_install/lib/liblivox_sdk_static.a
-/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk_install/include/livox_def.h
-/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk_install/include/livox_sdk.h

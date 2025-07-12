@@ -1,7 +1,0 @@
-[0.023s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/mindvision_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/mindvision_camera -- -j22 -l22
-[0.042s] [ 25%] [32mBuilding CXX object CMakeFiles/mindvision_camera.dir/src/mv_camera_node.cpp.o[0m
-[0.042s] [ 50%] [32mBuilding CXX object CMakeFiles/mindvision_camera_node.dir/rclcpp_components/node_main_mindvision_camera_node.cpp.o[0m
-[2.787s] [ 75%] [32m[1mLinking CXX executable mindvision_camera_node[0m
-[2.892s] [ 75%] Built target mindvision_camera_node
-[3.146s] [100%] [32m[1mLinking CXX shared library libmindvision_camera.so[0m
-[3.237s] [100%] Built target mindvision_camera

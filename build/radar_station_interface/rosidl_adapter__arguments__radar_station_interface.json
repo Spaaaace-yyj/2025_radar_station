@@ -1,7 +1,0 @@
-{
-  "package_name": "radar_station_interface",
-  "non_idl_tuples": [
-    "/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station_interface:msg/RobotPosition.msg",
-    "/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station_interface:msg/RobotPositionArray.msg"
-  ]
-}

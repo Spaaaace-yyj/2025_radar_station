@@ -1,8 +1,0 @@
-source;share/livox_sdk_vendor/hook/cmake_prefix_path.ps1
-source;share/livox_sdk_vendor/hook/cmake_prefix_path.dsv
-source;share/livox_sdk_vendor/hook/cmake_prefix_path.sh
-source;share/livox_sdk_vendor/local_setup.bash
-source;share/livox_sdk_vendor/local_setup.dsv
-source;share/livox_sdk_vendor/local_setup.ps1
-source;share/livox_sdk_vendor/local_setup.sh
-source;share/livox_sdk_vendor/local_setup.zsh

@@ -1,5 +1,0 @@
-[ 25%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/onnx_box.cpp.o[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/radar_station.cpp.o[0m
-[ 75%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/robot.cpp.o[0m
-[100%] [32m[1mLinking CXX executable radar_station[0m
-[100%] Built target radar_station

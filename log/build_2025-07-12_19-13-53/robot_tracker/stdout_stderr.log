@@ -1,5 +1,0 @@
-[ 25%] [32mBuilding CXX object CMakeFiles/robot_tracker.dir/src/kalman_fliter.cpp.o[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/robot_tracker.dir/src/robot_tracker.cpp.o[0m
-[ 75%] [32mBuilding CXX object CMakeFiles/robot_tracker.dir/src/robot_state.cpp.o[0m
-[100%] [32m[1mLinking CXX executable robot_tracker[0m
-[100%] Built target robot_tracker

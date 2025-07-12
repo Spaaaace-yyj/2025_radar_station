@@ -1,8 +1,0 @@
-source;share/dji_action4_camera/hook/cmake_prefix_path.ps1
-source;share/dji_action4_camera/hook/cmake_prefix_path.dsv
-source;share/dji_action4_camera/hook/cmake_prefix_path.sh
-source;share/dji_action4_camera/local_setup.bash
-source;share/dji_action4_camera/local_setup.dsv
-source;share/dji_action4_camera/local_setup.ps1
-source;share/dji_action4_camera/local_setup.sh
-source;share/dji_action4_camera/local_setup.zsh
