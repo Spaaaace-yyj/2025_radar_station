@@ -1,0 +1,13 @@
+# Target labels
+ livox-sdk-v2.3.1
+# Source files and their labels
+/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/CMakeFiles/livox-sdk-v2.3.1
+/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/CMakeFiles/livox-sdk-v2.3.1.rule
+/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/CMakeFiles/livox-sdk-v2.3.1-complete.rule
+/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-build.rule
+/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-configure.rule
+/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-download.rule
+/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-install.rule
+/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-mkdir.rule
+/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-patch.rule
+/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-update.rule

@@ -1,0 +1,12 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/onnx_box.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/radar_station.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/radar_station.dir/src/robot.cpp.o[0m
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:[m[K In member function ‘[01m[Kstd::vector<OnnxBox> RadarStation::process_onnx_result(cv::Mat&, cv::Mat, float, int)[m[K’:
+[01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station/src/radar_station.cpp:280:110:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  280 | std::vector<OnnxBox> RadarStation::process_onnx_result(cv::Mat& onnx_result, cv::Mat src, float conf_th, [01;35m[Kint mode[m[K){
+      |                                                                                                          [01;35m[K~~~~^~~~[m[K
+[100%] [32m[1mLinking CXX executable radar_station[0m
+/usr/bin/ld: warning: libopencv_imgcodecs.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_imgcodecs.so.410
+/usr/bin/ld: warning: libopencv_imgproc.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_imgproc.so.410
+/usr/bin/ld: warning: libopencv_core.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_core.so.410
+[100%] Built target radar_station

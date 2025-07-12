@@ -1,0 +1,119 @@
+[0.009s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver': AMENT_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor:/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_agent:/home/spaaaaace/env/MicroROS-Agent/microros_ws/install/micro_ros_msgs:/usr/local:/usr/local:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces/lib/python3.8/site-packages:${PYTHONPATH} /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_ros2_driver
+[0.046s] -- The C compiler identification is GNU 11.4.0
+[0.089s] -- The CXX compiler identification is GNU 11.4.0
+[0.095s] -- Detecting C compiler ABI info
+[0.137s] -- Detecting C compiler ABI info - done
+[0.144s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.144s] -- Detecting C compile features
+[0.144s] -- Detecting C compile features - done
+[0.146s] -- Detecting CXX compiler ABI info
+[0.194s] -- Detecting CXX compiler ABI info - done
+[0.202s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.202s] -- Detecting CXX compile features
+[0.203s] -- Detecting CXX compile features - done
+[0.204s] -- livox_ros2_driver version: 0.0.1
+[0.206s] -- Found ament_cmake_auto: 1.3.10 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.495s] -- Found Python3: /home/spaaaaace/anaconda3/envs/vision/bin/python3 (found version "3.8.20") found components: Interpreter 
+[0.694s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.698s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.709s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.727s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.750s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.788s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.790s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.858s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.880s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.910s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.916s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.970s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.972s] -- Found Threads: TRUE  
+[1.175s] -- Checking for module 'eigen3'
+[1.185s] --   Found eigen3, version 3.4.0
+[1.209s] -- Found Eigen: /usr/local/include/eigen3 (Required is at least version "3.1") 
+[1.209s] -- Eigen found (include: /usr/local/include/eigen3, version: 3.4.0)
+[1.237s] -- Checking for module 'flann'
+[1.249s] --   Found flann, version 1.9.1
+[1.294s] -- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+[1.294s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[2.147s] -- Checking for module 'libusb-1.0'
+[2.160s] --   Found libusb-1.0, version 1.0.25
+[2.190s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[2.191s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[2.239s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[2.398s] -- Eigen found (include: /usr/local/include/eigen3, version: 3.4.0)
+[2.407s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[2.416s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[2.591s] -- Found Qhull version 8.0.2
+[2.729s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[2.877s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[2.878s] -- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+[2.878s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[2.879s] -- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+[2.880s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+[2.881s] -- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+[2.881s] -- Found PCL_2D: /usr/include/pcl-1.12  
+[2.881s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+[2.882s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[2.883s] -- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+[2.883s] -- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+[2.884s] -- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+[2.885s] -- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+[2.886s] -- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+[2.886s] -- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+[2.887s] -- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+[2.888s] -- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+[2.889s] -- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+[2.890s] -- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+[2.890s] -- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+[2.891s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+[2.891s] -- Found PCL_MODELER: /usr/include/pcl-1.12  
+[2.892s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+[2.892s] -- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+[2.893s] -- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+[2.924s] [33mCMake Warning (dev) at CMakeLists.txt:31 (find_package):
+[2.924s]   Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+[2.924s]   Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+[2.924s]   command to set the policy and suppress this warning.
+[2.924s] 
+[2.924s]   CMake variable PCL_ROOT is set to:
+[2.924s] 
+[2.924s]     /usr
+[2.924s] 
+[2.925s]   For compatibility, CMake is ignoring the variable.
+[2.925s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.925s] [0m
+[2.932s] -- Found livox_sdk: /home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor/include  
+[2.936s] -- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.0") 
+[2.937s] -- Checking for module 'apr-1'
+[2.950s] --   Found apr-1, version 1.7.0
+[2.978s] [0m/usr/include/apr-1.0[0m
+[2.978s] [0mapr-1[0m
+[2.992s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.008s] -- Added test 'copyright' to check source files copyright and LICENSE
+[3.011s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.011s] -- Configured cppcheck include dirs: /home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/common;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/common/rapidjson;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/comon/rapdidxml;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/common/comm;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/timesync;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/timesync/user_uart;/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_ros2_driver/livox_ros2_driver
+[3.011s] -- Configured cppcheck exclude dirs and/or files: 
+[3.013s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[3.013s] -- Configured cpplint exclude dirs and/or files: 
+[3.013s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.014s] -- Added test 'lint_cmake' to check CMake code style
+[3.015s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[3.017s] -- Added test 'uncrustify' to check C / C++ code style
+[3.017s] -- Configured uncrustify additional arguments: 
+[3.017s] -- Added test 'xmllint' to check XML markup files
+[3.019s] -- Configuring done (3.0s)
+[3.042s] [33mCMake Warning at /opt/ros/humble/share/ament_cmake_auto/cmake/ament_auto_add_library.cmake:66 (add_library):
+[3.042s]   Cannot generate a safe runtime search path for target livox_ros2_driver
+[3.042s]   because files in some directories may conflict with libraries in implicit
+[3.042s]   directories:
+[3.042s] 
+[3.042s]     runtime library [libz.so.1] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+[3.042s]       /home/spaaaaace/anaconda3/envs/vision/lib
+[3.042s] 
+[3.042s]   Some of these libraries may not be found correctly.
+[3.042s] Call Stack (most recent call first):
+[3.042s]   CMakeLists.txt:50 (ament_auto_add_library)
+[3.042s] 
+[3.042s] [0m
+[3.045s] -- Generating done (0.0s)
+[3.048s] -- Build files have been written to: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_ros2_driver

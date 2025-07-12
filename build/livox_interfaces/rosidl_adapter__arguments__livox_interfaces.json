@@ -1,0 +1,7 @@
+{
+  "package_name": "livox_interfaces",
+  "non_idl_tuples": [
+    "/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_interfaces:msg/CustomPoint.msg",
+    "/home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_interfaces:msg/CustomMsg.msg"
+  ]
+}

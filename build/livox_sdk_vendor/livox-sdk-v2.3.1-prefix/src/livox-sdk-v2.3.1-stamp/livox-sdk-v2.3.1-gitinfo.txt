@@ -1,0 +1,15 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=git
+command=/usr/local/bin/cmake;-P;/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/tmp/livox-sdk-v2.3.1-gitclone.cmake
+source_dir=/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1
+work_dir=/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src
+repository=https://github.com/Livox-SDK/Livox-SDK.git
+remote=origin
+init_submodules=TRUE
+recurse_submodules=--recursive
+submodules=
+CMP0097=
+

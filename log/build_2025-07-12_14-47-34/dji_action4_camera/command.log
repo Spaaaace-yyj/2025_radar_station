@@ -1,0 +1,1 @@
+Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/camera_driver/dji_Action4_camera -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera

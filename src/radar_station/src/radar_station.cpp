@@ -9,7 +9,6 @@ inline float sigmoid(float x) {
 
 RadarStation::RadarStation() : Node("radar_station")
 {
-
     init_parameters();
 
     generate_color_map();
@@ -131,7 +130,7 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
                         break;
                     }
                     if (j >= target_.size()) {
-                        continue;  // 或者 break;
+                        continue;
                     }
                     target_[j].robot_points_roi_.push_back(lidar_points[i]);
                     target_[j].get_real_pos();
@@ -153,7 +152,6 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
         }
 
 	    dt = (end_image_time_ - start_image_time_) * 1000 / cv::getTickFrequency();
-        //publish_cloud_debug();  
         cv::putText(frame_, "Latency: " + to_string(dt) + "ms", cv::Point2f(5, 30), cv::FONT_HERSHEY_SIMPLEX, 0.7, cv::Scalar(0, 255, 0), 2, 8);
         
     }
@@ -173,7 +171,6 @@ void RadarStation::point_cloud_callback(const sensor_msgs::msg::PointCloud2::Sha
     }else{
         *point_cloud_ += *cloud;
     }
-    //RCLCPP_INFO(this->get_logger(), "frame_count = %d", lidar_frame_counter_);
     lidar_frame_counter_++;
 }
 

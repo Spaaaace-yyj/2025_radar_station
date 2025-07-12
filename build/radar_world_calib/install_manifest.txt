@@ -1,0 +1,16 @@
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/lib/radar_world_calib/radar_world_calib
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/ament_index/resource_index/package_run_dependencies/radar_world_calib
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/ament_index/resource_index/parent_prefix_path/radar_world_calib
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/environment/ament_prefix_path.sh
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/environment/ament_prefix_path.dsv
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/environment/path.sh
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/environment/path.dsv
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/local_setup.bash
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/local_setup.sh
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/local_setup.zsh
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/local_setup.dsv
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/package.dsv
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/ament_index/resource_index/packages/radar_world_calib
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/cmake/radar_world_calibConfig.cmake
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/cmake/radar_world_calibConfig-version.cmake
+/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_world_calib/share/radar_world_calib/package.xml

@@ -1,0 +1,37 @@
+[0.020s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_sdk_vendor -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor
+[0.079s] -- The C compiler identification is GNU 11.4.0
+[0.135s] -- The CXX compiler identification is GNU 11.4.0
+[0.141s] -- Detecting C compiler ABI info
+[0.186s] -- Detecting C compiler ABI info - done
+[0.192s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.193s] -- Detecting C compile features
+[0.193s] -- Detecting C compile features - done
+[0.197s] -- Detecting CXX compiler ABI info
+[0.241s] -- Detecting CXX compiler ABI info - done
+[0.253s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.253s] -- Detecting CXX compile features
+[0.254s] -- Detecting CXX compile features - done
+[0.257s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.569s] -- Found Python3: /home/spaaaaace/anaconda3/envs/vision/bin/python3 (found version "3.8.20") found components: Interpreter 
+[0.730s] -- Configuring done (0.7s)
+[0.732s] -- Generating done (0.0s)
+[0.733s] -- Build files have been written to: /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor
+[0.740s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_sdk_vendor -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_sdk_vendor
+[0.742s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor -- -j22 -l22
+[0.758s] [ 12%] [34m[1mCreating directories for 'livox-sdk-v2.3.1'[0m
+[0.764s] [ 25%] [34m[1mPerforming download step (git clone) for 'livox-sdk-v2.3.1'[0m
+[0.769s] 正克隆到 'livox-sdk-v2.3.1'...
+[0.781s] fatal: 无法访问 'https://github.com/Livox-SDK/Livox-SDK.git/'：Failed to connect to 127.0.0.1 port 2081 after 0 ms: 连接被拒绝
+[0.784s] 正克隆到 'livox-sdk-v2.3.1'...
+[0.794s] fatal: 无法访问 'https://github.com/Livox-SDK/Livox-SDK.git/'：Failed to connect to 127.0.0.1 port 2081 after 0 ms: 连接被拒绝
+[0.798s] 正克隆到 'livox-sdk-v2.3.1'...
+[0.808s] fatal: 无法访问 'https://github.com/Livox-SDK/Livox-SDK.git/'：Failed to connect to 127.0.0.1 port 2081 after 0 ms: 连接被拒绝
+[0.810s] -- Had to git clone more than once: 3 times.
+[0.810s] [31mCMake Error at /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/tmp/livox-sdk-v2.3.1-gitclone.cmake:39 (message):
+[0.810s]   Failed to clone repository: 'https://github.com/Livox-SDK/Livox-SDK.git'
+[0.811s] 
+[0.811s] [0m
+[0.811s] gmake[2]: *** [CMakeFiles/livox-sdk-v2.3.1.dir/build.make:98：livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-download] 错误 1
+[0.812s] gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/livox-sdk-v2.3.1.dir/all] 错误 2
+[0.812s] gmake: *** [Makefile:146：all] 错误 2
+[0.814s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor -- -j22 -l22

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/CMakeFiles/livox-sdk-v2.3.1"
+		},
+		{
+			"file" : "/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/CMakeFiles/livox-sdk-v2.3.1.rule"
+		},
+		{
+			"file" : "/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/CMakeFiles/livox-sdk-v2.3.1-complete.rule"
+		},
+		{
+			"file" : "/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-build.rule"
+		},
+		{
+			"file" : "/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-configure.rule"
+		},
+		{
+			"file" : "/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-download.rule"
+		},
+		{
+			"file" : "/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-install.rule"
+		},
+		{
+			"file" : "/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-mkdir.rule"
+		},
+		{
+			"file" : "/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-patch.rule"
+		},
+		{
+			"file" : "/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"livox-sdk-v2.3.1"
+		],
+		"name" : "livox-sdk-v2.3.1"
+	}
+}

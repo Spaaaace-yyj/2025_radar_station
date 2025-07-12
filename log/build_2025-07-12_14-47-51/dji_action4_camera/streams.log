@@ -1,0 +1,29 @@
+[0.023s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/dji_action4_camera -- -j22 -l22
+[0.044s] [ 50%] [32mBuilding CXX object CMakeFiles/camera_node.dir/src/camera_node.cpp.o[0m
+[3.094s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[3.094s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[3.094s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[3.094s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[3.094s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[3.094s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[3.094s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[3.094s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[3.094s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[3.094s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[3.094s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[3.094s]                  from [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/camera_driver/dji_Action4_camera/src/camera_node.cpp:1[m[K:
+[3.094s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/camera_driver/dji_Action4_camera/src/camera_node.cpp:[m[K In member function ‘[01m[Kvoid CameraNode::setup_timer()[m[K’:
+[3.094s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/camera_driver/dji_Action4_camera/src/camera_node.cpp:72:45:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%lld[m[K’ expects argument of type ‘[01m[Klong long int[m[K’, but argument 6 has type ‘[01m[Kstd::chrono::duration<long int, std::ratio<1, 1000> >::rep[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[3.094s]    72 |             RCLCPP_INFO(this->get_logger(), [01;35m[K"camera fps: %.2f FPS, timer %lld ms"[m[K, fps, [32m[Kperiod.count()[m[K);
+[3.094s]       |                                             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K       [32m[K~~~~~~~~~~~~~~[m[K
+[3.094s]       |                                                                                                     [32m[K|[m[K
+[3.094s]       |                                                                                                     [32m[Kstd::chrono::duration<long int, std::ratio<1, 1000> >::rep {aka long int}[m[K
+[3.094s] [01m[K/home/spaaaaace/Code/mid70/2025_radar_station/src/camera_driver/dji_Action4_camera/src/camera_node.cpp:72:77:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[3.094s]    72 |             RCLCPP_INFO(this->get_logger(), "camera fps: %.2f FPS, timer [01;36m[K%lld[m[K ms", fps, period.count());
+[3.094s]       |                                                                          [01;36m[K~~~^[m[K
+[3.094s]       |                                                                             [01;36m[K|[m[K
+[3.095s]       |                                                                             [01;36m[Klong long int[m[K
+[3.095s]       |                                                                          [32m[K%ld[m[K
+[4.271s] [100%] [32m[1mLinking CXX executable camera_node[0m
+[4.336s] /usr/bin/ld: warning: libopencv_core.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_core.so.410
+[4.623s] [100%] Built target camera_node

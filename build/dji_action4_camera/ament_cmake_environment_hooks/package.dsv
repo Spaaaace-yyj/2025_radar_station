@@ -1,0 +1,4 @@
+source;share/dji_action4_camera/local_setup.bash
+source;share/dji_action4_camera/local_setup.dsv
+source;share/dji_action4_camera/local_setup.sh
+source;share/dji_action4_camera/local_setup.zsh

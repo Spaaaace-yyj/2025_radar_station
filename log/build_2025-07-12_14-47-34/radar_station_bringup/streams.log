@@ -1,0 +1,25 @@
+[0.019s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station_bringup -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_bringup
+[0.072s] -- The C compiler identification is GNU 11.4.0
+[0.137s] -- The CXX compiler identification is GNU 11.4.0
+[0.144s] -- Detecting C compiler ABI info
+[0.184s] -- Detecting C compiler ABI info - done
+[0.191s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.191s] -- Detecting C compile features
+[0.191s] -- Detecting C compile features - done
+[0.193s] -- Detecting CXX compiler ABI info
+[0.235s] -- Detecting CXX compiler ABI info - done
+[0.242s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.242s] -- Detecting CXX compile features
+[0.242s] -- Detecting CXX compile features - done
+[0.246s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.609s] -- Found Python3: /home/spaaaaace/anaconda3/envs/vision/bin/python3 (found version "3.8.20") found components: Interpreter 
+[0.678s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.800s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.801s] -- Added test 'lint_cmake' to check CMake code style
+[0.802s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.803s] -- Added test 'xmllint' to check XML markup files
+[0.806s] -- Configuring done (0.8s)
+[0.809s] -- Generating done (0.0s)
+[0.810s] -- Build files have been written to: /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup
+[0.817s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/radar_station_bringup -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_bringup
+[0.819s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_bringup -- -j22 -l22

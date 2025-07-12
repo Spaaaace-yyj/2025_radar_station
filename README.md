@@ -67,11 +67,11 @@ bash radar_station.sh
 
 雷达站裁判系统判定流程
 
-<img src="/home/spaaaaace/Code/mid70/2025_radar_station/doc/pipline_1.png" alt="pipline_1"  />
+<img src="./doc/pipline_1.png" alt="pipline_1"  />
 
 #### **赛场俯视图**
 
-<img src="/home/spaaaaace/Code/mid70/2025_radar_station/doc/map.png" alt="map" style="zoom:33%;" />
+<img src="./doc/map.png" alt="map" style="zoom:33%;" />
 
 
 
@@ -439,7 +439,9 @@ export LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/env/opencv/
 
 ## 7.12
 
-重写了推理张量解析的代码，同时适配yolov8和yolov5的模型
+重写了推理张量解析的代码，能自动识别yolov8还是yolov5的模型，新训练的yolov8模型还要优化（没有开源的稳定）
+
+
 
 ###### git
 

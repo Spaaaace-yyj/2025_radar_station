@@ -1,0 +1,4 @@
+source;share/livox_sdk_vendor/local_setup.bash
+source;share/livox_sdk_vendor/local_setup.dsv
+source;share/livox_sdk_vendor/local_setup.sh
+source;share/livox_sdk_vendor/local_setup.zsh

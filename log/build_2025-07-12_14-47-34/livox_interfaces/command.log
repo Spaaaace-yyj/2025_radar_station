@@ -1,0 +1,1 @@
+Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake /home/spaaaaace/Code/mid70/2025_radar_station/src/livox_ros2_driver/livox_interfaces -DCMAKE_INSTALL_PREFIX=/home/spaaaaace/Code/mid70/2025_radar_station/install/livox_interfaces

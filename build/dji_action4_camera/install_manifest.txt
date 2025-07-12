@@ -1,0 +1,16 @@
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/lib/dji_action4_camera/camera_node
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/ament_index/resource_index/package_run_dependencies/dji_action4_camera
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/ament_index/resource_index/parent_prefix_path/dji_action4_camera
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/environment/ament_prefix_path.sh
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/environment/ament_prefix_path.dsv
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/environment/path.sh
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/environment/path.dsv
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/local_setup.bash
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/local_setup.sh
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/local_setup.zsh
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/local_setup.dsv
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/package.dsv
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/ament_index/resource_index/packages/dji_action4_camera
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/cmake/dji_action4_cameraConfig.cmake
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/cmake/dji_action4_cameraConfig-version.cmake
+/home/spaaaaace/Code/mid70/2025_radar_station/install/dji_action4_camera/share/dji_action4_camera/package.xml

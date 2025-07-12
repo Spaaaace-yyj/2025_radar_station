@@ -1,0 +1,4 @@
+source;share/radar_station_bringup/local_setup.bash
+source;share/radar_station_bringup/local_setup.dsv
+source;share/radar_station_bringup/local_setup.sh
+source;share/radar_station_bringup/local_setup.zsh

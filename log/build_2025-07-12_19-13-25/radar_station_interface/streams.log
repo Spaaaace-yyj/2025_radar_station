@@ -1,0 +1,176 @@
+[0.023s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_interface -- -j22 -l22
+[0.050s] [  2%] Built target radar_station_interface__cpp
+[0.051s] [ 12%] Built target radar_station_interface__rosidl_generator_c
+[0.052s] [ 12%] Built target ament_cmake_python_copy_radar_station_interface
+[0.062s] [ 23%] Built target radar_station_interface__rosidl_typesupport_cpp
+[0.063s] [ 33%] Built target radar_station_interface__rosidl_typesupport_introspection_cpp
+[0.064s] [ 53%] Built target radar_station_interface__rosidl_typesupport_introspection_c
+[0.064s] [ 53%] Built target radar_station_interface__rosidl_typesupport_fastrtps_cpp
+[0.064s] [ 64%] Built target radar_station_interface__rosidl_typesupport_fastrtps_c
+[0.064s] [ 74%] Built target radar_station_interface__rosidl_typesupport_c
+[0.070s] [ 74%] Built target radar_station_interface
+[0.078s] [ 76%] Built target radar_station_interface__py
+[0.087s] [ 84%] Built target radar_station_interface__rosidl_generator_py
+[0.094s] [ 89%] Built target radar_station_interface__rosidl_typesupport_fastrtps_c__pyext
+[0.095s] [ 94%] Built target radar_station_interface__rosidl_typesupport_c__pyext
+[0.096s] [100%] Built target radar_station_interface__rosidl_typesupport_introspection_c__pyext
+[0.273s] running egg_info
+[0.280s] writing radar_station_interface.egg-info/PKG-INFO
+[0.280s] writing dependency_links to radar_station_interface.egg-info/dependency_links.txt
+[0.280s] writing top-level names to radar_station_interface.egg-info/top_level.txt
+[0.300s] reading manifest file 'radar_station_interface.egg-info/SOURCES.txt'
+[0.301s] writing manifest file 'radar_station_interface.egg-info/SOURCES.txt'
+[0.317s] [100%] Built target ament_cmake_python_build_radar_station_interface_egg
+[0.322s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_interface -- -j22 -l22
+[0.387s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_interface
+[0.389s] -- Install configuration: ""
+[0.389s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/ament_index/resource_index/rosidl_interfaces/radar_station_interface
+[0.389s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface
+[0.389s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg
+[0.389s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail
+[0.389s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__functions.h
+[0.389s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__struct.h
+[0.389s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__type_support.h
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__functions.h
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__functions.c
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__struct.h
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__type_support.h
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__functions.c
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/robot_position_array.h
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/rosidl_generator_c__visibility_control.h
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/robot_position.h
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/environment/library_path.sh
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/environment/library_path.dsv
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_generator_c.so
+[0.390s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_generator_c.so" to ""
+[0.390s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface
+[0.390s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.390s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__rosidl_typesupport_fastrtps_c.h
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__rosidl_typesupport_fastrtps_c.h
+[0.390s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_fastrtps_c.so
+[0.391s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_fastrtps_c.so" to ""
+[0.391s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface
+[0.391s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg
+[0.391s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail
+[0.391s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__type_support.c
+[0.391s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__rosidl_typesupport_introspection_c.h
+[0.391s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__rosidl_typesupport_introspection_c.h
+[0.391s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__type_support.c
+[0.391s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.391s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_introspection_c.so
+[0.391s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_introspection_c.so" to ""
+[0.391s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_c.so
+[0.391s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_c.so" to ""
+[0.392s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface
+[0.392s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/robot_position.hpp
+[0.392s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__traits.hpp
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__builder.hpp
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__struct.hpp
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__traits.hpp
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__builder.hpp
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__struct.hpp
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/robot_position_array.hpp
+[0.392s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface
+[0.392s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg
+[0.392s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__rosidl_typesupport_fastrtps_cpp.hpp
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__rosidl_typesupport_fastrtps_cpp.hpp
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/dds_fastrtps
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.392s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_fastrtps_cpp.so
+[0.392s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_fastrtps_cpp.so" to ""
+[0.393s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface
+[0.393s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg
+[0.393s] -- Up-to-date: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail
+[0.393s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__type_support.cpp
+[0.393s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position__rosidl_typesupport_introspection_cpp.hpp
+[0.393s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__type_support.cpp
+[0.393s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/include/radar_station_interface/radar_station_interface/msg/detail/robot_position_array__rosidl_typesupport_introspection_cpp.hpp
+[0.393s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_introspection_cpp.so
+[0.393s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_introspection_cpp.so" to ""
+[0.393s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_cpp.so
+[0.393s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_typesupport_cpp.so" to ""
+[0.393s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/environment/pythonpath.sh
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/environment/pythonpath.dsv
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface-0.0.0-py3.8.egg-info
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface-0.0.0-py3.8.egg-info/dependency_links.txt
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface-0.0.0-py3.8.egg-info/SOURCES.txt
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface-0.0.0-py3.8.egg-info/PKG-INFO
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface-0.0.0-py3.8.egg-info/top_level.txt
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/_radar_station_interface_s.ep.rosidl_typesupport_introspection_c.c
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/radar_station_interface_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/msg
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/msg/_robot_position.py
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/msg/_robot_position_array.py
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/msg/_robot_position_s.c
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/msg/_robot_position_array_s.c
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/msg/__init__.py
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/_radar_station_interface_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/libradar_station_interface__rosidl_generator_py.so
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/radar_station_interface_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/_radar_station_interface_s.ep.rosidl_typesupport_c.c
+[0.394s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/radar_station_interface_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[0.395s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/__init__.py
+[0.420s] Listing '/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface'...
+[0.420s] Compiling '/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/__init__.py'...
+[0.420s] Listing '/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/msg'...
+[0.420s] Compiling '/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/msg/__init__.py'...
+[0.420s] Compiling '/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/msg/_robot_position.py'...
+[0.420s] Compiling '/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/msg/_robot_position_array.py'...
+[0.425s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/radar_station_interface_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[0.426s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/radar_station_interface_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""
+[0.426s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/radar_station_interface_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[0.426s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/radar_station_interface_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""
+[0.426s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/radar_station_interface_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[0.426s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/python3.8/site-packages/radar_station_interface/radar_station_interface_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""
+[0.426s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_generator_py.so
+[0.426s] -- Set runtime path of "/home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/lib/libradar_station_interface__rosidl_generator_py.so" to ""
+[0.426s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/msg/RobotPosition.idl
+[0.426s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/msg/RobotPositionArray.idl
+[0.426s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/msg/RobotPosition.msg
+[0.426s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/msg/RobotPositionArray.msg
+[0.426s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/ament_index/resource_index/package_run_dependencies/radar_station_interface
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/ament_index/resource_index/parent_prefix_path/radar_station_interface
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/environment/ament_prefix_path.sh
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/environment/ament_prefix_path.dsv
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/environment/path.sh
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/environment/path.dsv
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/local_setup.bash
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/local_setup.sh
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/local_setup.zsh
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/local_setup.dsv
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/package.dsv
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/ament_index/resource_index/packages/radar_station_interface
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/export_radar_station_interface__rosidl_generator_cExport.cmake
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/export_radar_station_interface__rosidl_generator_cExport-noconfig.cmake
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/export_radar_station_interface__rosidl_typesupport_fastrtps_cExport.cmake
+[0.427s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/export_radar_station_interface__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[0.428s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/radar_station_interface__rosidl_typesupport_introspection_cExport.cmake
+[0.428s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/radar_station_interface__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[0.428s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/radar_station_interface__rosidl_typesupport_cExport.cmake
+[0.428s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/radar_station_interface__rosidl_typesupport_cExport-noconfig.cmake
+[0.428s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/export_radar_station_interface__rosidl_generator_cppExport.cmake
+[0.428s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/export_radar_station_interface__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.428s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/export_radar_station_interface__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[0.428s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/radar_station_interface__rosidl_typesupport_introspection_cppExport.cmake
+[0.428s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/radar_station_interface__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[0.428s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/radar_station_interface__rosidl_typesupport_cppExport.cmake
+[0.428s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/radar_station_interface__rosidl_typesupport_cppExport-noconfig.cmake
+[0.429s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/export_radar_station_interface__rosidl_generator_pyExport.cmake
+[0.429s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/export_radar_station_interface__rosidl_generator_pyExport-noconfig.cmake
+[0.429s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/rosidl_cmake-extras.cmake
+[0.429s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.429s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/ament_cmake_export_libraries-extras.cmake
+[0.429s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/ament_cmake_export_targets-extras.cmake
+[0.429s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.429s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.429s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.430s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/radar_station_interfaceConfig.cmake
+[0.430s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/cmake/radar_station_interfaceConfig-version.cmake
+[0.430s] -- Installing: /home/spaaaaace/Code/mid70/2025_radar_station/install/radar_station_interface/share/radar_station_interface/package.xml
+[0.431s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --install /home/spaaaaace/Code/mid70/2025_radar_station/build/radar_station_interface

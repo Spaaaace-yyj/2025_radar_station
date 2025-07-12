@@ -1,0 +1,3 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/radar_world_calib.dir/src/radar_world_calib.cpp.o[0m
+[100%] [32m[1mLinking CXX executable radar_world_calib[0m
+[100%] Built target radar_world_calib

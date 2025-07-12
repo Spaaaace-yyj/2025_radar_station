@@ -1,0 +1,4 @@
+source;share/radar_world_calib/local_setup.bash
+source;share/radar_world_calib/local_setup.dsv
+source;share/radar_world_calib/local_setup.sh
+source;share/radar_world_calib/local_setup.zsh

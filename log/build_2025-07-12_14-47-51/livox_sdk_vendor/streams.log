@@ -1,0 +1,17 @@
+[0.023s] Invoking command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor -- -j22 -l22
+[0.036s] [ 12%] [34m[1mPerforming download step (git clone) for 'livox-sdk-v2.3.1'[0m
+[0.044s] 正克隆到 'livox-sdk-v2.3.1'...
+[0.052s] fatal: 无法访问 'https://github.com/Livox-SDK/Livox-SDK.git/'：Failed to connect to 127.0.0.1 port 2081 after 0 ms: 连接被拒绝
+[0.053s] 正克隆到 'livox-sdk-v2.3.1'...
+[0.065s] fatal: 无法访问 'https://github.com/Livox-SDK/Livox-SDK.git/'：Failed to connect to 127.0.0.1 port 2081 after 0 ms: 连接被拒绝
+[0.070s] 正克隆到 'livox-sdk-v2.3.1'...
+[0.077s] fatal: 无法访问 'https://github.com/Livox-SDK/Livox-SDK.git/'：Failed to connect to 127.0.0.1 port 2081 after 0 ms: 连接被拒绝
+[0.079s] -- Had to git clone more than once: 3 times.
+[0.079s] [31mCMake Error at /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/tmp/livox-sdk-v2.3.1-gitclone.cmake:39 (message):
+[0.079s]   Failed to clone repository: 'https://github.com/Livox-SDK/Livox-SDK.git'
+[0.079s] 
+[0.079s] [0m
+[0.080s] gmake[2]: *** [CMakeFiles/livox-sdk-v2.3.1.dir/build.make:98：livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-download] 错误 1
+[0.080s] gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/livox-sdk-v2.3.1.dir/all] 错误 2
+[0.083s] gmake: *** [Makefile:146：all] 错误 2
+[0.093s] Invoked command in '/home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(vision) /usr/local/bin/cmake --build /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor -- -j22 -l22

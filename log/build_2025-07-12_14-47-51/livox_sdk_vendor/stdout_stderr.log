@@ -1,0 +1,15 @@
+[ 12%] [34m[1mPerforming download step (git clone) for 'livox-sdk-v2.3.1'[0m
+正克隆到 'livox-sdk-v2.3.1'...
+fatal: 无法访问 'https://github.com/Livox-SDK/Livox-SDK.git/'：Failed to connect to 127.0.0.1 port 2081 after 0 ms: 连接被拒绝
+正克隆到 'livox-sdk-v2.3.1'...
+fatal: 无法访问 'https://github.com/Livox-SDK/Livox-SDK.git/'：Failed to connect to 127.0.0.1 port 2081 after 0 ms: 连接被拒绝
+正克隆到 'livox-sdk-v2.3.1'...
+fatal: 无法访问 'https://github.com/Livox-SDK/Livox-SDK.git/'：Failed to connect to 127.0.0.1 port 2081 after 0 ms: 连接被拒绝
+-- Had to git clone more than once: 3 times.
+[31mCMake Error at /home/spaaaaace/Code/mid70/2025_radar_station/build/livox_sdk_vendor/livox-sdk-v2.3.1-prefix/tmp/livox-sdk-v2.3.1-gitclone.cmake:39 (message):
+  Failed to clone repository: 'https://github.com/Livox-SDK/Livox-SDK.git'
+
+[0m
+gmake[2]: *** [CMakeFiles/livox-sdk-v2.3.1.dir/build.make:98：livox-sdk-v2.3.1-prefix/src/livox-sdk-v2.3.1-stamp/livox-sdk-v2.3.1-download] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/livox-sdk-v2.3.1.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2
