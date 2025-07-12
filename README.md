@@ -437,6 +437,10 @@ export LD_LIBRARY_PATH=/home/spaaaaace/Code/mid70/2025_radar_station/env/opencv/
 
 <img src="./doc/11.png" alt="11" style="zoom: 50%;" />
 
+## 7.12
+
+重写了推理张量解析的代码，同时适配yolov8和yolov5的模型
+
 ###### git
 
 ```bash

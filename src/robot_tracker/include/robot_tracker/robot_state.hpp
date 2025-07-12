@@ -70,7 +70,7 @@ public:
     RobotID id_ = RobotID::R1;
 
     int lost_count_ = 0;
-    int max_lost_count_ = 150;
+    int max_lost_count_ = 100;
 
 private:
     float dt_ = 0.2;

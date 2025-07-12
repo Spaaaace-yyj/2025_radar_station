@@ -3,6 +3,10 @@
 
 using namespace std;
 
+inline float sigmoid(float x) {
+    return 1.0f / (1.0f + std::exp(-x));
+}
+
 RadarStation::RadarStation() : Node("radar_station")
 {
 
@@ -34,6 +38,7 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
 
     if (!point_cloud_ || point_cloud_->empty()) {
         RCLCPP_WARN(this->get_logger(), "Point cloud is empty or null");
+        cv::waitKey(500);
         return;
     }
     if(lidar_frame_counter_ >= lidar_frame_add_num_){
@@ -125,6 +130,9 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
                     if(target_.empty()){
                         break;
                     }
+                    if (j >= target_.size()) {
+                        continue;  // 或者 break;
+                    }
                     target_[j].robot_points_roi_.push_back(lidar_points[i]);
                     target_[j].get_real_pos();
                     target_[j].get_world_location(R_world_camera_, T_world_camera_);
@@ -215,7 +223,7 @@ std::vector<OnnxBox> RadarStation::get_armor_box(const cv::Mat& src){
         std::vector<std::string> outNames = { "output0" };
         car_net.forward(outs_car, outNames);
         
-        onnx_boxes_car = process_onnx_result(outs_car[0], src, 0.95, 1);
+        onnx_boxes_car = process_onnx_result(outs_car[0], src, 0.5, 1);
 
         for(size_t i = 0; i < onnx_boxes_car.size(); i++){
             
@@ -234,18 +242,19 @@ std::vector<OnnxBox> RadarStation::get_armor_box(const cv::Mat& src){
             std::vector<std::string> outNames = { "output0" };
             armor_net.forward(outs_armor, outNames);
 
-            onnx_boxes_armor = process_onnx_result(outs_armor[0], roi_img, 0.73, 2);
-            cv::Mat roi_show;
-            for(size_t j = 0; j < onnx_boxes_armor.size(); j++){
-                std::cout << "armor_onnx_id = " << onnx_boxes_armor[j].class_id << std::endl;
-                onnx_boxes_armor[j].draw(roi_img);
+            onnx_boxes_armor = process_onnx_result(outs_armor[0], roi_img, 0.7, 2);
+            // cv::Mat roi_show;
+            // for(size_t j = 0; j < onnx_boxes_armor.size(); j++){
+            //     std::cout << "armor_onnx_id = " << onnx_boxes_armor[j].class_id << std::endl;
+            //     onnx_boxes_armor[j].draw(roi_img);
                 
-            }
-            cv::resize(roi_img, roi_show, cv::Size(640, 640));
-            cv::imshow("ROI", roi_show);
-            cv::waitKey(1);
+            // }
+            // cv::resize(roi_img, roi_show, cv::Size(640, 640));
+            // cv::imshow("ROI", roi_show);
+            // cv::waitKey(1);
 
             //修复如果没有装甲板识别到的情况
+
             if(!onnx_boxes_armor.empty()){
                 onnx_boxes_car[i].class_id = onnx_boxes_armor[0].class_id;
                 robot_temp.id_ = onnx_boxes_car[i].class_id;
@@ -256,12 +265,13 @@ std::vector<OnnxBox> RadarStation::get_armor_box(const cv::Mat& src){
                 target_temp.push_back(robot_temp);
             }
             
+            
         }
-
-        target_ = target_temp;
         for(size_t i = 0; i < onnx_boxes_car.size(); i++){
             onnx_boxes_car[i].draw(frame_);
         }
+        target_ = target_temp;
+
 
         return onnx_boxes_car;
     }else{
@@ -270,51 +280,93 @@ std::vector<OnnxBox> RadarStation::get_armor_box(const cv::Mat& src){
     }
 }
 
-std::vector<OnnxBox> RadarStation::process_onnx_result(const cv::Mat& onnx_result, cv::Mat src, float conf_th, int mode){
-    int num_attributes = onnx_result.size[1];
-    int num_anchors = onnx_result.size[2];
-    int class_num = num_attributes - 4;
-    //std::cout << "num_attributes = " << num_attributes << std::endl;
-    //std::cout << "num_anchors = " << num_anchors << std::endl;
+std::vector<OnnxBox> RadarStation::process_onnx_result(cv::Mat& onnx_result, cv::Mat src, float conf_th, int mode){
+
+    int rows = onnx_result.size[1];
+    int dimensions = onnx_result.size[2];
+    bool yolov8 = false;
     std::vector<OnnxBox> onnx_boxes_temp;
+    
+    if(dimensions > rows){
+        yolov8 = true;
+        rows = onnx_result.size[2];
+        dimensions = onnx_result.size[1];
+
+        onnx_result = onnx_result.reshape(1, dimensions);
+        cv::transpose(onnx_result, onnx_result);
+
+    }
 
     float* data = (float*)onnx_result.data;
-        for(int j = 0; j < num_anchors; j++){
+
+    for(int i = 0; i < rows; i++){
+        OnnxBox box;
+        if(yolov8){
+            float *classes_scores = data + 4;
+            double max_conf = 0;
             int max_conf_id = 0;
-            for(int i = 1; i < class_num; i++){
-                if(data[j + num_anchors * (4 + i)] > data[j + num_anchors * (4 + max_conf_id)]){
-                    max_conf_id = i;
+            for(int j = 0; j < dimensions - 4; j++){
+                if(classes_scores[j] >= max_conf){
+                    max_conf = classes_scores[j];
+                    max_conf_id = j;
                 }
             }
-            if(mode == 1 && max_conf_id != 2){
-                continue;   
-            }
+            if(max_conf >= conf_th){
+                float x_center = (data[0] / 640) * src.cols;
+                float y_center = (data[1] / 640) * src.rows;
+                float w = (data[2] / 640) * src.cols;
+                float h = (data[3] / 640) * src.rows;
+                float conf = data[4 + max_conf_id];
 
-            if(data[j + num_anchors * (4 + max_conf_id)] > conf_th){
-                OnnxBox box;
-                float x_center = (data[j + num_anchors * 0] / 640) * src.cols;
-                float y_center = (data[j + num_anchors * 1] / 640) * src.rows;
-                float w = (data[j + num_anchors * 2] / 640) * src.cols;
-                float h = (data[j + num_anchors * 3] / 640) * src.rows;
-                float conf = data[j + num_anchors * (4 + max_conf_id)];
-
-                box.P1 = cv::Point2f(x_center - w / 2, y_center - h / 2);
-                box.P2 = cv::Point2f(x_center + w / 2, y_center + h / 2);
+                box.P1 = cv::Point2f((int)(x_center - w / 2), (int)(y_center - h / 2));
+                box.P2 = cv::Point2f((int)(x_center + w / 2), (int)(y_center + h / 2));
                 box.width = w;
                 box.height = h;
-                box.center = cv::Point2f(x_center, y_center);
+                box.center = cv::Point2f((int)x_center, (int)y_center);
 
                 box.conf = conf;
                 box.class_id = max_conf_id;
-                //cout << "conf = " << conf << endl;
+
                 onnx_boxes_temp.push_back(box);
-            }else{
-                continue;
+            }
+        }else{
+            float obj_score = data[4];
+            if(obj_score > conf_th){
+                float *classes_score = data + 5;
+                float max_score = 0;
+                int max_class_id = 0;
+                for(int j = 0; j < dimensions - 5; j++){
+                    if(classes_score[j] > max_score){
+                        max_score = classes_score[j];
+                        max_class_id = j;
+                    }
+                }
+                if(max_score > conf_th){
+                    float x_center = (data[0] / 640) * src.cols;
+                    float y_center = (data[1] / 640) * src.rows;
+                    float w = (data[2] / 640) * src.cols;
+                    float h = (data[3] / 640) * src.rows;
+                    float conf = classes_score[max_class_id];
+
+                    box.P1 = cv::Point2f(x_center - w / 2, y_center - h / 2);
+                    box.P2 = cv::Point2f(x_center + w / 2, y_center + h / 2);
+                    box.width = w;
+                    box.height = h;
+                    box.center = cv::Point2f(x_center, y_center);
+
+                    box.conf = conf;
+                    box.class_id = max_class_id;
+
+                    onnx_boxes_temp.push_back(box);
+                }
             }
         }
-        nms(onnx_boxes_temp, 0.5);
+        data += dimensions;
+    }
 
-        return onnx_boxes_temp;
+    nms(onnx_boxes_temp, 0.2);
+
+    return onnx_boxes_temp;
 }
 
 float RadarStation::get_iou(OnnxBox box1, OnnxBox box2){

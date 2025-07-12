@@ -3,6 +3,7 @@
 void Robot::get_real_pos(){
     float max_x = 0, min_x = 10000, max_y = 0, min_y = 10000, max_z = 0, min_z = 10000;
     for(size_t i = 0; i < robot_points_roi_.size(); i++){
+        if(robot_points_roi_.empty()) break;
         real_pos_.x += robot_points_roi_[i].x;
         real_pos_.y += robot_points_roi_[i].y;
         real_pos_.z += robot_points_roi_[i].z;

@@ -36,9 +36,20 @@ def generate_launch_description():
         )
     )
 
+    robot_tracker = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(
+                get_package_share_directory('robot_tracker'),
+                'launch',
+                'robot_tracker.launch.py'
+            )
+        )
+    )
+
 
     return LaunchDescription([
         camera_launch,
         livox_lidar_launch,
-        radar_ststion
+        radar_ststion,
+        robot_tracker
     ])

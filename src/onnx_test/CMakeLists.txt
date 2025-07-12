@@ -1,6 +1,5 @@
-add_compile_options(-g)
 cmake_minimum_required(VERSION 3.8)
-project(robot_tracker)
+project(onnx_test)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -22,8 +21,8 @@ find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
-find_package(radar_station_interface REQUIRED)
 
+find_package(radar_station_interface REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -40,18 +39,17 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-add_executable(robot_tracker src/robot_tracker.cpp src/kalman_fliter.cpp src/robot_state.cpp)
-ament_target_dependencies(robot_tracker rclcpp sensor_msgs cv_bridge 
+add_executable(onnx_test src/onnx_test.cpp )
+target_link_libraries(onnx_test ${OpenCV_LIBS})
+
+ament_target_dependencies(onnx_test rclcpp sensor_msgs cv_bridge 
                               image_transport PCL pcl_conversions OpenVINO 
                               visualization_msgs tf2 tf2_ros geometry_msgs tf2_geometry_msgs
                               radar_station_interface)
 
-install(TARGETS robot_tracker
-  DESTINATION lib/${PROJECT_NAME})
-
-install(DIRECTORY
-launch
-DESTINATION share/${PROJECT_NAME}
-)
+install(TARGETS
+  onnx_test
+  DESTINATION lib/${PROJECT_NAME}
+  )
 
 ament_package()

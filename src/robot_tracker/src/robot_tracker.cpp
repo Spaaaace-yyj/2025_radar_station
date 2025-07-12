@@ -134,13 +134,14 @@ void RobotTracker::publish_marker_array(){
             marker_text.text = "ID:" + std::to_string(robot_list_[i].id_) + "\n" + 
                     " x:" + std::to_string(robot_list_[i].predict_position_.x) + "\n" + 
                     " y:" + std::to_string(robot_list_[i].predict_position_.y) + "\n" + 
-                    " z:" + std::to_string(robot_list_[i].predict_position_.z);
+                    " z:" + std::to_string(robot_list_[i].predict_position_.z) + "\n" + 
+                    "Tracking----";
         }else{
             marker_text.text = "ID:" + std::to_string(robot_list_[i].id_) + "\n" + 
                     " x:" + std::to_string(robot_list_[i].predict_position_.x) + "\n" + 
                     " y:" + std::to_string(robot_list_[i].predict_position_.y) + "\n" + 
                     " z:" + std::to_string(robot_list_[i].predict_position_.z) + "\n" +
-                    "Predicting------";
+                    "Predicting----";
         }
 
         marker_text.lifetime = rclcpp::Duration::from_seconds(1); 
