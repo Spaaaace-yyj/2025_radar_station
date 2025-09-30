@@ -9,7 +9,7 @@ EKF::EKF(double dt) : dt_(dt) {
 
     // Set process noise Q
     Q_.setIdentity();
-    Q_ *= 3e-4; // You can tune this
+    Q_ *= 3e-2; // You can tune this
 
     // Set observation noise R
     R_.setIdentity();

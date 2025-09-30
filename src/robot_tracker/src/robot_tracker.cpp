@@ -42,6 +42,37 @@ void RobotTracker::robot_position_callback(const radar_station_interface::msg::R
             robot_list_[i].update_state(dt_, Robot::InputState::LOST_INPUT);
         }
     }
+    //todo list : 1.尝试采用匈牙利算法匹配机器人
+    //            2.用累积投票来确定机器人ID，解决跳变问题
+
+}
+
+float RobotTracker::get_iou(const Robot& r1, const Robot& r2){
+    float x1 = std::max(r1.predict_position_.x - r1.width_ / 2, r2.predict_position_.x - r2.width_ / 2);
+    float x2 = std::min(r1.predict_position_.x + r1.width_ / 2, r2.predict_position_.x + r2.width_ / 2);
+    float y1 = std::max(r1.predict_position_.y - r1.height_ / 2, r2.predict_position_.y - r2.height_ / 2);
+    float y2 = std::min(r1.predict_position_.y + r1.height_ / 2, r2.predict_position_.y + r2.height_ / 2);
+    float z1 = std::max(r1.predict_position_.z - r1.depth_ / 2, r2.predict_position_.z - r2.depth_ / 2);
+    float z2 = std::min(r1.predict_position_.z + r1.depth_ / 2, r2.predict_position_.z + r2.depth_ / 2);
+
+    float volume_public = (x2 - x1) * (y2 - y1) * (z2 - z1);
+    float volume_r1 = (r1.width_ * r1.height_ * r1.depth_);
+    float volume_r2 = (r2.width_ * r2.height_ * r2.depth_);
+    if(volume_public <= 0 || volume_r1 <= 0 || volume_r2 <= 0){
+        return 0.0f;
+    }
+    float iou = volume_public / (volume_r1 + volume_r2 - volume_public);
+    return iou;
+}
+
+std::vector<std::vector<float>> RobotTracker::get_cost_matrix(const std::vector<Robot>& robot_list1, std::vector<Robot>& robot_list2){
+    std::vector<std::vector<float>> cost_matrix(robot_list1.size(), std::vector<float>(robot_list2.size(), 0));
+    for(size_t i = 0; i < robot_list1.size(); i++){
+        for(size_t j = 0; j < robot_list2.size(); j++){
+            cost_matrix[i][j] = 1 - get_iou(robot_list1[i], robot_list2[j]);
+        }
+    }
+    return cost_matrix;
 }
 
 void RobotTracker::init_params(){

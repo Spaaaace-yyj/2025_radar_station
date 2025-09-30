@@ -5,8 +5,6 @@
 #include <opencv4/opencv2/opencv.hpp>
 #include<opencv4/opencv2/dnn.hpp>
 
-#include "openvino/openvino.hpp"
-
 //ros2
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/image.hpp>
@@ -104,7 +102,7 @@ private:
     cv::dnn::Net armor_net;
 
     float car_confidence_threshold_ = 0.5f;
-    float armor_confidence_threshold_ = 0.5f;
+    float armor_confidence_threshold_ = 0.7f;
 
     //lidar_sum_frame_num
     int lidar_frame_add_num_ = 1;

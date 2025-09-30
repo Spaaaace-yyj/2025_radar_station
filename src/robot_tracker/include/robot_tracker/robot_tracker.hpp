@@ -32,6 +32,7 @@
 #include "radar_station_interface/msg/robot_position_array.hpp"
 #include "kalman_fliter.hpp"
 #include "robot_state.hpp"
+#include "Hungarian.h"
 
 class RobotTracker : public rclcpp::Node{
 public:
@@ -48,10 +49,18 @@ public:
 
     void update_params();
 
+    float get_iou(const Robot& r1, const Robot& r2);
+
+    std::vector<std::vector<float>> get_cost_matrix(const std::vector<Robot>& robot_list1, std::vector<Robot>& robot_list2);
+
 private:
     double dt_ = 0.2;
 
     std::vector<Robot> robot_list_;
+
+    std::vector<Robot> now_robot_list_;
+
+    std::vector<Robot> last_robot_list_;
 
 private:
     rclcpp::Subscription<radar_station_interface::msg::RobotPositionArray>::SharedPtr robot_position_array_sub_;
@@ -59,6 +68,8 @@ private:
     rclcpp::TimerBase::SharedPtr timer_;
 
     rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr marker_array_pub_;
+
+    HungarianAlgorithm hungarian_algorithm_;
 
 };
 

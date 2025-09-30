@@ -59,9 +59,9 @@ private:
 
 
 public:
-    float width_ = 0.0;
-    float height_ = 0.0;
-    float depth_ = 0.0;
+    float width_ = 0.0;// x-x
+    float height_ = 0.0;// y-y
+    float depth_ = 0.0;// z-z
 
     cv::Point3f measurement_position_;
     cv::Point3f predict_position_;
@@ -75,7 +75,6 @@ public:
 private:
     float dt_ = 0.2;
     EKF *ekf_ = nullptr;
-
 
 
 };

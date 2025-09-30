@@ -34,6 +34,7 @@ RadarStation::RadarStation() : Node("radar_station")
 void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
 {
     update_parameters();
+    start_image_time_ = cv::getTickCount();
 
     if (!point_cloud_ || point_cloud_->empty()) {
         RCLCPP_WARN(this->get_logger(), "Point cloud is empty or null");
@@ -69,25 +70,23 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
             cv::waitKey(500);
         }
 
-        start_image_time_ = cv::getTickCount();
         std::vector<OnnxBox> onnx_boxes = get_armor_box(frame_);
         
-        end_image_time_ = cv::getTickCount();	
 
         std::vector<cv::Point3f> lidar_points;
         std::vector<cv::Point2f> lidar_points_projection;
         
         for(size_t i = 0; i < point_cloud_->points.size(); i++){
             const auto& p = point_cloud_->points[i];
-
-            //livox雷达坐标系与opencv坐标系定义不同，转换livox坐标系为opencv坐标系
             Eigen::Vector3f lidar_point(p.x, p.y, p.z);
+            //lidar frame to camera frame
             Eigen::Vector3f lidar_point_in_camera = R_lidar_to_camera_ * lidar_point + T_lidar_to_camera_;
             cv::Point3f point_lidar_in_camera(lidar_point_in_camera.x(), lidar_point_in_camera.y(), lidar_point_in_camera.z());
 
             lidar_points.push_back(point_lidar_in_camera);
         }
-
+        
+        //lidar frame to screen frame
         cv::projectPoints(lidar_points, cv::Mat::zeros(3, 1, CV_64F), cv::Mat::zeros(3, 1, CV_64F), cameraMatrix, distCoeffs, lidar_points_projection);
         
         //遍历屏幕投影点云，id与实际3D点云对应
@@ -151,6 +150,7 @@ void RadarStation::image_callback(const sensor_msgs::msg::Image::SharedPtr msg)
             }
         }
 
+        end_image_time_ = cv::getTickCount();	
 	    dt = (end_image_time_ - start_image_time_) * 1000 / cv::getTickFrequency();
         cv::putText(frame_, "Latency: " + to_string(dt) + "ms", cv::Point2f(5, 30), cv::FONT_HERSHEY_SIMPLEX, 0.7, cv::Scalar(0, 255, 0), 2, 8);
         
@@ -174,6 +174,7 @@ void RadarStation::point_cloud_callback(const sensor_msgs::msg::PointCloud2::Sha
     lidar_frame_counter_++;
 }
 
+//点云颜色映射（废弃）
 void RadarStation::generate_color_map(){
     colormap_.resize(256);
     for (int i = 0; i < 256; ++i) {
@@ -220,7 +221,7 @@ std::vector<OnnxBox> RadarStation::get_armor_box(const cv::Mat& src){
         std::vector<std::string> outNames = { "output0" };
         car_net.forward(outs_car, outNames);
         
-        onnx_boxes_car = process_onnx_result(outs_car[0], src, 0.5, 1);
+        onnx_boxes_car = process_onnx_result(outs_car[0], src, car_confidence_threshold_, 1);
 
         for(size_t i = 0; i < onnx_boxes_car.size(); i++){
             
@@ -239,13 +240,14 @@ std::vector<OnnxBox> RadarStation::get_armor_box(const cv::Mat& src){
             std::vector<std::string> outNames = { "output0" };
             armor_net.forward(outs_armor, outNames);
 
-            onnx_boxes_armor = process_onnx_result(outs_armor[0], roi_img, 0.7, 2);
+            onnx_boxes_armor = process_onnx_result(outs_armor[0], roi_img, armor_confidence_threshold_, 2);
+
             // cv::Mat roi_show;
             // for(size_t j = 0; j < onnx_boxes_armor.size(); j++){
             //     std::cout << "armor_onnx_id = " << onnx_boxes_armor[j].class_id << std::endl;
             //     onnx_boxes_armor[j].draw(roi_img);
                 
-            // }
+            // }4==-91w 
             // cv::resize(roi_img, roi_show, cv::Size(640, 640));
             // cv::imshow("ROI", roi_show);
             // cv::waitKey(1);
@@ -283,7 +285,7 @@ std::vector<OnnxBox> RadarStation::process_onnx_result(cv::Mat& onnx_result, cv:
     int dimensions = onnx_result.size[2];
     bool yolov8 = false;
     std::vector<OnnxBox> onnx_boxes_temp;
-    
+    //yolov8 or yolov5
     if(dimensions > rows){
         yolov8 = true;
         rows = onnx_result.size[2];
